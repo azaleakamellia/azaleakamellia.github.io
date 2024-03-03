@@ -2,7 +2,6 @@ baseURL = 'https://azaleakamellia.github.io/'
 languageCode = 'en-us'
 title = 'ANECDATA'
 theme = 'archie'
-publishDir = 'docs'
 
 copyright = "© Azalea Kamellia"
 pygmentsstyle = "monokai"
