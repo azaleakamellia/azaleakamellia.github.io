@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ANECDATA</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on ANECDATA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Azalea Kamellia</copyright>
+    <lastBuildDate>Sun, 14 Jan 2024 07:07:07 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Static Website</title>
+      <link>http://localhost:1313/posts/test_00/</link>
+      <pubDate>Sun, 14 Jan 2024 07:07:07 +0100</pubDate>
+      <guid>http://localhost:1313/posts/test_00/</guid>
+      <description>The horror of static website development In the pursuit of actually trying something myself instead of asking for help, I always end up in some sort of self-imposed misery. Creating static website is one of it although developing some web application still reigns top.&#xA;It always felt like a ruse when people tell you that something is easy or simple. But, truth be told, web development, static or not, isn&amp;rsquo;t easy.</description>
+    </item>
+  </channel>
+</rss>
