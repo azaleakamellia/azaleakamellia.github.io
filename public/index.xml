@@ -2,46 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ANECDATA</title>
-    <link>https://azaleakamellia.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on ANECDATA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Azalea Kamellia</copyright>
-    <lastBuildDate>Tue, 05 Mar 2024 07:07:07 +0100</lastBuildDate>
-    <atom:link href="https://azaleakamellia.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Mar 2024 23:37:14 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Value of Nature; HoB | WWF-Malaysia</title>
+      <link>http://localhost:1313/posts/portfolio_03/</link>
+      <pubDate>Tue, 05 Mar 2024 23:37:14 +0800</pubDate>
+      <guid>http://localhost:1313/posts/portfolio_03/</guid>
+      <description>I rarely keep record of the maps I make and my portfolio is as thick as an amoeba. But when I find them, I&amp;rsquo;m extra extra happy.&#xA;There are 3 of them in this beautiful coffee table book entitled: &amp;lsquo;The Value of Nature; Balancing Conservation, Development and People in the Heart of Borneo&amp;rsquo;, by my super cool colleague Cynthia Chin &amp;ndash; published by WWF-Malaysia. The digital copy is available in Bahasa Melayu and English at the link below 👇🏻</description>
+    </item>
     <item>
       <title>MBR 2023 | PETRONAS</title>
-      <link>https://azaleakamellia.github.io/posts/portfolio_01/</link>
+      <link>http://localhost:1313/posts/portfolio_01/</link>
       <pubDate>Tue, 05 Mar 2024 07:07:07 +0100</pubDate>
-      <guid>https://azaleakamellia.github.io/posts/portfolio_01/</guid>
+      <guid>http://localhost:1313/posts/portfolio_01/</guid>
       <description>Malaysia Bid Round 2023 (MBR 2023) Tool: ArcGIS Pro 2.6.3&#xA;Technique: Symbolization, labeling and SQL expression&#xA;MBR 2023 is a peak event that culminates all the effort of data collection and stock take of hydrocarbon resource in the Malaysia. It is an annual event that put together all the exploration blocks, discoverable hydrocarbon fields and late life assets for upstream sectors to evaluate and invest in.&#xA;Leading up to the event, the Malaysia Petroleum Management (MPM) updates, re-evaluate and produces maps; static and digital, to cater to the need for the most update stock-take of information that can be gained from various source of exploration output; seismic, full tensor gradiometry, assets; cables, pipelines, platforms, as well as discoverable resources.</description>
     </item>
     <item>
       <title>Peta Guna Tanah Malaysia 2014-2018 | FRIM</title>
-      <link>https://azaleakamellia.github.io/posts/portfolio_02/</link>
+      <link>http://localhost:1313/posts/portfolio_02/</link>
       <pubDate>Tue, 05 Mar 2024 07:07:07 +0100</pubDate>
-      <guid>https://azaleakamellia.github.io/posts/portfolio_02/</guid>
+      <guid>http://localhost:1313/posts/portfolio_02/</guid>
       <description>Peta Gunatanah Malaysia 2014 - 2018 Peta Gunatanah Malaysia 2014 -2018 Malaysia&amp;rsquo;s Land Cover 2014 - 2018 web application is a platform generated for the Quality Assessment activity organized by Forest Research Institute Malaysia (FRIM) on 23rd June 2024.&#xA;The workshop aims to collect field/reference data from Malaysian&amp;rsquo;s state agencies in the effort to verify the quality of the land cover classification output generated in support of CO2 release measurement from converted agricultural lands.</description>
     </item>
     <item>
       <title>About</title>
-      <link>https://azaleakamellia.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sun, 03 Mar 2024 14:14:41 +0800</pubDate>
-      <guid>https://azaleakamellia.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>Hello! I’m Azalea Kamellia and I’m a remote sensing specialist from Kuching, Malaysia. I’ve been tinkering around with GIS technology and remote sensing for some time. Over the years, I have applied my skillset through projects with universities, federal agencies, non-profit organizations and now, as a consultant.&#xA;My field of interest includes optical remote sensing, cartography and running.&#xA;Feel free to reach me at azaleakamellia.a@gmail.com.</description>
     </item>
     <item>
       <title>Portfolio</title>
-      <link>https://azaleakamellia.github.io/portfolio/</link>
+      <link>http://localhost:1313/portfolio/</link>
       <pubDate>Sun, 03 Mar 2024 14:14:41 +0800</pubDate>
-      <guid>https://azaleakamellia.github.io/portfolio/</guid>
-      <description> MBR 2023 | PETRONAS </description>
+      <guid>http://localhost:1313/portfolio/</guid>
+      <description> MBR 2023 | PETRONAS Peta Guna Tanah Malaysia 2014-2018 | FRIM The Value of Nature; Heart of Borneo | WWF-Malaysia </description>
     </item>
     <item>
       <title>My First Static Website</title>
-      <link>https://azaleakamellia.github.io/posts/test_00/</link>
+      <link>http://localhost:1313/posts/test_00/</link>
       <pubDate>Sun, 14 Jan 2024 07:07:07 +0100</pubDate>
-      <guid>https://azaleakamellia.github.io/posts/test_00/</guid>
+      <guid>http://localhost:1313/posts/test_00/</guid>
       <description>The horror of static website development In the pursuit of actually trying something myself instead of asking for help, I always end up in some sort of self-imposed misery. Creating static website is one of it although developing some web application still reigns top.&#xA;It always felt like a ruse when people tell you that something is easy or simple. But, truth be told, web development, static or not, isn&amp;rsquo;t easy.</description>
     </item>
   </channel>
