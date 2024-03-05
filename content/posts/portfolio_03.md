@@ -16,3 +16,5 @@ There are 3 of them in this beautiful coffee table book entitled: 'The Value of 
 ![preview](/image/blog/wwfmy_valueofnature_01.jpg)
 
 ![preview](/image/blog/wwfmy_valueofnature_02.jpg)
+
+![preview](/image/blog/wwfmy_valueofnature_03.jpg)
