@@ -7,21 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Azalea Kamellia</copyright>
-    <lastBuildDate>Sun, 14 Jan 2024 07:07:07 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 05 Mar 2024 07:07:07 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MBR 2023 | PETRONAS</title>
+      <link>http://localhost:1313/posts/portfolio_01/</link>
+      <pubDate>Tue, 05 Mar 2024 07:07:07 +0100</pubDate>
+      <guid>http://localhost:1313/posts/portfolio_01/</guid>
+      <description>Malaysia Bid Round 2023 (MBR 2023) Tool: ArcGIS Pro 2.6.3&#xA;Technique: Symbolization, labeling and SQL expression&#xA;MBR 2023 is a peak event that culminates all the effort of data collection and stock take of hydrocarbon resource in the Malaysia. It is an annual event that put together all the exploration blocks, discoverable hydrocarbon fields and late life assets for upstream sectors to evaluate and invest in.&#xA;Leading up to the event, the Malaysia Petroleum Management (MPM) updates, re-evaluate and produces maps; static and digital, to cater to the need for the most update stock-take of information that can be gained from various source of exploration output; seismic, full tensor gradiometry, assets; cables, pipelines, platforms, as well as discoverable resources.</description>
+    </item>
+    <item>
+      <title>MBR 2023 | PETRONAS</title>
+      <link>http://localhost:1313/posts/portfolio_02/</link>
+      <pubDate>Tue, 05 Mar 2024 07:07:07 +0100</pubDate>
+      <guid>http://localhost:1313/posts/portfolio_02/</guid>
+      <description>Malaysia Bid Round 2023 (MBR 2023) Tool: ArcGIS Pro 2.6.3&#xA;Technique: Symbolization, labeling and SQL expression&#xA;MBR 2023 is a peak event that culminates all the effort of data collection and stock take of hydrocarbon resource in the Malaysia. It is an annual event that put together all the exploration blocks, discoverable hydrocarbon fields and late life assets for upstream sectors to evaluate and invest in.&#xA;Leading up to the event, the Malaysia Petroleum Management (MPM) updates, re-evaluate and produces maps; static and digital, to cater to the need for the most update stock-take of information that can be gained from various source of exploration output; seismic, full tensor gradiometry, assets; cables, pipelines, platforms, as well as discoverable resources.</description>
+    </item>
     <item>
       <title>My First Static Website</title>
       <link>http://localhost:1313/posts/test_00/</link>
       <pubDate>Sun, 14 Jan 2024 07:07:07 +0100</pubDate>
       <guid>http://localhost:1313/posts/test_00/</guid>
       <description>The horror of static website development In the pursuit of actually trying something myself instead of asking for help, I always end up in some sort of self-imposed misery. Creating static website is one of it although developing some web application still reigns top.&#xA;It always felt like a ruse when people tell you that something is easy or simple. But, truth be told, web development, static or not, isn&amp;rsquo;t easy.</description>
-    </item>
-    <item>
-      <title>Malaysian Bidding Round 2023 (MBR2023) | PETRONAS</title>
-      <link>http://localhost:1313/posts/portfolio_01/</link>
-      <pubDate>Wed, 02 Aug 2023 07:07:07 +0100</pubDate>
-      <guid>http://localhost:1313/posts/portfolio_01/</guid>
-      <description>Malaysia Bid Round 2023 (MBR 2023) Tool: ArcGIS Pro 2.6.3&#xA;Technique: Symbolization, labeling and SQL expression&#xA;MBR 2023 is a peak event that culminates all the effort of data collection and stock take of hydrocarbon resource in the Malaysia. It is an annual event that put together all the exploration blocks, discoverable hydrocarbon fields and late life assets for upstream sectors to evaluate and invest in.&#xA;Leading up to the event, the Malaysia Petroleum Management (MPM) updates, re-evaluate and produces maps; static and digital, to cater to the need for the most update stock-take of information that can be gained from various source of exploration output; seismic, full tensor gradiometry, assets; cables, pipelines, platforms, as well as discoverable resources.</description>
     </item>
   </channel>
 </rss>
