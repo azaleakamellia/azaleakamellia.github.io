@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Portfolio on ANECDATA</title>
-    <link>http://localhost:1313/tags/portfolio/</link>
+    <link>https://azaleakamellia.github.io/tags/portfolio/</link>
     <description>Recent content in Portfolio on ANECDATA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Azalea Kamellia</copyright>
     <lastBuildDate>Tue, 05 Mar 2024 07:07:07 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://azaleakamellia.github.io/tags/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MBR 2023 | PETRONAS</title>
-      <link>http://localhost:1313/posts/portfolio_01/</link>
+      <link>https://azaleakamellia.github.io/posts/portfolio_01/</link>
       <pubDate>Tue, 05 Mar 2024 07:07:07 +0100</pubDate>
-      <guid>http://localhost:1313/posts/portfolio_01/</guid>
+      <guid>https://azaleakamellia.github.io/posts/portfolio_01/</guid>
       <description>Malaysia Bid Round 2023 (MBR 2023) Tool: ArcGIS Pro 2.6.3&#xA;Technique: Symbolization, labeling and SQL expression&#xA;MBR 2023 is a peak event that culminates all the effort of data collection and stock take of hydrocarbon resource in the Malaysia. It is an annual event that put together all the exploration blocks, discoverable hydrocarbon fields and late life assets for upstream sectors to evaluate and invest in.&#xA;Leading up to the event, the Malaysia Petroleum Management (MPM) updates, re-evaluate and produces maps; static and digital, to cater to the need for the most update stock-take of information that can be gained from various source of exploration output; seismic, full tensor gradiometry, assets; cables, pipelines, platforms, as well as discoverable resources.</description>
     </item>
     <item>
-      <title>MBR 2023 | PETRONAS</title>
-      <link>http://localhost:1313/posts/portfolio_02/</link>
+      <title>Peta Guna Tanah Malaysia 2014-2018 | FRIM</title>
+      <link>https://azaleakamellia.github.io/posts/portfolio_02/</link>
       <pubDate>Tue, 05 Mar 2024 07:07:07 +0100</pubDate>
-      <guid>http://localhost:1313/posts/portfolio_02/</guid>
-      <description>Malaysia Bid Round 2023 (MBR 2023) Tool: ArcGIS Pro 2.6.3&#xA;Technique: Symbolization, labeling and SQL expression&#xA;MBR 2023 is a peak event that culminates all the effort of data collection and stock take of hydrocarbon resource in the Malaysia. It is an annual event that put together all the exploration blocks, discoverable hydrocarbon fields and late life assets for upstream sectors to evaluate and invest in.&#xA;Leading up to the event, the Malaysia Petroleum Management (MPM) updates, re-evaluate and produces maps; static and digital, to cater to the need for the most update stock-take of information that can be gained from various source of exploration output; seismic, full tensor gradiometry, assets; cables, pipelines, platforms, as well as discoverable resources.</description>
+      <guid>https://azaleakamellia.github.io/posts/portfolio_02/</guid>
+      <description>Peta Gunatanah Malaysia 2014 - 2018 Peta Gunatanah Malaysia 2014 -2018 Malaysia&amp;rsquo;s Land Cover 2014 - 2018 web application is a platform generated for the Quality Assessment activity organized by Forest Research Institute Malaysia (FRIM) on 23rd June 2024.&#xA;The workshop aims to collect field/reference data from Malaysian&amp;rsquo;s state agencies in the effort to verify the quality of the land cover classification output generated in support of CO2 release measurement from converted agricultural lands.</description>
     </item>
   </channel>
 </rss>
