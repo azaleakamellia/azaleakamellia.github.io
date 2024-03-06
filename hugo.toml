@@ -31,16 +31,21 @@ icon = "youtube"
 url = "https://youtube.com/@azaleakamellia/"
 
 [[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
 name = "About"
 url = "/about"
-weight = 1
+weight = 2
 
 [[menu.main]]
 name = "Portfolio"
 url = "/portfolio"
-weight = 2
+weight = 3
 
 [[menu.main]]
 name = "Tags"
 url = "/tags"
-weight = 3
+weight = 4
