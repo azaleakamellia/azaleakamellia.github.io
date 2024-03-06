@@ -2,39 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://azaleakamellia.github.io/</loc>
     <lastmod>2024-03-05T23:37:14+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/portfolio/</loc>
+    <loc>https://azaleakamellia.github.io/tags/portfolio/</loc>
     <lastmod>2024-03-05T23:37:14+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://azaleakamellia.github.io/posts/</loc>
     <lastmod>2024-03-05T23:37:14+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://azaleakamellia.github.io/tags/</loc>
     <lastmod>2024-03-05T23:37:14+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/portfolio_03/</loc>
+    <loc>https://azaleakamellia.github.io/posts/portfolio_03/</loc>
     <lastmod>2024-03-05T23:37:14+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/portfolio_01/</loc>
+    <loc>https://azaleakamellia.github.io/posts/portfolio_02/</loc>
     <lastmod>2024-03-05T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/portfolio_02/</loc>
+    <loc>https://azaleakamellia.github.io/posts/portfolio_01/</loc>
     <lastmod>2024-03-05T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://azaleakamellia.github.io/about/</loc>
     <lastmod>2024-03-03T14:14:41+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/portfolio/</loc>
+    <loc>https://azaleakamellia.github.io/portfolio/</loc>
     <lastmod>2024-03-03T14:14:41+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/journal/</loc>
+    <loc>https://azaleakamellia.github.io/tags/journal/</loc>
     <lastmod>2024-01-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/test_00/</loc>
+    <loc>https://azaleakamellia.github.io/posts/test_00/</loc>
     <lastmod>2024-01-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://azaleakamellia.github.io/categories/</loc>
   </url>
 </urlset>
