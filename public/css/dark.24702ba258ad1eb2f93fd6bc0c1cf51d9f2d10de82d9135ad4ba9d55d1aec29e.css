@@ -1,3 +1,6 @@
+:root{
+  --bordercl:#FFD23F;  
+}
 body {
   color: white;
   background-color: #202124;
@@ -10,13 +13,13 @@ body {
 }
 
 ::selection {
-  background: red;
+  background: ##FFD23F;
   color: #fff;
   text-shadow: none;
 }
 
 hr {
-  border-top: 3px dotted blue;
+  border-top: 3px dotted #FFD23F;
 }
 code {
   background-color: lightblue;

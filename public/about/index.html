@@ -26,14 +26,49 @@ Feel free to reach me at azaleakamellia.a@gmail.com."/>
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://azaleakamellia.github.io/css/main.57c838992829197257ed5eb64d129e11d3f333fc71b17dfdbda137e8c8455232.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://azaleakamellia.github.io/css/dark.c95c5dcf5f32f8b67bd36f7dab66680e068fce2b303087294114aabf7a7c080b.css" media="(prefers-color-scheme: dark)"  />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://azaleakamellia.github.io/css/main.97fad9b69e430d608b3be4ea3affae9bea7ef5988b5394d886cacec8f1796f7e.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://azaleakamellia.github.io/css/dark.24702ba258ad1eb2f93fd6bc0c1cf51d9f2d10de82d9135ad4ba9d55d1aec29e.css"  disabled />
 	
 
 	
 	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
 
 	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
 	
 	
 	
@@ -45,20 +80,17 @@ Feel free to reach me at azaleakamellia.a@gmail.com."/>
 	</div>
 	<nav>
 		
-		<a href="/">Home</a>
-		
 		<a href="/about">About</a>
 		
 		<a href="/portfolio">Portfolio</a>
 		
-		<a href="/posts">All posts</a>
-		
 		<a href="/tags">Tags</a>
 		
+		| <span id="dark-mode-toggle" onclick="toggleTheme()"></span>
+		<script src="https://azaleakamellia.github.io/js/themetoggle.js"></script>
 		
 	</nav>
 </header>
-
 <main>
 	<article>
 		<div class="title">

@@ -4,7 +4,7 @@
 --bordercl:red;
 --callouctcolor:dodgerblue;
 --hovercolor:navy;
---darkMaincolor: #50fa7b;
+--darkMaincolor: #FFD23F;
 }
 html {
   color: #232333;
@@ -142,7 +142,7 @@ header {
 }
 
 header .main {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h1 {
@@ -161,12 +161,12 @@ h3, h4, h5, h6 {
   margin-top: 2em;
 }
 
-h1::before { color: var(--maincolor); content: '# '; }
-h2::before { color: var(--maincolor); content: '## '; }
-h3::before { color: var(--maincolor); content: '### '; }
-h4::before { color: var(--maincolor); content: '#### '; }
-h5::before { color: var(--maincolor); content: '##### '; }
-h6::before { color: var(--maincolor); content: '###### '; }
+h1::before { color: var(--maincolor); content: '## '; }
+h2::before { color: var(--maincolor); content: '### '; }
+h3::before { color: var(--maincolor); content: '#### '; }
+h4::before { color: var(--maincolor); content: '##### '; }
+h5::before { color: var(--maincolor); content: '###### '; }
+h6::before { color: var(--maincolor); content: '####### '; }
 
 .meta {
   color: #999;
