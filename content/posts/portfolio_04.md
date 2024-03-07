@@ -1,5 +1,5 @@
 ---
-title: 🗺️ 'Nature in the HoB (2020) | WWF-Malaysia'
+title: 🗺️ Nature in the HoB (2020) | WWF-Malaysia
 date: 2024-03-07T09:31:25+08:00
 draft: false
 tags: [portfolio]

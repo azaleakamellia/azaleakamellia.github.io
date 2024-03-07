@@ -1,5 +1,5 @@
 ---
-title: 🗺️ 'The Value of Nature; HoB | WWF-Malaysia'
+title: 🗺️ The Value of Nature; HoB | WWF-Malaysia
 date: 2024-03-05T23:37:14+08:00
 draft: false
 tags: [portfolio]

@@ -7,35 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Azalea Kamellia</copyright>
-    <lastBuildDate>Thu, 07 Mar 2024 09:31:25 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Mar 2024 21:56:57 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🌏 CE Strategy Dashboard 2021 | WWF-Malaysia</title>
+      <link>http://localhost:1313/posts/portfolio_06/</link>
+      <pubDate>Thu, 07 Mar 2024 21:56:57 +0800</pubDate>
+      <guid>http://localhost:1313/posts/portfolio_06/</guid>
+      <description>The northern highland communities of Lun Bawang have been collaborating with WWF-Malaysia under the Sarawak Conservation Programme (SCP) to empower sustainable economies and managing their natural biodiversity through the Community Empowerment Strategy (formerly known as Community Engagement and Education Strategy).&#xA;Since 2016, the communities have been actively mapping out their land uses and culturally important locations to delineate their areas of settlement and source of livelihood. Given the close vicinity of their communities to the licensed timber concessions, producing a definitive map is important to preserve and conserve their surrounding natural capitals.</description>
+    </item>
+    <item>
+      <title>🗺️ &#39;IKI Landuse Plan - Green Initiative in the HoB Report&#39;</title>
+      <link>http://localhost:1313/posts/portfolio_05/</link>
+      <pubDate>Thu, 07 Mar 2024 21:56:57 +0800</pubDate>
+      <guid>http://localhost:1313/posts/portfolio_05/</guid>
+      <description>Several maps are developed to aid or supplement the Natural Capital Valuation (NatCap) initiative. As cited by WWF: An essential element of the Natural Capital Project is developing tools that help decision makers protect biodiversity and ecosystem services.&#xA;Within the Rajang Basin, the study of the capacity of the land use within the basin to sustain its natural biodiversity assets in few business models; business as usual, conservation and green economy.</description>
+    </item>
     <item>
       <title>🗺️ &#39;Nature in the HoB (2020) | WWF-Malaysia&#39;</title>
       <link>http://localhost:1313/posts/portfolio_04/</link>
       <pubDate>Thu, 07 Mar 2024 09:31:25 +0800</pubDate>
       <guid>http://localhost:1313/posts/portfolio_04/</guid>
-      <description>Nature in the Heart of Borneo (2020) A series of maps were created for the book published by WWF-Malaysia and FORMADAT ([Forum Masyarakat Adat Dataran Tinggi Borneo].&#xA;This book was meant as a guide to some of the natural attractions at Northern parts of Sarawak which includes the black gold region of the Sarawak state; Miri, and the pearl of the Borneo island, Sabah. Notable locations of nature&amp;rsquo;s peculiar feats are shared for those who seek to explore the northern states for the first time.</description>
+      <description>A series of maps were created for the book published by WWF-Malaysia and FORMADAT (Forum Masyarakat Adat Dataran Tinggi Borneo).&#xA;This book was meant as a guide to some of the natural attractions at Northern parts of Sarawak which includes the black gold region of the Sarawak state; Miri, and the pearl of the Borneo island, Sabah. Notable locations of nature&amp;rsquo;s peculiar feats are shared for those who seek to explore the northern states for the first time.</description>
     </item>
     <item>
       <title>🗺️ &#39;The Value of Nature; HoB | WWF-Malaysia&#39;</title>
       <link>http://localhost:1313/posts/portfolio_03/</link>
       <pubDate>Tue, 05 Mar 2024 23:37:14 +0800</pubDate>
       <guid>http://localhost:1313/posts/portfolio_03/</guid>
-      <description>I rarely keep record of the maps I make and my portfolio is as thick as an amoeba. But when I find them, I&amp;rsquo;m extra extra happy.&#xA;There are 3 of them in this beautiful coffee table book entitled: &amp;lsquo;The Value of Nature; Balancing Conservation, Development and People in the Heart of Borneo&amp;rsquo;, by my super cool colleague Cynthia Chin &amp;ndash; published by WWF-Malaysia. The digital copy is available in Bahasa Melayu and English at the link below 👇🏻</description>
+      <description>I rarely keep record of the maps I make and my portfolio is as thick as an amoeba. But when I find them, I&amp;rsquo;m extra extra happy.&#xA;There are 3 of them in this beautiful coffee table book entitled: &amp;lsquo;The Value of Nature; Balancing Conservation, Development and People in the Heart of Borneo&amp;rsquo;, by my super cool colleague Cynthia Chin &amp;ndash; published by WWF-Malaysia. The digital copy is available in Bahasa Melayu and English at the link below 👇🏻 The Value of Nature: Balancing Conservation, Development and People in the Heart of Borneo TOOLS 1️⃣ ArcGIS Pro 2.</description>
+    </item>
+    <item>
+      <title>🌏 &#39;Peta Guna Tanah Malaysia 2014-2018 | FRIM&#39;</title>
+      <link>http://localhost:1313/posts/portfolio_02/</link>
+      <pubDate>Tue, 05 Mar 2024 07:07:07 +0100</pubDate>
+      <guid>http://localhost:1313/posts/portfolio_02/</guid>
+      <description>Peta Gunatanah Malaysia 2014 - 2018 Peta Gunatanah Malaysia 2014 -2018 Malaysia&amp;rsquo;s Land Cover 2014 - 2018 web application is a platform generated for the Quality Assessment activity organized by Forest Research Institute Malaysia (FRIM) on 23rd June 2024.&#xA;The workshop aims to collect field/reference data from Malaysian&amp;rsquo;s state agencies in the effort to verify the quality of the land cover classification output generated to support CO2 release measurement from converted agricultural lands.</description>
     </item>
     <item>
       <title>🗺️ &#39;MBR 2023 | PETRONAS&#39;</title>
       <link>http://localhost:1313/posts/portfolio_01/</link>
       <pubDate>Tue, 05 Mar 2024 07:07:07 +0100</pubDate>
       <guid>http://localhost:1313/posts/portfolio_01/</guid>
-      <description>Malaysia Bid Round 2023 (MBR 2023) MBR 2023 is a peak event that culminates all the effort of data collection and stock take of hydrocarbon resource in the Malaysia. It is an annual event that put together all the exploration blocks, discoverable hydrocarbon fields and late life assets for upstream sectors to evaluate and invest in.&#xA;Leading up to the event, the Malaysia Petroleum Management (MPM) updates, re-evaluate and produces maps; static and digital, to cater to the need for the most recent stock-take of information that can be obtained from various source of exploration output; seismic, full tensor gradiometry, assets; cables, pipelines, platforms, as well as discoverable resources.</description>
-    </item>
-    <item>
-      <title>🟡 &#39;Peta Guna Tanah Malaysia 2014-2018 | FRIM&#39;</title>
-      <link>http://localhost:1313/posts/portfolio_02/</link>
-      <pubDate>Tue, 05 Mar 2024 07:07:07 +0100</pubDate>
-      <guid>http://localhost:1313/posts/portfolio_02/</guid>
-      <description>Peta Gunatanah Malaysia 2014 - 2018 Peta Gunatanah Malaysia 2014 -2018 Malaysia&amp;rsquo;s Land Cover 2014 - 2018 web application is a platform generated for the Quality Assessment activity organized by Forest Research Institute Malaysia (FRIM) on 23rd June 2024.&#xA;The workshop aims to collect field/reference data from Malaysian&amp;rsquo;s state agencies in the effort to verify the quality of the land cover classification output generated to support CO2 release measurement from converted agricultural lands.</description>
+      <description>MBR 2023 is a peak event that culminates all the effort of data collection and stock take of hydrocarbon resource in the Malaysia. It is an annual event that put together all the exploration blocks, discoverable hydrocarbon fields and late life assets for upstream sectors to evaluate and invest in.&#xA;Leading up to the event, the Malaysia Petroleum Management (MPM) updates, re-evaluate and produces maps; static and digital, to cater to the need for the most recent stock-take of information that can be obtained from various source of exploration output; seismic, full tensor gradiometry, assets; cables, pipelines, platforms, as well as discoverable resources.</description>
     </item>
     <item>
       <title>My First Static Website</title>
