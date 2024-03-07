@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ANECDATA</title>
-    <link>https://azaleakamellia.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on ANECDATA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Azalea Kamellia</copyright>
-    <lastBuildDate>Tue, 05 Mar 2024 23:37:14 +0800</lastBuildDate>
-    <atom:link href="https://azaleakamellia.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Mar 2024 09:31:25 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Portfolio</title>
-      <link>https://azaleakamellia.github.io/tags/portfolio/</link>
-      <pubDate>Tue, 05 Mar 2024 23:37:14 +0800</pubDate>
-      <guid>https://azaleakamellia.github.io/tags/portfolio/</guid>
+      <link>http://localhost:1313/tags/portfolio/</link>
+      <pubDate>Thu, 07 Mar 2024 09:31:25 +0800</pubDate>
+      <guid>http://localhost:1313/tags/portfolio/</guid>
       <description></description>
     </item>
     <item>
       <title>Journal</title>
-      <link>https://azaleakamellia.github.io/tags/journal/</link>
+      <link>http://localhost:1313/tags/journal/</link>
       <pubDate>Sun, 14 Jan 2024 07:07:07 +0100</pubDate>
-      <guid>https://azaleakamellia.github.io/tags/journal/</guid>
+      <guid>http://localhost:1313/tags/journal/</guid>
       <description></description>
     </item>
   </channel>

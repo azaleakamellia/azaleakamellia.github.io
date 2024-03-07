@@ -1,13 +1,11 @@
 ---
-title: 🟢 'MBR 2023 | PETRONAS'
+title: 🗺️ 'MBR 2023 | PETRONAS'
 date: 2024-03-05T07:07:07+01:00
 draft: false
 tags: [portfolio]
 description: 
     'The Malaysian Bidding Round 2023 (MBR2023) has marked another successful year for PETRONAS.'
 ---
-# Malaysia Bid Round 2023 (MBR 2023)
-
 ![preview](/image/blog/mbr2023_01.jpg)
 
 MBR 2023 is a peak event that culminates all the effort of data collection and stock take of hydrocarbon resource in the Malaysia. It is an annual event that put together all the exploration blocks, discoverable hydrocarbon fields and late life assets for upstream sectors to evaluate and invest in.
@@ -20,7 +18,7 @@ Leading up to the event, the Malaysia Petroleum Management (MPM) updates, re-eva
 
 Credit: [Sh Shahira Wafa Syed Khairulmunir Wafa](https://www.linkedin.com/posts/sharifah-shahira-wafa-66630b55_alhamdulillahall-praise-to-god-managed-activity-7031617690708430848-sxcD/)
 
-**Technical aspects of cartographical output**\
+## **Technical aspects of cartographical output**\
 Over \~70 maps for unique blocks have been produced during the finalization stage, \~210 maps during data evaluation and additional 20 for the event. And this excludes the standardized maps to formalize information requested by prospective bidders as well as clients who are facing prospects of extending their contract.
 
 Data verification is an essential aspect for Production Sharing Contracts (PSC) or Joint Operating Agreements (JOA) where coordinates are verified geomatically before finalization for hydrocarbon resource is issued out for bidding. 
