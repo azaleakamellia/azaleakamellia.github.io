@@ -1,6 +1,6 @@
 ---
 title: 🌏 Malaysia Forest Cover 2020 | WWF-Malaysia
-date: 2024-03-07T21:56:57+08:00
+date: 2022-12-23T21:56:57+08:00
 draft: false
 tags: [portfolio]
 description:
@@ -18,7 +18,8 @@ The WWF-Malaysia Forest Cover Baseline and Forest Cover Key Performance Index (K
 ## **Centralized interface for concise and dynamic reporting**
 This exercise produces a concise dashboard report in an online platform that describes the processed information on the forest cover status as well as their prospective areas identified for conservation work.
 
-{{< video src="/wwf_cgis2020_00.mp4" type="video/mp4" preload="auto" >}}
+&nbsp;
+![preview](/image/blog/wwfmy_cgis2020_00.gif)
 
 \
 &nbsp;
@@ -29,8 +30,5 @@ ________________________________________________________________________________
 2️⃣ ArcGIS Online \
 3️⃣ Operations Dashboard for ArcGIS \
 4️⃣ HTML
-
 &nbsp;
 
-**STATUS** \
-🛑 Accessibility retracted 2021

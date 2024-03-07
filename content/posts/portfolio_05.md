@@ -1,6 +1,6 @@
 ---
 title: 🗺️ IKI Landuse Plan - Green Initiative in the HoB Report | WWF-Malaysia
-date: 2024-03-07T21:56:57+08:00
+date: 2022-04-20T21:56:57+08:00
 draft: false
 tags: [portfolio]
 description:
@@ -29,6 +29,7 @@ The generation of the data mainly includes superficial remote sensing to assess 
 &nbsp;
 &nbsp; 
 _______________________________________________________________________________________________
+
 **TOOLS** \
 1️⃣ ArcGIS Pro 2.6.1 
 &nbsp;
