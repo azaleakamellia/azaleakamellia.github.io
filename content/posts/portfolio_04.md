@@ -41,16 +41,12 @@ If you're making maps for books, don't border trying to make borders and fully u
 
 \
 &nbsp;
-&nbsp;
-_______________________________________________________________________________________________
-&nbsp;
-
+&nbsp; _______________________________________________________________________________________________
 **TOOLS** \
 1️⃣ ArcGIS Pro 2.9.3 \
 2️⃣ ArcGIS Online \
 3️⃣ Python \
 4️⃣ HTML
-
 &nbsp;
 
 

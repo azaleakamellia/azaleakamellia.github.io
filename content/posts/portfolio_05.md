@@ -27,12 +27,9 @@ The generation of the data mainly includes superficial remote sensing to assess 
 
 \
 &nbsp;
-&nbsp;
+&nbsp; 
 _______________________________________________________________________________________________
-&nbsp;
-
 **TOOLS** \
 1️⃣ ArcGIS Pro 2.6.1 
-
 &nbsp;
 

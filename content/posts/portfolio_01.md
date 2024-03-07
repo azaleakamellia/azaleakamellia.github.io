@@ -35,12 +35,9 @@ For more information on the event, please access the following resources:
 &nbsp;
 &nbsp;
 _______________________________________________________________________________________________
-&nbsp;
-
 **TOOLS** \
 1️⃣ ArcGIS Pro 2.9.3 \
 2️⃣ ArcGIS Online \
 3️⃣ Python 
-
 &nbsp;
 

@@ -22,10 +22,15 @@ Several outreach has been done and the community mapping effort has been shifted
 &nbsp;
 &nbsp;
 _______________________________________________________________________________________________
-&nbsp;
-
 **TOOLS** \
-1️⃣ ArcGIS Pro 2.6.1 
+1️⃣ ArcGIS Pro 2.6.1 \
+2️⃣ ArcGIS Online \
+3️⃣ Operations Dashboard for ArcGIS \
+4️⃣ Survey123 for ArcGIS \
+5️⃣ XLSForm \
+7️⃣ HTML 
 
 &nbsp;
 
+**STATUS** \
+🛑 Accessibility retracted 2021

@@ -26,12 +26,9 @@ There are 3 of them in this beautiful coffee table book entitled: 'The Value of 
 &nbsp;
 &nbsp;
 _______________________________________________________________________________________________
-&nbsp;
-
 **TOOLS** \
 1️⃣ ArcGIS Pro 2.9.3 \
 2️⃣ ArcGIS Online \
 3️⃣ Python \
 4️⃣ HTML
-
 &nbsp;
