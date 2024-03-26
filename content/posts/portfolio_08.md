@@ -18,7 +18,7 @@ Please find the abstract published here:
 
 &nbsp;
 ## **Centralized interface for concise and dynamic reporting**
-This exercise produces a concise dashboard report in an online platform that describes the processed information on the forest cover status as well as their prospective areas identified for conservation work.
+Deep learning features in ArcGIS Pro comprises of libraries that enable the deep learning workflow pipeline. The processes shows how markly different the handling of data, feature extraction and hyperparameters to match an expected output. Although the output is smoother and more contextual, its interpretability is not as evident as conventional machine learning algorithms used for pixel classification.
 
 &nbsp;
 
