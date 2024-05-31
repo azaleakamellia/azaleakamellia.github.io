@@ -1,5 +1,5 @@
 ---
-title: The FOMO move
+title: 'The FOMO move'
 date: 2024-01-14T07:07:07+01:00
 draft: false
 tags: [journal]
