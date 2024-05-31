@@ -1,9 +1,9 @@
 ---
-title: 'My First Static Website'
+title: 'The FOMO move'
 date: 2024-01-14T07:07:07+01:00
 draft: false
 tags: [journal]
-description: 'Have you heard of static website? It comes a joy that comes with backpain and insomnia.'
+description: 'Have you heard of static website? It's a joy that comes with backpain and insomnia.'
 ---
 ## The horror of static website development
 
