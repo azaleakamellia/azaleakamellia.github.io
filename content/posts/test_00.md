@@ -19,6 +19,3 @@ Resources:
 3. [Hosting and deployment](https://gohugo.io/hosting-and-deployment/) - This is the hard part initially. But if you're like me, checkout the [Host on GitHub Pages](https://gohugo.io/hosting-and-deployment/hosting-on-github/).
 
 All the best guys. If you're slow like me, you're gonna need it. Along with some yoga roller to decompress your spine. Just saying. 
-
-
-
