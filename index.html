@@ -1,755 +1,598 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gs. Azalea Kamellia Abdullah</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --green-deep:   #1a3a2a;
-      --green-mid:    #2d5e40;
-      --green-soft:   #4a8c5c;
-      --green-light:  #a8d5b5;
-      --cream:        #f5f0e8;
-      --cream-dark:   #ece6d8;
-      --sand:         #c8b89a;
-      --text-dark:    #1a2218;
-      --text-mid:     #3d5040;
-      --text-light:   #6b7f6e;
+      --ink:       #0f1a0f;
+      --forest:    #1e3d2a;
+      --moss:      #3a6b4a;
+      --sage:      #7aab85;
+      --mist:      #c8dece;
+      --paper:     #f7f4ee;
+      --warm:      #ece8df;
+      --rule:      #d4cfc4;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      background-color: var(--cream);
-      color: var(--text-dark);
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
       font-size: 16px;
-      line-height: 1.7;
-      overflow-x: hidden;
+      line-height: 1.75;
     }
 
-    /* ── NOISE TEXTURE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.5;
+    /* ── LAYOUT WRAPPER ── */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
+    /* ── TOP BAR ── */
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding: 1.4rem 0;
+      position: sticky;
+      top: 0;
+      background: rgba(247, 244, 238, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+
+    header .wrap {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 4rem;
-      background: rgba(245, 240, 232, 0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--cream-dark);
     }
 
-    .nav-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1rem;
-      color: var(--green-deep);
-      letter-spacing: 0.01em;
+    .site-id {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--moss);
+      letter-spacing: 0.04em;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
+    nav a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
       text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      transition: color 0.2s;
+      color: var(--ink);
+      opacity: 0.5;
+      margin-left: 1.8rem;
+      letter-spacing: 0.06em;
+      transition: opacity 0.2s;
     }
-
-    .nav-links a:hover { color: var(--green-soft); }
+    nav a:hover { opacity: 1; }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 5rem;
-      position: relative;
-      overflow: hidden;
+      padding: 4rem 0 2.5rem;
+      border-bottom: 1px solid var(--rule);
     }
 
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 3rem 6rem 4rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
+    .hero-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--sage);
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--green-soft);
-      border: 1px solid var(--green-light);
-      padding: 0.35rem 0.9rem;
-      border-radius: 2rem;
-      margin-bottom: 2rem;
-      width: fit-content;
-      animation: fadeUp 0.8s ease both;
+      margin-bottom: 1.4rem;
     }
 
-    .hero-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 600;
       line-height: 1.1;
-      color: var(--green-deep);
-      margin-bottom: 0.4rem;
-      animation: fadeUp 0.8s 0.1s ease both;
+      color: var(--forest);
+      margin-bottom: 0.2rem;
     }
 
-    .hero-title em {
+    .hero h1 em {
       font-style: italic;
-      color: var(--green-soft);
+      font-weight: 400;
     }
 
-    .hero-subtitle {
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--sand);
+    .hero-role {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--sage);
       margin-bottom: 2rem;
-      animation: fadeUp 0.8s 0.2s ease both;
+      letter-spacing: 0.06em;
     }
 
     .hero-bio {
       font-size: 1.05rem;
-      color: var(--text-mid);
-      max-width: 480px;
-      margin-bottom: 3rem;
       font-weight: 300;
-      animation: fadeUp 0.8s 0.3s ease both;
+      color: var(--forest);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
     }
 
     .hero-bio strong {
       font-weight: 500;
-      color: var(--green-deep);
     }
 
-    .hero-ctas {
+    .hero-links {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
-      animation: fadeUp 0.8s 0.4s ease both;
+      gap: 0.8rem;
     }
 
-    .btn-primary {
+    .pill {
       display: inline-block;
-      background: var(--green-deep);
-      color: var(--cream);
-      text-decoration: none;
-      padding: 0.8rem 2rem;
-      font-size: 0.85rem;
-      font-weight: 500;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
       letter-spacing: 0.06em;
-      border-radius: 3px;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-primary:hover {
-      background: var(--green-mid);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      border: 1.5px solid var(--green-soft);
-      color: var(--green-mid);
       text-decoration: none;
-      padding: 0.8rem 2rem;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      border-radius: 3px;
+      padding: 0.45rem 1rem;
+      border-radius: 2rem;
       transition: all 0.2s;
     }
 
-    .btn-secondary:hover {
-      background: var(--green-deep);
-      color: var(--cream);
-      border-color: var(--green-deep);
-      transform: translateY(-1px);
+    .pill-solid {
+      background: var(--forest);
+      color: var(--paper);
     }
+    .pill-solid:hover { background: var(--moss); }
 
-    /* ── HERO RIGHT — decorative map/geo panel ── */
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-      background: var(--green-deep);
+    .pill-outline {
+      border: 1px solid var(--moss);
+      color: var(--moss);
     }
-
-    .hero-right::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 60%, rgba(74,140,92,0.35) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(168,213,181,0.15) 0%, transparent 50%);
-    }
-
-    .geo-svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.18;
-    }
-
-    .hero-right-content {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 3rem;
-    }
-
-    .hero-stat {
-      display: inline-block;
-      background: rgba(168, 213, 181, 0.12);
-      border: 1px solid rgba(168, 213, 181, 0.25);
-      backdrop-filter: blur(8px);
-      border-radius: 6px;
-      padding: 1.2rem 1.6rem;
-      margin-bottom: 1rem;
-      max-width: 280px;
-    }
-
-    .hero-stat-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green-light);
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-stat-value {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.1rem;
-      color: var(--cream);
-      line-height: 1.3;
+    .pill-outline:hover {
+      background: var(--forest);
+      color: var(--paper);
+      border-color: var(--forest);
     }
 
     /* ── SECTION BASE ── */
     section {
-      padding: 6rem 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
+      padding: 2.2rem 0;
+      border-bottom: 1px solid var(--rule);
     }
+
+    section:last-of-type { border-bottom: none; }
 
     .section-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--green-soft);
-      margin-bottom: 0.8rem;
+      color: var(--sage);
+      margin-bottom: 1.2rem;
     }
 
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      color: var(--green-deep);
-      margin-bottom: 3rem;
-      line-height: 1.15;
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--sand), transparent);
-      margin: 0 4rem;
-      max-width: calc(1100px - 8rem);
-    }
-
-    /* ── RESEARCH SECTION ── */
-    .research-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .research-card {
-      background: white;
-      border: 1px solid var(--cream-dark);
-      border-radius: 6px;
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .research-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(26, 58, 42, 0.1);
-    }
-
-    .research-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(to right, var(--green-soft), var(--green-light));
-    }
-
-    .research-card-icon {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .research-card h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.15rem;
-      color: var(--green-deep);
-      margin-bottom: 0.6rem;
-    }
-
-    .research-card p {
-      font-size: 0.9rem;
-      color: var(--text-light);
+    /* ── ABOUT ── */
+    .about-text {
+      font-size: 0.98rem;
       font-weight: 300;
+      color: var(--forest);
+      margin-bottom: 1.2rem;
     }
 
-    .research-card .tag {
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--green-soft);
-      background: rgba(74, 140, 92, 0.08);
-      padding: 0.25rem 0.7rem;
+    .about-text strong { font-weight: 500; }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.6rem;
+    }
+
+    .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      background: var(--warm);
+      color: var(--moss);
+      border: 1px solid var(--rule);
+      padding: 0.3rem 0.75rem;
       border-radius: 2rem;
     }
 
-    /* ── PROJECTS SECTION ── */
-    #projects { background: var(--cream-dark); max-width: 100%; padding: 6rem 0; }
-    #projects > .inner { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
+    /* ── PROJECTS ── */
+    .project {
+      padding: 1.4rem 0;
+      border-top: 1px solid var(--rule);
+    }
 
-    .projects-list {
+    .project:first-of-type { border-top: none; padding-top: 0; }
+
+    .project-header {
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .project-item {
-      background: var(--cream);
-      border: 1px solid var(--cream-dark);
-      border-left: 4px solid var(--green-soft);
-      border-radius: 4px;
-      padding: 1.8rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: start;
+      justify-content: space-between;
+      align-items: flex-start;
       gap: 1rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .project-item:hover {
-      border-left-color: var(--green-deep);
-      transform: translateX(4px);
-    }
-
-    .project-item h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.1rem;
-      color: var(--green-deep);
       margin-bottom: 0.4rem;
     }
 
-    .project-item p {
-      font-size: 0.88rem;
-      color: var(--text-light);
-      font-weight: 300;
+    .project-title {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--forest);
     }
 
     .project-status {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.3rem 0.8rem;
-      border-radius: 2rem;
       white-space: nowrap;
+      padding: 0.2rem 0.65rem;
+      border-radius: 2rem;
+      flex-shrink: 0;
     }
 
     .status-active {
-      background: rgba(74, 140, 92, 0.12);
-      color: var(--green-soft);
-      border: 1px solid rgba(74, 140, 92, 0.3);
+      background: rgba(122, 171, 133, 0.15);
+      color: var(--moss);
+      border: 1px solid var(--mist);
     }
 
-    .status-coming {
-      background: rgba(200, 184, 154, 0.2);
-      color: var(--sand);
-      border: 1px solid rgba(200, 184, 154, 0.4);
+    .status-ip {
+      background: rgba(30, 61, 42, 0.08);
+      color: var(--forest);
+      border: 1px solid var(--rule);
     }
 
-    /* ── CV SECTION ── */
-    .cv-block {
-      background: var(--green-deep);
-      border-radius: 8px;
-      padding: 3rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 2rem;
-      color: var(--cream);
+    .status-soon {
+      background: var(--warm);
+      color: var(--sage);
+      border: 1px solid var(--rule);
     }
 
-    .cv-block h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.6rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .cv-block p {
+    .project-desc {
       font-size: 0.9rem;
-      color: var(--green-light);
       font-weight: 300;
-      max-width: 480px;
+      color: var(--moss);
     }
 
-    .btn-cv {
+    /* ── WRITING ── */
+    .writing-intro {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--forest);
+      margin-bottom: 1.8rem;
+    }
+
+    .post {
+      padding: 1.2rem 0;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .post:first-of-type { border-top: none; padding-top: 0; }
+    .post:hover { opacity: 0.65; }
+
+    .post-title {
+      font-family: 'Lora', serif;
+      font-size: 0.98rem;
+      color: var(--forest);
+    }
+
+    .post-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--sage);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .medium-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      background: var(--cream);
-      color: var(--green-deep);
-      text-decoration: none;
-      padding: 0.9rem 2rem;
-      font-size: 0.85rem;
-      font-weight: 500;
+      gap: 0.4rem;
+      margin-top: 1.6rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
       letter-spacing: 0.06em;
-      border-radius: 3px;
-      white-space: nowrap;
-      transition: all 0.2s;
+      color: var(--moss);
+      text-decoration: none;
+      border-bottom: 1px solid var(--mist);
+      padding-bottom: 0.1rem;
+      transition: color 0.2s, border-color 0.2s;
     }
 
-    .btn-cv:hover {
-      background: var(--green-light);
-      transform: translateY(-1px);
+    .medium-link:hover {
+      color: var(--forest);
+      border-color: var(--moss);
     }
 
-    /* ── CONTACT ── */
-    .contact-row {
+    /* ── CV ── */
+    .cv-row {
       display: flex;
-      gap: 3rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
       flex-wrap: wrap;
     }
 
-    .contact-item {
+    .cv-text {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--forest);
+      max-width: 420px;
+    }
+
+    /* ── CONNECT ── */
+    .connect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .connect-item {
       display: flex;
       flex-direction: column;
+      gap: 0.2rem;
     }
 
-    .contact-item-label {
-      font-size: 0.72rem;
+    .connect-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 0.3rem;
+      color: var(--sage);
     }
 
-    .contact-item a {
-      color: var(--green-mid);
+    .connect-item a {
+      font-size: 0.88rem;
+      color: var(--forest);
       text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s;
+      font-weight: 400;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
     }
 
-    .contact-item a:hover { color: var(--green-soft); }
+    .connect-item a:hover {
+      border-color: var(--sage);
+    }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--green-deep);
-      color: var(--green-light);
-      text-align: center;
-      padding: 2rem 4rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
+      padding: 2rem 0;
+      border-top: 1px solid var(--rule);
     }
 
-    footer span { color: var(--sand); }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
 
-    /* ── ANIMATIONS ── */
+    footer p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--sage);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── FADE IN ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
+      from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    .hero-eyebrow { animation: fadeUp 0.6s 0.05s ease both; }
+    .hero h1      { animation: fadeUp 0.6s 0.15s ease both; }
+    .hero-role    { animation: fadeUp 0.6s 0.22s ease both; }
+    .hero-bio     { animation: fadeUp 0.6s 0.3s ease both; }
+    .hero-links   { animation: fadeUp 0.6s 0.38s ease both; }
+
     /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
-      .nav-links a { font-size: 0.75rem; }
-
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 7rem 1.5rem 3rem; }
-      .hero-right { height: 280px; }
-
-      section { padding: 4rem 1.5rem; }
-      .divider { margin: 0 1.5rem; }
-
-      .research-grid { grid-template-columns: 1fr; }
-
-      #projects > .inner { padding: 0 1.5rem; }
-
-      .cv-block { grid-template-columns: 1fr; }
-
-      .contact-row { gap: 1.5rem; }
-
-      footer { padding: 1.5rem; }
+    @media (max-width: 600px) {
+      nav a { margin-left: 1rem; }
+      .hero { padding: 3.5rem 0 2rem; }
+      .cv-row { flex-direction: column; }
+      footer .wrap { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <span class="nav-name">Gs. Azalea Kamellia Abdullah</span>
-    <ul class="nav-links">
-      <li><a href="#research">Research</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap">
+      <span class="site-id">azaleakamellia.github.io</span>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#writing">Writing</a>
+        <a href="#connect">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-left">
-      <span class="hero-tag">Geospatialist · Researcher · MPhil Candidate</span>
-      <h1 class="hero-title">Gs. Azalea<br><em>Kamellia</em><br>Abdullah</h1>
-      <p class="hero-subtitle">MIGRSM · Practicing Professional Member</p>
+    <div class="wrap">
+      <p class="hero-eyebrow">Geospatialist · Researcher · MPhil Candidate</p>
+      <h1>Gs. Azalea<br><em>Kamellia</em> Abdullah</h1>
+      <p class="hero-role">MIGRSM &nbsp;·&nbsp; Universiti Teknologi Malaysia &nbsp;·&nbsp; Kuala Lumpur</p>
       <p class="hero-bio">
-        I work at the intersection of <strong>machine learning, geospatial science,</strong> and <strong>environmental monitoring</strong> — applying data-driven methods to understand how water, land, and climate interact. Currently researching bias correction of satellite precipitation estimates to improve drought monitoring in <strong>Sarawak</strong>, in collaboration with the state government.
+        I make maps, study rainfall, and occasionally write about what it's 
+        actually like to work in GIS. Based in Kuala Lumpur, researching in Sarawak.
       </p>
-      <div class="hero-ctas">
-        <a href="#projects" class="btn-primary">View My Work</a>
-        <a href="#cv" class="btn-secondary">Download CV</a>
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <!-- Decorative geo grid SVG -->
-      <svg class="geo-svg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
-        <!-- Topographic-style contour lines -->
-        <g fill="none" stroke="#a8d5b5" stroke-width="0.8">
-          <ellipse cx="300" cy="350" rx="60"  ry="40"/>
-          <ellipse cx="300" cy="350" rx="120" ry="85"/>
-          <ellipse cx="300" cy="350" rx="185" ry="135"/>
-          <ellipse cx="300" cy="350" rx="255" ry="190"/>
-          <ellipse cx="300" cy="350" rx="330" ry="250"/>
-        </g>
-        <!-- Grid lines -->
-        <g stroke="#a8d5b5" stroke-width="0.4" opacity="0.6">
-          <line x1="0"   y1="100" x2="600" y2="100"/>
-          <line x1="0"   y1="200" x2="600" y2="200"/>
-          <line x1="0"   y1="300" x2="600" y2="300"/>
-          <line x1="0"   y1="400" x2="600" y2="400"/>
-          <line x1="0"   y1="500" x2="600" y2="500"/>
-          <line x1="0"   y1="600" x2="600" y2="600"/>
-          <line x1="100" y1="0"   x2="100" y2="700"/>
-          <line x1="200" y1="0"   x2="200" y2="700"/>
-          <line x1="300" y1="0"   x2="300" y2="700"/>
-          <line x1="400" y1="0"   x2="400" y2="700"/>
-          <line x1="500" y1="0"   x2="500" y2="700"/>
-        </g>
-        <!-- Data points -->
-        <g fill="#a8d5b5">
-          <circle cx="180" cy="220" r="3"/>
-          <circle cx="340" cy="180" r="2"/>
-          <circle cx="420" cy="290" r="4"/>
-          <circle cx="260" cy="440" r="2.5"/>
-          <circle cx="160" cy="500" r="3"/>
-          <circle cx="470" cy="410" r="2"/>
-          <circle cx="300" cy="350" r="5"/>
-          <circle cx="380" cy="520" r="3"/>
-          <circle cx="120" cy="350" r="2"/>
-        </g>
-        <!-- Connection lines between points -->
-        <g stroke="#a8d5b5" stroke-width="0.6" opacity="0.5">
-          <line x1="300" y1="350" x2="180" y2="220"/>
-          <line x1="300" y1="350" x2="420" y2="290"/>
-          <line x1="300" y1="350" x2="260" y2="440"/>
-          <line x1="300" y1="350" x2="470" y2="410"/>
-          <line x1="180" y1="220" x2="340" y2="180"/>
-          <line x1="260" y1="440" x2="160" y2="500"/>
-          <line x1="470" y1="410" x2="380" y2="520"/>
-        </g>
-      </svg>
-
-      <div class="hero-right-content">
-        <div class="hero-stat">
-          <div class="hero-stat-label">Current Research</div>
-          <div class="hero-stat-value">Bias Correction of SPE Products · Sarawak Drought Monitoring</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-label">Intellectual Property</div>
-          <div class="hero-stat-value">Drought Indices Library · Registered under MyIPO</div>
-        </div>
+      <div class="hero-links">
+        <a href="#projects" class="pill pill-solid">View Projects</a>
+        <a href="cv.pdf" download class="pill pill-outline">Download CV</a>
+        <a href="https://medium.com/@azaleakamellia.a" target="_blank" class="pill pill-outline">Read My Writing</a>
       </div>
     </div>
   </div>
 
-  <!-- RESEARCH -->
-  <section id="research">
-    <p class="section-label">What I Do</p>
-    <h2 class="section-title">Research Interests</h2>
-    <div class="research-grid">
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <p class="section-label">About</p>
+      <p class="about-text">
+        I'm a geospatial scientist currently doing my MPhil at UTM, where my 
+        research looks at <strong>correcting satellite rainfall data</strong> to 
+        better detect droughts in Sarawak — a part of the world where ground 
+        measurements are sparse and the stakes for getting it right are real. 
+        The work is done in collaboration with the Sarawak State Government.
+      </p>
+      <p class="about-text">
+        By day I work as a geospatial consultant, which mostly means writing 
+        Python to wrangle satellite imagery into things that make sense to 
+        clients. I also built a <strong>drought indices library registered under MyIPO</strong>, 
+        which I'm quietly still improving.
+      </p>
+      <div class="tag-row">
+        <span class="tag">Hydrometeorology</span>
+        <span class="tag">Remote Sensing</span>
+        <span class="tag">Drought Monitoring</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Google Earth Engine</span>
+        <span class="tag">Forest Cover</span>
+        <span class="tag">Tropical Climatology</span>
+        <span class="tag">Bias Correction</span>
+      </div>
+    </div>
+  </section>
 
-      <div class="research-card">
-        <div class="research-card-icon">🌧️</div>
-        <h3>Hydrometeorology & Drought Monitoring</h3>
-        <p>Investigating how satellite-derived precipitation data can be corrected and validated to better capture drought conditions — particularly in tropical regions where ground observations are sparse.</p>
-        <span class="tag">MPhil Research</span>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <p class="section-label">Projects</p>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">
+            Bias Correction of SPE Products for Drought Monitoring in Sarawak
+          </span>
+          <span class="project-status status-active">MPhil · Active</span>
+        </div>
+        <p class="project-desc">
+          Evaluating and correcting CHIRPS, PERSIANN-CDR, and ERA5-Land over 
+          Sungai Sarawak basin using triple collocation error analysis and 
+          ML-based bias correction. In collaboration with the Sarawak State Government.
+        </p>
       </div>
 
-      <div class="research-card">
-        <div class="research-card-icon">🛰️</div>
-        <h3>Remote Sensing & Satellite Data</h3>
-        <p>Working with products like CHIRPS, PERSIANN, and IMERG to extract meaningful environmental signals. Focused on bias correction methodologies for improving data reliability over Borneo.</p>
-        <span class="tag">Core Expertise</span>
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">Drought Indices Calculation Library</span>
+          <span class="project-status status-ip">Registered · MyIPO</span>
+        </div>
+        <p class="project-desc">
+          A software library for computing standardised drought indices from 
+          hydrometeorological inputs. Registered intellectual property under 
+          the Malaysia Intellectual Property Office.
+        </p>
       </div>
 
-      <div class="research-card">
-        <div class="research-card-icon">🤖</div>
-        <h3>Machine Learning on Geospatial Data</h3>
-        <p>Applying ML approaches to environmental datasets — from classification of land cover change to regression models for climate indices. Bridging the gap between data science and earth observation.</p>
-        <span class="tag">Applied Methods</span>
-      </div>
-
-      <div class="research-card">
-        <div class="research-card-icon">🌿</div>
-        <h3>Forest Cover & Environmental Monitoring</h3>
-        <p>Using multi-temporal satellite imagery to track vegetation dynamics, land use change, and ecosystem health — with a focus on Southeast Asian tropical landscapes.</p>
-        <span class="tag">Research Interest</span>
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">Independent Projects — Coming Soon</span>
+          <span class="project-status status-soon">In Progress</span>
+        </div>
+        <p class="project-desc">
+          Open-data explorations in precipitation analysis, evaporative stress, 
+          and forest cover dynamics across Southeast Asia.
+        </p>
       </div>
 
     </div>
   </section>
 
-  <div class="divider"></div>
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="wrap">
+      <p class="section-label">Writing</p>
+      <p class="writing-intro">
+        I write on Medium about geospatial work, remote sensing, and the 
+        honest realities of being a GIS analyst. Occasionally serious. 
+        Usually not.
+      </p>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="inner">
-      <p class="section-label">My Work</p>
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-list">
+      <!-- Recent posts — update these manually as you publish new ones -->
+      <a class="post" href="https://medium.com/@azaleakamellia.a/the-day-i-realized-my-wasted-hostel-nights-were-actually-the-peak-of-my-life-1bf3ac4f4bd4" target="_blank">
+        <span class="post-title">The day I realized my 'wasted' hostel nights were actually the peak of my life</span>
+        <span class="post-date">Nov 2025</span>
+      </a>
 
-        <div class="project-item">
-          <div>
-            <h3>Bias Correction of Satellite Precipitation Estimates for Drought Monitoring in Sarawak</h3>
-            <p>MPhil research project in collaboration with the Sarawak state government. Evaluating and correcting satellite-derived rainfall products to improve the accuracy of drought indices over a data-sparse tropical region.</p>
-          </div>
-          <span class="project-status status-active">Active · MPhil</span>
-        </div>
+      <a class="post" href="https://medium.com/@azaleakamellia.a/digitizing-the-boundaries-to-your-skillset-and-patience-the-guide-to-survive-self-imposed-misery-637a6a7bac85" target="_blank">
+        <span class="post-title">Digitizing the boundaries to your skillset and patience</span>
+        <span class="post-date">Nov 2025</span>
+      </a>
 
-        <div class="project-item">
-          <div>
-            <h3>Drought Indices Calculation Library</h3>
-            <p>An independent software library for computing standardised drought indices from hydrometeorological inputs. Registered intellectual property under MyIPO (Malaysia Intellectual Property Office).</p>
-          </div>
-          <span class="project-status status-active">Registered · MyIPO</span>
-        </div>
+      <a class="post" href="https://medium.com/@azaleakamellia.a/google-maps-doesnt-do-this-and-other-lies-that-keep-me-employed-e8dbde9b1924" target="_blank">
+        <span class="post-title">Google Maps Doesn't Do This (And Other Lies That Keep Me Employed)</span>
+        <span class="post-date">Aug 2025</span>
+      </a>
 
-        <div class="project-item">
-          <div>
-            <h3>More projects coming soon</h3>
-            <p>Independent projects built on open data — exploring evaporative stress, forest cover change, and precipitation analysis across Southeast Asia.</p>
-          </div>
-          <span class="project-status status-coming">Coming Soon</span>
-        </div>
+      <a class="post" href="https://medium.com/@azaleakamellia.a/a-gis-analysts-guide-to-losing-gracefully-mostly-just-losing-cc2834d11d05" target="_blank">
+        <span class="post-title">A GIS Analyst's Guide to Losing Gracefully (Mostly Just Losing)</span>
+        <span class="post-date">Aug 2025</span>
+      </a>
 
-      </div>
+      <a class="medium-link" href="https://medium.com/@azaleakamellia.a" target="_blank">
+        All posts on Medium →
+      </a>
     </div>
   </section>
 
   <!-- CV -->
   <section id="cv">
-    <p class="section-label">Career</p>
-    <h2 class="section-title">Curriculum Vitae</h2>
-    <div class="cv-block">
-      <div>
-        <h3>Download My CV</h3>
-        <p>A full overview of my academic background, professional experience as a geospatial consultant, research output, and registered intellectual property. Available as a PDF.</p>
+    <div class="wrap">
+      <p class="section-label">Curriculum Vitae</p>
+      <div class="cv-row">
+        <p class="cv-text">
+          Full academic and professional history — including research output, 
+          registered IP, and 10+ years of geospatial consultancy experience.
+          Available in academic and industry formats.
+        </p>
+        <a href="cv.pdf" download class="pill pill-solid">Download CV (PDF)</a>
       </div>
-      <!-- 
-        TO UPDATE: Replace "cv.pdf" below with the actual filename of your CV once you upload it to GitHub.
-        Place your CV file in the same folder as this index.html file.
-      -->
-      <a href="cv.pdf" download class="btn-cv">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download CV (PDF)
-      </a>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <p class="section-label">Get in Touch</p>
-    <h2 class="section-title">Contact</h2>
-    <p style="color: var(--text-light); font-weight:300; margin-bottom: 2.5rem; max-width: 520px;">
-      I'm open to research collaborations, academic discussions, and geospatial consulting enquiries. Feel free to reach out.
-    </p>
-    <div class="contact-row">
-      <div class="contact-item">
-        <span class="contact-item-label">Email</span>
-        <!-- TO UPDATE: Replace with your actual email address -->
-        <a href="mailto:azaleakamellia.a@gmail.com">azaleakamellia.a@gmail.com</a>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-label">GitHub</span>
-        <a href="https://github.com/azaleakamellia" target="_blank">github.com/azaleakamellia</a>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-label">Membership</span>
-        <a href="https://www.igrsm.org.my" target="_blank">IGRSM · Practicing Professional Member</a>
+  <!-- CONNECT -->
+  <section id="connect">
+    <div class="wrap">
+      <p class="section-label">Get in Touch</p>
+      <div class="connect-grid">
+        <div class="connect-item">
+          <span class="connect-label">Email</span>
+          <a href="/cdn-cgi/l/email-protection#9ffee5fef3fafef4fef2faf3f3f6feb1fedff8f2fef6f3b1fcf0f2"><span class="__cf_email__" data-cfemail="2a4b504b464f4b414b474f4646434b044b6a4d474b434604494547">[email&#160;protected]</span></a>
+        </div>
+        <div class="connect-item">
+          <span class="connect-label">GitHub</span>
+          <a href="https://github.com/azaleakamellia" target="_blank">azaleakamellia</a>
+        </div>
+        <div class="connect-item">
+          <span class="connect-label">Medium</span>
+          <a href="https://medium.com/@azaleakamellia.a" target="_blank">@azaleakamellia.a</a>
+        </div>
+        <div class="connect-item">
+          <span class="connect-label">Membership</span>
+          <a href="https://www.igrsm.org.my" target="_blank">IGRSM · Gs.</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 <span>Gs. Azalea Kamellia Abdullah</span> · Geospatialist · Built with GitHub Pages</p>
-  </footer>
-
-</body>
-</html>
+    <div class="wrap">
