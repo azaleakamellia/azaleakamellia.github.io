@@ -4,6 +4,10 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gs. Azalea Kamellia Abdullah</title>
+
+  <!-- Favicon: little plant -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><line x1='16' y1='26' x2='16' y2='12' stroke='%233a6b4a' stroke-width='1.8' stroke-linecap='round'/><path d='M16 18C16 18 10 18 9 12C9 12 15 10 16 18Z' fill='%23c8dece' stroke='%233a6b4a' stroke-width='1.3'/><path d='M16 14C16 14 22 13 23 7C23 7 17 6 16 14Z' fill='%237aab85' stroke='%233a6b4a' stroke-width='1.3'/><path d='M16 22C16 22 11 23 10 27H22C21 23 16 22 16 22Z' fill='%23c8dece' stroke='%233a6b4a' stroke-width='1.2'/></svg>">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -76,7 +80,7 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 4rem 0 2.5rem;
+      padding: 3rem 0 2rem;
       border-bottom: 1px solid var(--rule);
     }
 
@@ -86,7 +90,7 @@
       color: var(--sage);
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-bottom: 1.4rem;
+      margin-bottom: 0.8rem;
     }
 
     .hero h1 {
@@ -107,7 +111,7 @@
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.78rem;
       color: var(--sage);
-      margin-bottom: 2rem;
+      margin-bottom: 1.2rem;
       letter-spacing: 0.06em;
     }
 
@@ -116,7 +120,7 @@
       font-weight: 300;
       color: var(--forest);
       max-width: 560px;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero-bio strong {
@@ -158,7 +162,7 @@
 
     /* ── SECTION BASE ── */
     section {
-      padding: 2.2rem 0;
+      padding: 1.5rem 0;
       border-bottom: 1px solid var(--rule);
     }
 
@@ -170,7 +174,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--sage);
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.8rem;
     }
 
     /* ── ABOUT ── */
@@ -178,7 +182,11 @@
       font-size: 0.98rem;
       font-weight: 300;
       color: var(--forest);
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .about-text:last-of-type {
+      margin-bottom: 1.4rem;
     }
 
     .about-text strong { font-weight: 500; }
@@ -186,8 +194,8 @@
     .tag-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1.6rem;
+      gap: 0.4rem;
+      margin-top: 1rem;
     }
 
     .tag {
@@ -203,7 +211,7 @@
 
     /* ── PROJECTS ── */
     .project {
-      padding: 1.4rem 0;
+      padding: 0.9rem 0;
       border-top: 1px solid var(--rule);
     }
 
@@ -264,11 +272,11 @@
       font-size: 0.95rem;
       font-weight: 300;
       color: var(--forest);
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.4rem;
     }
 
     .post {
-      padding: 1.2rem 0;
+      padding: 0.8rem 0;
       border-top: 1px solid var(--rule);
       display: flex;
       justify-content: space-between;
@@ -413,10 +421,24 @@
   <!-- HEADER -->
   <header>
     <div class="wrap">
-      <span class="site-id">azaleakamellia.github.io</span>
+      <span class="site-id">
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none" style="display:inline-block;vertical-align:middle;margin-right:5px;">
+          <path d="M10 14L8 8L13 12Z" fill="#7aab85" stroke="#3a6b4a" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M22 14L24 8L19 12Z" fill="#7aab85" stroke="#3a6b4a" stroke-width="1.2" stroke-linejoin="round"/>
+          <ellipse cx="16" cy="17" rx="8" ry="7" fill="#c8dece" stroke="#3a6b4a" stroke-width="1.5"/>
+          <ellipse cx="13" cy="16" rx="1.2" ry="1.5" fill="#3a6b4a"/>
+          <ellipse cx="19" cy="16" rx="1.2" ry="1.5" fill="#3a6b4a"/>
+          <path d="M15.2 19L16 20L16.8 19L16 18.5Z" fill="#7aab85"/>
+          <line x1="8" y1="18" x2="13" y2="19" stroke="#3a6b4a" stroke-width="0.8" stroke-linecap="round"/>
+          <line x1="8" y1="20" x2="13" y2="20" stroke="#3a6b4a" stroke-width="0.8" stroke-linecap="round"/>
+          <line x1="24" y1="18" x2="19" y2="19" stroke="#3a6b4a" stroke-width="0.8" stroke-linecap="round"/>
+          <line x1="24" y1="20" x2="19" y2="20" stroke="#3a6b4a" stroke-width="0.8" stroke-linecap="round"/>
+        </svg>azaleakamellia.github.io
+      </span>
       <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#cartography">Maps</a>
         <a href="#writing">Writing</a>
         <a href="#connect">Contact</a>
       </nav>
@@ -456,7 +478,8 @@
         By day I work as a geospatial consultant, which mostly means writing 
         Python to wrangle satellite imagery into things that make sense to 
         clients. I also built a <strong>drought indices library registered under MyIPO</strong>, 
-        which I'm quietly still improving.
+        which I'm quietly still improving. In 2020 I received the 
+        <strong>Society of Conservation GIS (SCGIS) Scholarship Award</strong>.
       </p>
       <div class="tag-row">
         <span class="tag">Hydrometeorology</span>
@@ -513,6 +536,68 @@
         </p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- CARTOGRAPHY -->
+  <section id="cartography">
+    <div class="wrap">
+      <p class="section-label">Cartography</p>
+      <p class="about-text" style="margin-bottom:1.4rem;">
+        Maps are where I started. Over the years I've made them for 
+        conservation reports, government bids, published books, and 
+        public dashboards — mostly across Malaysia and Borneo.
+        A proper gallery is in the works. For now, the archive lives on Tumblr.
+      </p>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">Nature in the Heart of Borneo</span>
+          <span class="project-status status-ip">Published · WWF 2020</span>
+        </div>
+        <p class="project-desc">
+          Series of maps for a WWF-Malaysia and FORMADAT ecotourism guidebook 
+          on Northern Sarawak's highland communities — Lun Bawang, Sa'ban, and Kelabit.
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">Malaysia Forest Cover 2020 Dashboard</span>
+          <span class="project-status status-active">WWF-Malaysia</span>
+        </div>
+        <p class="project-desc">
+          Interactive dashboard of forest cover extent and methodology across 
+          Malaysia's regions. Built with ArcGIS Pro and ArcGIS Online. 
+          GEM Award recipient 2020.
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">Malaysia Bid Round 2023 · PETRONAS</span>
+          <span class="project-status status-ip">Cartography</span>
+        </div>
+        <p class="project-desc">
+          Exploration block and hydrocarbon field maps for the annual 
+          Malaysia Bid Round event, using ArcGIS Pro symbolization and SQL expressions.
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">IKI Land Use Plan · Heart of Borneo</span>
+          <span class="project-status status-ip">WWF · 2021</span>
+        </div>
+        <p class="project-desc">
+          Maps supporting Natural Capital Valuation for the International 
+          Climate Initiative green initiative across the Heart of Borneo region.
+        </p>
+      </div>
+
+      <a class="medium-link" href="https://azaleakamellia.tumblr.com/tagged/portfolio" target="_blank">
+        Full cartography archive on Tumblr →
+      </a>
     </div>
   </section>
 
