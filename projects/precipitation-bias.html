@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satellite Precipitation Bias Correction</title>
+  <meta name="description" content="Evaluating machine learning models and triple collocation for satellite precipitation bias correction across data-scarce tropical basins.">
+  <meta name="keywords" content="Python • Machine Learning • CHIRPS • ERA5-Land • Triple Collocation">
+  <meta name="date" content="In Progress (MPhil Research)">
+  
+  <link rel="stylesheet" href="https://latex.vercel.app/style.min.css">
+  <link rel="stylesheet" href="../style.css">
 
+  <!-- MathJax for rendering equations cleanly -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    /* Project Page Back Button */
+    .nav-back {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    .badge-status {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-back">&larr; Back to Portfolio</a>
+  </nav>
+
+  <header>
+    <span class="badge-status">MPhil Research • Ongoing Project</span>
+    <h1>Evaluating Error Structures & ML Bias-Correction for Satellite Precipitation Estimates</h1>
+    <p class="author">Azalea Kamellia Abdullah &mdash; Universiti Teknologi Malaysia</p>
+  </header>
+
+  <main>
+    
+    <section>
+      <h2>Executive Summary</h2>
+      <p>
+        Gridded Satellite Precipitation Estimates (SPEs) offer continuous spatial coverage crucial for hydrometeorological monitoring, flood forecasting, and drought assessment. However, in data-scarce tropical regions with complex topography, SPEs exhibit significant systematic biases due to cloud physics, mountain effects, and gauge density limitations.
+      </p>
+      <p>
+        This research evaluates multi-source gridded datasets—including <strong>CHIRPS</strong>, <strong>PERSIANN-CDR</strong>, and <strong>ERA5-Land</strong>—across a 40-year historical baseline (1983–2023). By combining <strong>Triple Collocation Analysis (TCA)</strong> with machine learning pipelines, this study quantifies error variance without relying solely on dense rain-gauge networks.
+      </p>
+    </section>
+
+    <section>
+      <h2>Problem Statement & Context</h2>
+      <p>
+        Traditional bias correction methods heavily depend on high-density, continuously operating ground rain gauge networks. In regions where gauge distribution is sparse or unevenly distributed, conventional spatial interpolation methods (e.g., IDW or Kriging) propagate spatial errors. 
+      </p>
+      <p>
+        The objective of this project is twofold:
+      </p>
+      <ol>
+        <li>Characterize the independent error variances of competing satellite gridded products without treating any single dataset as absolute ground truth.</li>
+        <li>Develop a robust, machine-learning-based bias-correction framework to improve input reliability for downstream standardized drought index computation (e.g., SPI/SPEI).</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Methodological Framework</h2>
+
+      <h3>1. Data Acquisition & Harmonization</h3>
+      <p>
+        Data extraction and spatio-temporal resampling are executed via the <strong>Google Earth Engine (GEE) Python API</strong> and custom local Python pipelines. Datasets with differing native spatial resolutions (e.g., \(0.05^\circ\) to \(0.25^\circ\)) are resampled and aligned to a standardized spatial grid before error modeling.
+      </p>
+
+      <h3>2. Triple Collocation Analysis (TCA)</h3>
+      <p>
+        To evaluate dataset uncertainties without assuming a perfect ground reference, Triple Collocation estimates the error variances \( \sigma_{\epsilon}^2 \) among three mutually independent triplet signals \( (X_1, X_2, X_3) \):
+      </p>
+
+      \[
+        \sigma_{\epsilon_1}^2 = \sigma_1^2 - \frac{\sigma_{12} \sigma_{13}}{\sigma_{23}}
+      \]
+
+      <p>
+        Where \( \sigma_i^2 \) denotes variance and \( \sigma_{ij} \) denotes covariance between dataset pairs. This allows objective assessment of sensor performance across varied elevation zones and seasonal monsoon regimes.
+      </p>
+
+      <h3>3. Machine Learning Calibration Pipeline</h3>
+      <p>
+        To correct systematic rainfall distribution shifts (such as wet-day frequency oversaturation and extreme event underestimation), stratified cross-validation is used to train regression frameworks (including ensemble tree models and neural network approaches) against historical observation nodes.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Stack & Libraries</h2>
+      <div class="project-tags">
+        Python • Google Earth Engine (GEE) API • Scikit-Learn • PyTorch • GDAL • PostGIS • Triple Collocation • MathJax
+      </div>
+    </section>
+
+    <section>
+      <h2>Project Status & Future Scope</h2>
+      <p>
+        <em>Note: Detailed model benchmarks, regional error maps, and specific quantitative findings are intentionally withheld as manuscript preparation and thesis evaluations are currently ongoing.</em>
+      </p>
+      <p>
+        Calibrated output arrays from this workflow will directly feed into <strong>STEMRAINCAL</strong>, a MyIPO-registered Python library developed for automated drought index derivation.
+      </p>
+    </section>
+
+  </main>
+
+  <footer style="margin-top: 3rem; font-size: 0.85rem; opacity: 0.7; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+    <p>Research conducted under the Faculty of Built Environment and Surveying, Universiti Teknologi Malaysia (UTM).</p>
+  </footer>
+
+</body>
+</html>
