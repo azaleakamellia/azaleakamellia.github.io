@@ -131,6 +131,52 @@
         font-family: monospace;
       }
     }
+
+    /* ==========================================================================
+   4. RESPONSIVE PROJECT GRID
+   ========================================================================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.project-card {
+  border: 1px solid #ddd;
+  padding: 1.2rem;
+  border-radius: 4px;
+  background: #fafafa;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  font-size: 0.8rem;
+  font-family: monospace;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+
+/* Dark Mode Adjustments for Project Cards */
+[data-theme="dark"] .project-card {
+  background: #1e1e1e !important;
+  border-color: #333 !important;
+}
+
+[data-theme="dark"] .project-tags {
+  color: #aaa !important;
+}
   </style>
 </head>
 <body>
@@ -157,6 +203,43 @@
         <li><a href="essays/on-digitalization.html">On Digitalization and Cognition</a> — <em>July 2026</em></li>
       </ul>
     </section>
+    <section>
+  <h2>Selected Projects & Workflows</h2>
+  
+  <div class="project-grid">
+
+    <!-- Project Card 1 -->
+    <article class="project-card">
+      <h3>Bias-Correcting Satellite Precipitation Estimates</h3>
+      <div class="project-tags">Python • Machine Learning • CHIRPS • ERA5</div>
+      <p>
+        Performance evaluation of machine learning models for bias-correction of satellite precipitation data using stratified cross-validation.
+      </p>
+      <a href="https://github.com/azaleakamellia" target="_blank" rel="noopener">&rarr; View Repository</a>
+    </article>
+
+    <!-- Project Card 2 -->
+    <article class="project-card">
+      <h3>Automated Shoreline Analysis</h3>
+      <div class="project-tags">Google Earth Engine • Sentinel-2 • Python</div>
+      <p>
+        Multi-temporal coastal shoreline monitoring and spatial change detection framework built for satellite imagery analysis.
+      </p>
+      <a href="https://github.com/azaleakamellia" target="_blank" rel="noopener">&rarr; View Code & Details</a>
+    </article>
+
+    <!-- Project Card 3 -->
+    <article class="project-card">
+      <h3>High-Resolution Mangrove Mapping (OBIA)</h3>
+      <div class="project-tags">GEE • OBIA • Drone Data • Remote Sensing</div>
+      <p>
+        Object-Based Image Analysis workflow combining drone imagery and multi-spectral satellite data for accurate mangrove classification.
+      </p>
+      <a href="https://github.com/azaleakamellia" target="_blank" rel="noopener">&rarr; View Workflow</a>
+    </article>
+
+  </div>
+</section>
   </main>
 
   <script>
