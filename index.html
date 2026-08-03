@@ -9,9 +9,7 @@
   <link rel="stylesheet" href="https://latex.vercel.app/style.min.css">
 
   <style>
-    /* ==========================================================================
-       1. FIXED DARK MODE (Overrides LaTeX.css defaults completely)
-       ========================================================================== */
+    /* 1. FIXED DARK MODE OVERRIDES */
     [data-theme="dark"],
     [data-theme="dark"] body,
     [data-theme="dark"] main,
@@ -26,43 +24,57 @@
     [data-theme="dark"] a { color: #8ab4f8 !important; }
     [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3 { color: #ffffff !important; }
 
-    /* Top Navigation Bar */
+    /* 2. TOP NAVIGATION & SOFTENED BUTTONS */
     .top-nav {
       display: flex;
-      justify: space-between;
+      justify-content: space-between;
       align-items: center;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.5rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #eaeaea;
+      padding-bottom: 0.8rem;
     }
-    [data-theme="dark"] .top-nav { border-bottom-color: #333; }
+    [data-theme="dark"] .top-nav { border-bottom-color: #2a2a2a; }
 
-    .nav-links { display: flex; gap: 1rem; align-items: center; }
-    
-    .btn-cv {
-      display: inline-block;
-      padding: 0.35rem 0.8rem;
-      border: 1px solid currentColor;
-      text-decoration: none !important;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      font-weight: bold;
+    .nav-controls {
+      display: flex;
+      gap: 0.8rem; /* Relaxed spacing between buttons */
+      align-items: center;
     }
 
-    .theme-toggle-btn {
-      background: none;
-      border: 1px solid currentColor;
-      padding: 0.3rem 0.6rem;
-      font-family: inherit;
+    /* Soft, Minimalist Button Styling */
+    .btn-soft {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid #d0d0d0; /* Muted subtle border */
+      border-radius: 6px;
       font-size: 0.85rem;
+      font-family: inherit;
+      color: #333;
+      text-decoration: none !important;
+      background-color: #ffffff;
+      transition: all 0.2s ease;
       cursor: pointer;
-      border-radius: 4px;
-      color: inherit;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     }
 
-    /* ==========================================================================
-       2. PROJECT GRID CARDS
-       ========================================================================== */
+    .btn-soft:hover {
+      border-color: #999;
+      background-color: #fcfcfc;
+      transform: translateY(-1px);
+    }
+
+    [data-theme="dark"] .btn-soft {
+      background-color: #1a1a1a;
+      border-color: #333;
+      color: #e0e0e0;
+    }
+    [data-theme="dark"] .btn-soft:hover {
+      border-color: #555;
+      background-color: #242424;
+    }
+
+    /* 3. PROJECT GRID */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -71,13 +83,16 @@
     }
 
     .project-card {
-      border: 1px solid #ddd;
-      padding: 1.2rem;
-      border-radius: 4px;
+      border: 1px solid #e5e5e5;
+      padding: 1.25rem;
+      border-radius: 6px;
       background: #fafafa;
-      transition: transform 0.15s ease;
+      transition: transform 0.15s ease, border-color 0.15s ease;
     }
-    .project-card:hover { transform: translateY(-2px); }
+    .project-card:hover { 
+      transform: translateY(-2px); 
+      border-color: #ccc;
+    }
 
     .project-card h3 { margin-top: 0; font-size: 1.1rem; }
     .project-card p { font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.8rem; }
@@ -90,8 +105,8 @@
     }
 
     [data-theme="dark"] .project-card {
-      background: #1e1e1e !important;
-      border-color: #333 !important;
+      background: #181818 !important;
+      border-color: #2a2a2a !important;
     }
     [data-theme="dark"] .project-tags { color: #aaa !important; }
   </style>
@@ -100,10 +115,12 @@
 
   <!-- Top Navigation & Controls -->
   <div class="top-nav">
-    <div class="nav-links">
-      <a href="cv.html" class="btn-cv">📄 Curriculum Vitae (PDF/Print)</a>
+    <div class="nav-controls">
+      <a href="cv.html" class="btn-soft">📄 Curriculum Vitae</a>
     </div>
-    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">🌙 Dark</button>
+    <div class="nav-controls">
+      <button class="btn-soft" id="theme-toggle" aria-label="Toggle Theme">🌙 Dark</button>
+    </div>
   </div>
 
   <header>
@@ -119,45 +136,27 @@
       </p>
     </section>
 
-    <!-- Projects Section with Sub-pages -->
+    <!-- Dynamic Projects Section -->
     <section>
       <h2>Selected Workflows & Projects</h2>
-      <div class="project-grid">
-
-        <article class="project-card">
-          <h3>Satellite Precipitation Bias-Correction</h3>
-          <div class="project-tags">Python • Machine Learning • CHIRPS • ERA5</div>
-          <p>Multi-model evaluation using stratified cross-validation for rainfall bias correction.</p>
-          <a href="projects/precipitation-bias.html">&rarr; Read Project Case Study</a>
-        </article>
-
-        <article class="project-card">
-          <h3>Automated Shoreline Analysis</h3>
-          <div class="project-tags">Google Earth Engine • Sentinel-2 • Python</div>
-          <p>Multi-temporal coastal shoreline extraction and spatial change detection.</p>
-          <a href="projects/shoreline-analysis.html">&rarr; Read Project Case Study</a>
-        </article>
-
-        <article class="project-card">
-          <h3>High-Res Mangrove Mapping (OBIA)</h3>
-          <div class="project-tags">GEE • OBIA • Drone Data • Sentinel</div>
-          <p>Object-based image analysis workflow combining UAV data and satellite imagery.</p>
-          <a href="projects/mangrove-obia.html">&rarr; Read Project Case Study</a>
-        </article>
-
+      <div class="project-grid" id="projects-container">
+        <p style="font-style: italic; color: #777;">Loading projects directly from repository...</p>
       </div>
     </section>
 
-    <!-- Essays Section (Tufte formatted pages) -->
+    <!-- Dynamic Essays Section -->
     <section>
       <h2>Essays & Notes</h2>
-      <ul>
-        <li><a href="essays/on-digitalization.html">On Digitalization and Cognition</a> — <em>July 2026</em></li>
+      <ul id="essays-container">
+        <li style="font-style: italic; color: #777;">Loading essays directly from repository...</li>
       </ul>
     </section>
   </main>
 
   <script>
+    // -------------------------------------------------------------
+    // 1. Theme Switcher Logic
+    // -------------------------------------------------------------
     const toggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
 
@@ -176,6 +175,85 @@
       localStorage.setItem('theme', theme);
       toggleBtn.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
     }
+
+    // -------------------------------------------------------------
+    // 2. Dynamic Repository Fetcher (Projects & Essays)
+    // -------------------------------------------------------------
+    const REPO_OWNER = 'azaleakamellia';
+    const REPO_NAME = 'azaleakamellia.github.io';
+
+    async function fetchDynamicContent() {
+      fetchFolderContent('projects', renderProjects);
+      fetchFolderContent('essays', renderEssays);
+    }
+
+    async function fetchFolderContent(folderPath, renderCallback) {
+      const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}`;
+      
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error(`Folder ${folderPath} not found`);
+        
+        const files = await response.json();
+        const htmlFiles = files.filter(f => f.name.endsWith('.html'));
+        
+        // Fetch HTML meta details for each file
+        const fileDetails = await Promise.all(htmlFiles.map(async file => {
+          const rawRes = await fetch(file.download_url);
+          const text = await rawRes.text();
+          
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, 'text/html');
+          
+          return {
+            title: doc.querySelector('title')?.innerText || file.name.replace('.html', ''),
+            description: doc.querySelector('meta[name="description"]')?.content || '',
+            tags: doc.querySelector('meta[name="keywords"]')?.content || 'GIS • Remote Sensing',
+            date: doc.querySelector('meta[name="date"]')?.content || '',
+            path: `${folderPath}/${file.name}`
+          };
+        }));
+
+        renderCallback(fileDetails);
+      } catch (err) {
+        console.error(`Error loading ${folderPath}:`, err);
+      }
+    }
+
+    function renderProjects(projects) {
+      const container = document.getElementById('projects-container');
+      if (!projects.length) {
+        container.innerHTML = '<p>No projects found in /projects directory.</p>';
+        return;
+      }
+
+      container.innerHTML = projects.map(p => `
+        <article class="project-card">
+          <h3>${p.title}</h3>
+          ${p.tags ? `<div class="project-tags">${p.tags}</div>` : ''}
+          <p>${p.description || 'Geospatial workflow and case study details.'}</p>
+          <a href="${p.path}">&rarr; Read Project Case Study</a>
+        </article>
+      `).join('');
+    }
+
+    function renderEssays(essays) {
+      const container = document.getElementById('essays-container');
+      if (!essays.length) {
+        container.innerHTML = '<li>No essays found in /essays directory.</li>';
+        return;
+      }
+
+      container.innerHTML = essays.map(e => `
+        <li>
+          <a href="${e.path}">${e.title}</a>
+          ${e.date ? ` &mdash; <em>${e.date}</em>` : ''}
+        </li>
+      `).join('');
+    }
+
+    // Initialize Fetch on Page Load
+    document.addEventListener('DOMContentLoaded', fetchDynamicContent);
   </script>
 
 </body>
