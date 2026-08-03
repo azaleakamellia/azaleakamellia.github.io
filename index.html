@@ -5,130 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Azalea Kamellia | Geospatial Consultant & Researcher</title>
   
-  <!-- LaTeX.css Core Styling -->
+  <!-- Base LaTeX.css + Unified Custom Style -->
   <link rel="stylesheet" href="https://latex.vercel.app/style.min.css">
-
-  <style>
-      /* ==========================================================================
-     HOMEPAGE WIDTH OVERRIDES (Academic Portfolio Style)
-     ========================================================================== */
-  body {
-    max-width: 900px !important;
-    margin: 0 auto !important;
-    padding: 2.5rem 2rem !important;
-  }
-  
-  @media screen and (max-width: 768px) {
-    body {
-      max-width: 100% !important;
-      padding: 1.5rem 1rem !important;
-    }
-  }
-    /* 1. FIXED DARK MODE OVERRIDES */
-    [data-theme="dark"],
-    [data-theme="dark"] body,
-    [data-theme="dark"] main,
-    [data-theme="dark"] header,
-    [data-theme="dark"] footer,
-    [data-theme="dark"] section,
-    [data-theme="dark"] article {
-      background-color: #121212 !important;
-      color: #e0e0e0 !important;
-    }
-
-    [data-theme="dark"] a { color: #8ab4f8 !important; }
-    [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3 { color: #ffffff !important; }
-
-    /* 2. TOP NAVIGATION & SOFTENED BUTTONS */
-    .top-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5rem;
-      border-bottom: 1px solid #eaeaea;
-      padding-bottom: 0.8rem;
-    }
-    [data-theme="dark"] .top-nav { border-bottom-color: #2a2a2a; }
-
-    .nav-controls {
-      display: flex;
-      gap: 0.8rem; /* Relaxed spacing between buttons */
-      align-items: center;
-    }
-
-    /* Soft, Minimalist Button Styling */
-    .btn-soft {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.45rem 0.9rem;
-      border: 1px solid #d0d0d0; /* Muted subtle border */
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-family: inherit;
-      color: #333;
-      text-decoration: none !important;
-      background-color: #ffffff;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-    }
-
-    .btn-soft:hover {
-      border-color: #999;
-      background-color: #fcfcfc;
-      transform: translateY(-1px);
-    }
-
-    [data-theme="dark"] .btn-soft {
-      background-color: #1a1a1a;
-      border-color: #333;
-      color: #e0e0e0;
-    }
-    [data-theme="dark"] .btn-soft:hover {
-      border-color: #555;
-      background-color: #242424;
-    }
-
-    /* 3. PROJECT GRID */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-      margin: 1.5rem 0;
-    }
-
-    .project-card {
-      border: 1px solid #e5e5e5;
-      padding: 1.25rem;
-      border-radius: 6px;
-      background: #fafafa;
-      transition: transform 0.15s ease, border-color 0.15s ease;
-    }
-    .project-card:hover { 
-      transform: translateY(-2px); 
-      border-color: #ccc;
-    }
-
-    .project-card h3 { margin-top: 0; font-size: 1.1rem; }
-    .project-card p { font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.8rem; }
-    
-    .project-tags {
-      font-size: 0.78rem;
-      font-family: monospace;
-      color: #666;
-      margin-bottom: 0.6rem;
-    }
-
-    [data-theme="dark"] .project-card {
-      background: #181818 !important;
-      border-color: #2a2a2a !important;
-    }
-    [data-theme="dark"] .project-tags { color: #aaa !important; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Top Navigation & Controls -->
+  <!-- Top Navigation -->
   <div class="top-nav">
     <div class="nav-controls">
       <a href="cv.html" class="btn-soft">📄 Curriculum Vitae</a>
@@ -147,7 +30,7 @@
     <section>
       <h2>About</h2>
       <p>
-        Welcome to my academic and professional portfolio. My work focuses on geospatial analysis, satellite remote sensing workflows, bias correction models, and coastal monitoring.
+        Welcome to my academic and professional portfolio. My work focuses on geospatial data science, remote sensing workflows, machine learning applications, and satellite hydrometeorology.
       </p>
     </section>
 
@@ -155,7 +38,7 @@
     <section>
       <h2>Selected Workflows & Projects</h2>
       <div class="project-grid" id="projects-container">
-        <p style="font-style: italic; color: #777;">Loading projects directly from repository...</p>
+        <p style="font-style: italic; opacity: 0.7;">Loading projects directly from repository...</p>
       </div>
     </section>
 
@@ -163,15 +46,13 @@
     <section>
       <h2>Essays & Notes</h2>
       <ul id="essays-container">
-        <li style="font-style: italic; color: #777;">Loading essays directly from repository...</li>
+        <li style="font-style: italic; opacity: 0.7;">Loading essays directly from repository...</li>
       </ul>
     </section>
   </main>
 
   <script>
-    // -------------------------------------------------------------
-    // 1. Theme Switcher Logic
-    // -------------------------------------------------------------
+    // Theme Toggle Logic
     const toggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
 
@@ -191,94 +72,82 @@
       toggleBtn.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
     }
 
-    // -------------------------------------------------------------
-// Dynamic Repository Fetcher (Filtered for Templates & Drafts)
-// -------------------------------------------------------------
-const REPO_OWNER = 'azaleakamellia';
-const REPO_NAME = 'azaleakamellia.github.io';
+    // Dynamic Repository Fetcher (Ignores files starting with '_')
+    const REPO_OWNER = 'azaleakamellia';
+    const REPO_NAME = 'azaleakamellia.github.io';
 
-async function fetchDynamicContent() {
-  fetchFolderContent('projects', renderProjects);
-  fetchFolderContent('essays', renderEssays);
-}
+    async function fetchDynamicContent() {
+      fetchFolderContent('projects', renderProjects);
+      fetchFolderContent('essays', renderEssays);
+    }
 
-async function fetchFolderContent(folderPath, renderCallback) {
-  const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}`;
-  
-  try {
-    const response = await fetch(apiUrl);
-    if (!response.ok) throw new Error(`Folder ${folderPath} not found`);
-    
-    const files = await response.json();
-    
-    // 1. Ignore filenames starting with '_', 'draft-', or named 'template.html'
-    const htmlFiles = files.filter(f => 
-      f.name.endsWith('.html') && 
-      !f.name.startsWith('_') && 
-      !f.name.startsWith('draft-') &&
-      !f.name.includes('template')
-    );
-    
-    // 2. Fetch HTML meta details for remaining files
-    const fileDetails = await Promise.all(htmlFiles.map(async file => {
-      const rawRes = await fetch(file.download_url);
-      const text = await rawRes.text();
+    async function fetchFolderContent(folderPath, renderCallback) {
+      const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}`;
       
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text, 'text/html');
-      
-      return {
-        title: doc.querySelector('title')?.innerText || file.name.replace('.html', ''),
-        description: doc.querySelector('meta[name="description"]')?.content || '',
-        tags: doc.querySelector('meta[name="keywords"]')?.content || 'GIS • Remote Sensing',
-        date: doc.querySelector('meta[name="date"]')?.content || '',
-        status: doc.querySelector('meta[name="status"]')?.content || 'published',
-        path: `${folderPath}/${file.name}`
-      };
-    }));
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error(`Folder ${folderPath} not found`);
+        
+        const files = await response.json();
+        
+        // Filter out drafts/templates starting with '_'
+        const htmlFiles = files.filter(f => f.name.endsWith('.html') && !f.name.startsWith('_'));
+        
+        const fileDetails = await Promise.all(htmlFiles.map(async file => {
+          const rawRes = await fetch(file.download_url);
+          const text = await rawRes.text();
+          
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, 'text/html');
+          
+          return {
+            title: doc.querySelector('title')?.innerText || file.name.replace('.html', ''),
+            description: doc.querySelector('meta[name="description"]')?.content || '',
+            tags: doc.querySelector('meta[name="keywords"]')?.content || 'GIS • Remote Sensing',
+            date: doc.querySelector('meta[name="date"]')?.content || '',
+            path: `${folderPath}/${file.name}`
+          };
+        }));
 
-    // 3. Filter out explicitly marked draft pages
-    const visibleFiles = fileDetails.filter(f => f.status !== 'draft' && f.status !== 'template');
+        renderCallback(fileDetails);
+      } catch (err) {
+        console.error(`Error loading ${folderPath}:`, err);
+      }
+    }
 
-    renderCallback(visibleFiles);
-  } catch (err) {
-    console.error(`Error loading ${folderPath}:`, err);
-  }
-}
+    function renderProjects(projects) {
+      const container = document.getElementById('projects-container');
+      if (!projects.length) {
+        container.innerHTML = '<p>No published projects found.</p>';
+        return;
+      }
 
-function renderProjects(projects) {
-  const container = document.getElementById('projects-container');
-  if (!projects.length) {
-    container.innerHTML = '<p>No published projects found.</p>';
-    return;
-  }
+      container.innerHTML = projects.map(p => `
+        <article class="project-card">
+          <h3>${p.title}</h3>
+          ${p.tags ? `<div class="project-tags">${p.tags}</div>` : ''}
+          <p>${p.description || 'Geospatial workflow and case study details.'}</p>
+          <a href="${p.path}">&rarr; Read Project Case Study</a>
+        </article>
+      `).join('');
+    }
 
-  container.innerHTML = projects.map(p => `
-    <article class="project-card">
-      <h3>${p.title}</h3>
-      ${p.tags ? `<div class="project-tags">${p.tags}</div>` : ''}
-      <p>${p.description || 'Geospatial workflow and case study details.'}</p>
-      <a href="${p.path}">&rarr; Read Project Case Study</a>
-    </article>
-  `).join('');
-}
+    function renderEssays(essays) {
+      const container = document.getElementById('essays-container');
+      if (!essays.length) {
+        container.innerHTML = '<li>No published essays found.</li>';
+        return;
+      }
 
-function renderEssays(essays) {
-  const container = document.getElementById('essays-container');
-  if (!essays.length) {
-    container.innerHTML = '<li>No published essays found.</li>';
-    return;
-  }
+      container.innerHTML = essays.map(e => `
+        <li>
+          <a href="${e.path}">${e.title}</a>
+          ${e.date ? ` &mdash; <em>${e.date}</em>` : ''}
+        </li>
+      `).join('');
+    }
 
-  container.innerHTML = essays.map(e => `
-    <li>
-      <a href="${e.path}">${e.title}</a>
-      ${e.date ? ` &mdash; <em>${e.date}</em>` : ''}
-    </li>
-  `).join('');
-}
-
-document.addEventListener('DOMContentLoaded', fetchDynamicContent);
+    document.addEventListener('DOMContentLoaded', fetchDynamicContent);
   </script>
 
 </body>
