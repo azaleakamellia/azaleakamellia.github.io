@@ -7,14 +7,14 @@
   
   <style>
     /* ==========================================================================
-       LATEX CV EXACT STYLING & METRICS
+       LATEX / ACADEMIC CV TYPOGRAPHY & SPACIOUS LAYOUT
        ========================================================================== */
-    @import url('https://fonts.googleapis.com/css2?family=Latin+Modern+Roman&family=Inter:wght@400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Latin+Modern+Roman&family=Computer+Modern&display=swap');
 
     :root {
-      --font-serif: "Latin Modern Roman", Georgia, "Times New Roman", serif;
-      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-      --text-color: #000000;
+      --font-serif: "Latin Modern Roman", "CMU Serif", Georgia, "Times New Roman", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --text-color: #111111;
       --rule-color: #000000;
       --subtext-color: #333333;
     }
@@ -28,29 +28,31 @@
     body {
       font-family: var(--font-serif);
       color: var(--text-color);
-      background-color: #f4f4f6;
-      line-height: 1.4;
-      font-size: 10pt;
-      padding: 2.5rem 1rem;
+      background-color: #f8f9fa;
+      line-height: 1.6;
+      font-size: 11pt;
+      padding: 3rem 1.5rem;
     }
 
+    /* Widen container for comfortable reading (matches academic portfolio widths) */
     .cv-container {
-      max-width: 820px;
+      max-width: 960px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 3rem 3.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      padding: 3.5rem 4rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-radius: 4px;
     }
 
-    /* Top Action Bar (Hidden in Print) */
+    /* Top Navigation Bar */
     .no-print-bar {
-      max-width: 820px;
-      margin: 0 auto 1.2rem auto;
+      max-width: 960px;
+      margin: 0 auto 1.5rem auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-family: var(--font-sans);
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
 
     .no-print-bar a {
@@ -62,9 +64,9 @@
 
     .btn-print {
       font-family: var(--font-sans);
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       padding: 0.45rem 0.9rem;
-      border: 1px solid #bbb;
+      border: 1px solid #ccc;
       background: #fff;
       cursor: pointer;
       border-radius: 4px;
@@ -73,23 +75,22 @@
     }
     .btn-print:hover { background: #f0f0f0; }
 
-    /* Header Section */
+    /* Header Styling */
     header {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     h1.name {
       font-size: 22pt;
       font-weight: normal;
       letter-spacing: 0.02em;
-      margin-bottom: 0.3rem;
-      color: #000;
+      margin-bottom: 0.4rem;
     }
 
     .contact-info {
-      font-size: 9.5pt;
+      font-size: 10pt;
       color: var(--subtext-color);
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .contact-info a {
@@ -97,46 +98,32 @@
       text-decoration: none;
     }
 
-    /* SECTION TITLES & SEPARATING HORIZONTAL LINES (\hrule) */
-    .section-block {
-      margin-top: 1.4rem;
-      margin-bottom: 0.6rem;
-    }
-
+    /* Section Headings with Full Dark Rule & Vertical Breathing Room */
     h2.section-title {
-      font-size: 11pt;
+      font-size: 11.5pt;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 0.25rem;
-      color: #000;
+      margin-top: 2.2rem;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1.5px solid var(--rule-color);
     }
 
-    /* Prominent separating line matching LaTeX \hrule */
-    .section-rule {
-      height: 1px;
-      background-color: var(--rule-color);
-      border: none;
-      margin-bottom: 0.75rem;
-    }
-
-    /* Profile Text */
     p.profile-text {
       text-align: justify;
-      font-size: 9.8pt;
-      line-height: 1.45;
-      margin-bottom: 0.5rem;
+      font-size: 10.5pt;
+      line-height: 1.6;
     }
 
-    /* Key-Value Competencies Grid */
+    /* Two-Column Key-Value Grid with Expanded Widths */
     .competency-grid {
       display: grid;
-      grid-template-columns: 210px 1fr;
-      row-gap: 0.45rem;
-      column-gap: 1.2rem;
-      font-size: 9.5pt;
-      margin-top: 0.2rem;
-      margin-bottom: 0.4rem;
+      grid-template-columns: 240px 1fr;
+      row-gap: 0.6rem;
+      column-gap: 1.5rem;
+      font-size: 10pt;
+      margin-top: 0.5rem;
     }
 
     .competency-label {
@@ -147,63 +134,61 @@
       color: var(--subtext-color);
     }
 
-    /* Experience & Education Entries */
+    /* Experience & Education Entries with Distinct Timelines */
     .entry {
-      margin-bottom: 1rem;
+      margin-bottom: 1.4rem;
     }
 
     .entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      margin-bottom: 0.15rem;
     }
 
     .entry-title {
-      font-size: 10pt;
+      font-size: 11pt;
       font-weight: bold;
-      color: #000;
     }
 
     .entry-location {
-      font-size: 9.5pt;
+      font-size: 10pt;
       font-style: italic;
+      white-space: nowrap;
+      margin-left: 1rem;
     }
 
     .entry-subhead {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 9.5pt;
+      font-size: 10pt;
       font-style: italic;
       color: var(--subtext-color);
-      margin-top: 0.1rem;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
     }
 
-    /* Bullet Points Spacing */
     ul.entry-bullets {
       list-style-type: disc;
-      margin-left: 1.3rem;
-      font-size: 9.5pt;
-      line-height: 1.45;
+      margin-left: 1.4rem;
+      font-size: 10pt;
+      line-height: 1.55;
     }
 
     ul.entry-bullets li {
-      margin-bottom: 0.3rem; /* Distinct spacing between bullet points */
+      margin-bottom: 0.35rem;
       text-align: justify;
     }
 
-    /* Single Line Lists (Publications / IP / Membership) */
     ul.simple-list {
       list-style-type: disc;
-      margin-left: 1.3rem;
-      font-size: 9.5pt;
-      line-height: 1.45;
+      margin-left: 1.4rem;
+      font-size: 10pt;
+      line-height: 1.55;
     }
 
     ul.simple-list li {
-      margin-bottom: 0.4rem;
-      text-align: justify;
+      margin-bottom: 0.5rem;
     }
 
     /* ==========================================================================
@@ -229,11 +214,17 @@
 
       @page {
         size: A4 portrait;
-        margin: 16mm 18mm 16mm 18mm;
+        margin: 15mm 18mm 15mm 18mm;
       }
 
-      .section-rule {
-        background-color: #000000 !important;
+      h2.section-title {
+        border-bottom-color: #000000 !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      .entry {
+        margin-bottom: 1rem !important;
       }
 
       a {
@@ -245,7 +236,7 @@
 </head>
 <body>
 
-  <!-- Top Action Bar -->
+  <!-- Navigation Bar -->
   <div class="no-print-bar">
     <a href="index.html">&larr; Back to Portfolio</a>
     <button class="btn-print" onclick="window.print()">🖨️ Save as PDF / Print</button>
@@ -266,18 +257,16 @@
     </header>
 
     <!-- Profile -->
-    <section class="section-block">
+    <section>
       <h2 class="section-title">Profile</h2>
-      <hr class="section-rule">
       <p class="profile-text">
         Senior geospatial data scientist with over 10 years of experience across conservation, energy, and environmental consulting sectors. Specialises in remote sensing, automated geospatial pipelines, and machine learning applied to large-scale satellite imagery. Proven track record delivering data-driven solutions for ESG, ESIA, and biodiversity assessments. Developer of a registered drought indices library (MyIPO). Currently completing MPhil research in satellite precipitation bias correction at UTM, in collaboration with the Sarawak State Government.
       </p>
     </section>
 
     <!-- Core Competencies -->
-    <section class="section-block">
+    <section>
       <h2 class="section-title">Core Competencies</h2>
-      <hr class="section-rule">
       <div class="competency-grid">
         <div class="competency-label">Remote Sensing & Earth Obs.</div>
         <div class="competency-value">GEE, Landsat, Sentinel, CHIRPS, ERA5</div>
@@ -300,9 +289,8 @@
     </section>
 
     <!-- Professional Experience -->
-    <section class="section-block">
+    <section>
       <h2 class="section-title">Professional Experience</h2>
-      <hr class="section-rule">
 
       <div class="entry">
         <div class="entry-header">
@@ -381,9 +369,8 @@
     </section>
 
     <!-- Education -->
-    <section class="section-block">
+    <section>
       <h2 class="section-title">Education</h2>
-      <hr class="section-rule">
 
       <div class="entry">
         <div class="entry-header">
@@ -412,9 +399,8 @@
     </section>
 
     <!-- Selected Publications -->
-    <section class="section-block">
+    <section>
       <h2 class="section-title">Selected Publications</h2>
-      <hr class="section-rule">
       <ul class="simple-list">
         <li>
           Md Reba, M. N., <strong>Abdullah, A. K.</strong>, Hashim, M., Mahmud, M. R., & Wan Ahmad, W. A. N. (2025). Evaluating satellite gridded precipitation errors in the Sungai Sarawak basin: A triple collocation approach. <em>Proceedings of ACRS 2025</em>.
@@ -426,18 +412,16 @@
     </section>
 
     <!-- Intellectual Property -->
-    <section class="section-block">
+    <section>
       <h2 class="section-title">Intellectual Property</h2>
-      <hr class="section-rule">
-      <p style="font-size: 9.5pt;">
+      <p style="font-size: 10pt;">
         <strong>STEMRAINCAL Python Library</strong> (Registered under MyIPO). Independent programmatic Python library for computing standardised drought indices from hydrometeorological inputs.
       </p>
     </section>
 
     <!-- Membership & Awards -->
-    <section class="section-block">
+    <section>
       <h2 class="section-title">Membership & Awards</h2>
-      <hr class="section-rule">
       <div class="competency-grid">
         <div class="competency-label">IGRSM</div>
         <div class="competency-value">Practicing Professional Member (Entitled to use title Gs.)</div>
