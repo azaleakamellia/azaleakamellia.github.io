@@ -1,683 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gs. Azalea Kamellia Abdullah</title>
-
-  <!-- Favicon: little plant -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><line x1='16' y1='26' x2='16' y2='12' stroke='%233a6b4a' stroke-width='1.8' stroke-linecap='round'/><path d='M16 18C16 18 10 18 9 12C9 12 15 10 16 18Z' fill='%23c8dece' stroke='%233a6b4a' stroke-width='1.3'/><path d='M16 14C16 14 22 13 23 7C23 7 17 6 16 14Z' fill='%237aab85' stroke='%233a6b4a' stroke-width='1.3'/><path d='M16 22C16 22 11 23 10 27H22C21 23 16 22 16 22Z' fill='%23c8dece' stroke='%233a6b4a' stroke-width='1.2'/></svg>">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azalea Kamellia | Geospatial Consultant & Researcher</title>
+  
+  <!-- LaTeX.css Core Styling -->
+  <link rel="stylesheet" href="https://latex.vercel.app/style.min.css">
 
   <style>
-    :root {
-      --ink:       #0f1a0f;
-      --forest:    #1e3d2a;
-      --moss:      #3a6b4a;
-      --sage:      #7aab85;
-      --mist:      #c8dece;
-      --paper:     #f7f4ee;
-      --warm:      #ece8df;
-      --rule:      #d4cfc4;
+    /* ==========================================================================
+       1. THEMING (Light / Dark Mode)
+       ========================================================================== */
+    [data-theme="dark"] {
+      background-color: #121212 !important;
+      color: #e0e0e0 !important;
+    }
+    [data-theme="dark"] a {
+      color: #8ab4f8 !important;
+    }
+    [data-theme="dark"] aside {
+      background-color: #1e1e1e !important;
+      border-left-color: #bb86fc !important;
+      color: #b0b0b0 !important;
+    }
+    [data-theme="dark"] code, [data-theme="dark"] pre {
+      background-color: #2d2d2d !important;
+      color: #f1f1f1 !important;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'IBM Plex Sans', sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-      font-size: 16px;
-      line-height: 1.75;
+    /* Theme Toggle Button Styling */
+    .theme-toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: 1px solid currentColor;
+      padding: 0.3rem 0.6rem;
+      font-family: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border-radius: 4px;
+      color: inherit;
     }
 
-    /* ── LAYOUT WRAPPER ── */
-    .wrap {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 2rem;
+    /* ==========================================================================
+       2. RESPONSIVE LAYOUT & MOBILE POLISH
+       ========================================================================== */
+    /* Desktop: Tufte Sidenotes */
+    @media screen and (min-width: 1200px) {
+      body {
+        max-width: 55%;
+        margin-left: 10%;
+        position: relative;
+      }
+      aside {
+        position: absolute;
+        left: 110%;
+        width: 45%;
+        margin-top: 0;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        color: #555;
+        border-left: 1px dashed #ccc;
+        padding-left: 0.75rem;
+      }
     }
 
-    /* ── TOP BAR ── */
-    header {
-      border-bottom: 1px solid var(--rule);
-      padding: 1.4rem 0;
-      position: sticky;
-      top: 0;
-      background: rgba(247, 244, 238, 0.92);
-      backdrop-filter: blur(8px);
-      z-index: 10;
+    /* Mobile / Tablet: Clean Callout Boxes */
+    @media screen and (max-width: 1199px) {
+      body {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      aside {
+        display: block;
+        margin: 1.2rem 0;
+        padding: 0.6rem 1rem;
+        background: #fdfdfd;
+        border-left: 3px solid #333;
+        font-size: 0.9rem;
+      }
+      .theme-toggle-btn {
+        position: static;
+        display: block;
+        margin: 0 0 1rem auto;
+      }
     }
 
-    header .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .site-id {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--moss);
-      letter-spacing: 0.04em;
-    }
-
-    nav a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
-      text-decoration: none;
-      color: var(--ink);
-      opacity: 0.5;
-      margin-left: 1.8rem;
-      letter-spacing: 0.06em;
-      transition: opacity 0.2s;
-    }
-    nav a:hover { opacity: 1; }
-
-    /* ── HERO ── */
-    .hero {
-      padding: 3rem 0 2rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .hero-eyebrow {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--sage);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero h1 {
-      font-family: 'Lora', serif;
-      font-size: clamp(2.4rem, 6vw, 3.6rem);
-      font-weight: 600;
-      line-height: 1.1;
-      color: var(--forest);
-      margin-bottom: 0.2rem;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .hero-role {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--sage);
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.06em;
-    }
-
-    .hero-bio {
-      font-size: 1.05rem;
-      font-weight: 300;
-      color: var(--forest);
-      max-width: 560px;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-bio strong {
-      font-weight: 500;
-    }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-
-    .pill {
-      display: inline-block;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      text-decoration: none;
-      padding: 0.45rem 1rem;
-      border-radius: 2rem;
-      transition: all 0.2s;
-    }
-
-    .pill-solid {
-      background: var(--forest);
-      color: var(--paper);
-    }
-    .pill-solid:hover { background: var(--moss); }
-
-    .pill-outline {
-      border: 1px solid var(--moss);
-      color: var(--moss);
-    }
-    .pill-outline:hover {
-      background: var(--forest);
-      color: var(--paper);
-      border-color: var(--forest);
-    }
-
-    /* ── SECTION BASE ── */
-    section {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    section:last-of-type { border-bottom: none; }
-
-    .section-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--sage);
-      margin-bottom: 0.8rem;
-    }
-
-    /* ── ABOUT ── */
-    .about-text {
-      font-size: 0.98rem;
-      font-weight: 300;
-      color: var(--forest);
-      margin-bottom: 0.7rem;
-    }
-
-    .about-text:last-of-type {
-      margin-bottom: 1.4rem;
-    }
-
-    .about-text strong { font-weight: 500; }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 1rem;
-    }
-
-    .tag {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      background: var(--warm);
-      color: var(--moss);
-      border: 1px solid var(--rule);
-      padding: 0.3rem 0.75rem;
-      border-radius: 2rem;
-    }
-
-    /* ── PROJECTS ── */
-    .project {
-      padding: 0.9rem 0;
-      border-top: 1px solid var(--rule);
-    }
-
-    .project:first-of-type { border-top: none; padding-top: 0; }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .project-title {
-      font-family: 'Lora', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--forest);
-    }
-
-    .project-status {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      padding: 0.2rem 0.65rem;
-      border-radius: 2rem;
-      flex-shrink: 0;
-    }
-
-    .status-active {
-      background: rgba(122, 171, 133, 0.15);
-      color: var(--moss);
-      border: 1px solid var(--mist);
-    }
-
-    .status-ip {
-      background: rgba(30, 61, 42, 0.08);
-      color: var(--forest);
-      border: 1px solid var(--rule);
-    }
-
-    .status-soon {
-      background: var(--warm);
-      color: var(--sage);
-      border: 1px solid var(--rule);
-    }
-
-    .project-desc {
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: var(--moss);
-    }
-
-    /* ── WRITING ── */
-    .writing-intro {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--forest);
-      margin-bottom: 1.4rem;
-    }
-
-    .post {
-      padding: 0.8rem 0;
-      border-top: 1px solid var(--rule);
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .post:first-of-type { border-top: none; padding-top: 0; }
-    .post:hover { opacity: 0.65; }
-
-    .post-title {
-      font-family: 'Lora', serif;
-      font-size: 0.98rem;
-      color: var(--forest);
-    }
-
-    .post-date {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--sage);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .medium-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 1.6rem;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      color: var(--moss);
-      text-decoration: none;
-      border-bottom: 1px solid var(--mist);
-      padding-bottom: 0.1rem;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .medium-link:hover {
-      color: var(--forest);
-      border-color: var(--moss);
-    }
-
-    /* ── CV ── */
-    .cv-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .cv-text {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--forest);
-      max-width: 420px;
-    }
-
-    /* ── CONNECT ── */
-    .connect-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    .connect-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .connect-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--sage);
-    }
-
-    .connect-item a {
-      font-size: 0.88rem;
-      color: var(--forest);
-      text-decoration: none;
-      font-weight: 400;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    .connect-item a:hover {
-      border-color: var(--sage);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 2rem 0;
-      border-top: 1px solid var(--rule);
-    }
-
-    footer .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    footer p {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--sage);
-      letter-spacing: 0.04em;
-    }
-
-    /* ── FADE IN ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-eyebrow { animation: fadeUp 0.6s 0.05s ease both; }
-    .hero h1      { animation: fadeUp 0.6s 0.15s ease both; }
-    .hero-role    { animation: fadeUp 0.6s 0.22s ease both; }
-    .hero-bio     { animation: fadeUp 0.6s 0.3s ease both; }
-    .hero-links   { animation: fadeUp 0.6s 0.38s ease both; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      nav a { margin-left: 1rem; }
-      .hero { padding: 3.5rem 0 2rem; }
-      .cv-row { flex-direction: column; }
-      footer .wrap { flex-direction: column; align-items: flex-start; }
+    /* ==========================================================================
+       3. PRINT ENGINE Optimization (Ctrl+P / Cmd+P)
+       ========================================================================== */
+    @media print {
+      .theme-toggle-btn {
+        display: none !important;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 20mm;
+      }
+      body {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 11pt !important;
+        color: #000 !important;
+        background: #fff !important;
+      }
+      aside {
+        display: block;
+        position: relative !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin: 0.8rem 0 !important;
+        padding-left: 0.8rem !important;
+        font-size: 9.5pt !important;
+        font-style: italic;
+        border-left: 2px solid #666 !important;
+        page-break-inside: avoid;
+      }
+      a {
+        text-decoration: none !important;
+        color: #000 !important;
+      }
+      a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 8.5pt;
+        font-family: monospace;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">🌙 Dark</button>
+
   <header>
-    <div class="wrap">
-      <span class="site-id">
-        <svg width="16" height="16" viewBox="0 0 32 32" fill="none" style="display:inline-block;vertical-align:middle;margin-right:5px;">
-          <path d="M10 14L8 8L13 12Z" fill="#7aab85" stroke="#3a6b4a" stroke-width="1.2" stroke-linejoin="round"/>
-          <path d="M22 14L24 8L19 12Z" fill="#7aab85" stroke="#3a6b4a" stroke-width="1.2" stroke-linejoin="round"/>
-          <ellipse cx="16" cy="17" rx="8" ry="7" fill="#c8dece" stroke="#3a6b4a" stroke-width="1.5"/>
-          <ellipse cx="13" cy="16" rx="1.2" ry="1.5" fill="#3a6b4a"/>
-          <ellipse cx="19" cy="16" rx="1.2" ry="1.5" fill="#3a6b4a"/>
-          <path d="M15.2 19L16 20L16.8 19L16 18.5Z" fill="#7aab85"/>
-          <line x1="8" y1="18" x2="13" y2="19" stroke="#3a6b4a" stroke-width="0.8" stroke-linecap="round"/>
-          <line x1="8" y1="20" x2="13" y2="20" stroke="#3a6b4a" stroke-width="0.8" stroke-linecap="round"/>
-          <line x1="24" y1="18" x2="19" y2="19" stroke="#3a6b4a" stroke-width="0.8" stroke-linecap="round"/>
-          <line x1="24" y1="20" x2="19" y2="20" stroke="#3a6b4a" stroke-width="0.8" stroke-linecap="round"/>
-        </svg>azaleakamellia.github.io
-      </span>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#cartography">Maps</a>
-        <a href="#writing">Writing</a>
-        <a href="#connect">Contact</a>
-      </nav>
-    </div>
+    <h1>Azalea Kamellia</h1>
+    <p class="author">Geospatial & GIS Senior Consultant | MPhil Researcher</p>
   </header>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="wrap">
-      <p class="hero-eyebrow">Geospatialist · Researcher · MPhil Candidate</p>
-      <h1>Gs. Azalea<br><em>Kamellia</em> Abdullah</h1>
-      <p class="hero-role">MIGRSM &nbsp;·&nbsp; Universiti Teknologi Malaysia &nbsp;·&nbsp; Kuala Lumpur</p>
-      <p class="hero-bio">
-        I make maps, study rainfall, and occasionally write about what it's 
-        actually like to work in GIS. Based in Kuala Lumpur, researching in Sarawak.
+  <main>
+    <section>
+      <h2>About</h2>
+      <p>
+        Welcome to my portfolio. My research and professional focus center on geospatial analysis, remote sensing workflows, and environmental data modeling.
+        <aside><strong>Note:</strong> Reading on physical paper promotes deeper focus. Hit Ctrl+P anytime for a cleanly typeset PDF version.</aside>
       </p>
-      <div class="hero-links">
-        <a href="#projects" class="pill pill-solid">View Projects</a>
-        <a href="cv.pdf" download class="pill pill-outline">Download CV</a>
-        <a href="https://medium.com/@azaleakamellia.a" target="_blank" class="pill pill-outline">Read My Writing</a>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap">
-      <p class="section-label">About</p>
-      <p class="about-text">
-        I'm a geospatial scientist currently doing my MPhil at UTM, where my 
-        research looks at <strong>correcting satellite rainfall data</strong> to 
-        better detect droughts in Sarawak — a part of the world where ground 
-        measurements are sparse and the stakes for getting it right are real. 
-        The work is done in collaboration with the Sarawak State Government.
-      </p>
-      <p class="about-text">
-        By day I work as a geospatial consultant, which mostly means writing 
-        Python to wrangle satellite imagery into things that make sense to 
-        clients. I also built a <strong>drought indices library registered under MyIPO</strong>, 
-        which I'm quietly still improving. In 2020 I received the 
-        <strong>Society of Conservation GIS (SCGIS) Scholarship Award</strong>.
-      </p>
-      <div class="tag-row">
-        <span class="tag">Hydrometeorology</span>
-        <span class="tag">Remote Sensing</span>
-        <span class="tag">Drought Monitoring</span>
-        <span class="tag">Machine Learning</span>
-        <span class="tag">Google Earth Engine</span>
-        <span class="tag">Forest Cover</span>
-        <span class="tag">Tropical Climatology</span>
-        <span class="tag">Bias Correction</span>
-      </div>
-    </div>
-  </section>
+    <section>
+      <h2>Essays & Notes</h2>
+      <ul>
+        <li><a href="essays/on-digitalization.html">On Digitalization and Cognition</a> — <em>July 2026</em></li>
+      </ul>
+    </section>
+  </main>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="wrap">
-      <p class="section-label">Projects</p>
+  <script>
+    // Theme Switcher Logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
 
-      <div class="project">
-        <div class="project-header">
-          <span class="project-title">
-            Bias Correction of SPE Products for Drought Monitoring in Sarawak
-          </span>
-          <span class="project-status status-active">MPhil · Active</span>
-        </div>
-        <p class="project-desc">
-          Evaluating and correcting CHIRPS, PERSIANN-CDR, and ERA5-Land over 
-          Sungai Sarawak basin using triple collocation error analysis and 
-          ML-based bias correction. In collaboration with the Sarawak State Government.
-        </p>
-      </div>
+    // Check saved preference or system theme
+    const savedTheme = localStorage.getItem('theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    setTheme(savedTheme);
 
-      <div class="project">
-        <div class="project-header">
-          <span class="project-title">Drought Indices Calculation Library</span>
-          <span class="project-status status-ip">Registered · MyIPO</span>
-        </div>
-        <p class="project-desc">
-          A software library for computing standardised drought indices from 
-          hydrometeorological inputs. Registered intellectual property under 
-          the Malaysia Intellectual Property Office.
-        </p>
-      </div>
+    toggleBtn.addEventListener('click', () => {
+      const newTheme = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
 
-      <div class="project">
-        <div class="project-header">
-          <span class="project-title">Independent Projects — Coming Soon</span>
-          <span class="project-status status-soon">In Progress</span>
-        </div>
-        <p class="project-desc">
-          Open-data explorations in precipitation analysis, evaporative stress, 
-          and forest cover dynamics across Southeast Asia.
-        </p>
-      </div>
+    function setTheme(theme) {
+      htmlEl.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      toggleBtn.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+    }
+  </script>
 
-    </div>
-  </section>
-
-  <!-- CARTOGRAPHY -->
-  <section id="cartography">
-    <div class="wrap">
-      <p class="section-label">Cartography</p>
-      <p class="about-text" style="margin-bottom:1.4rem;">
-        Maps are where I started. Over the years I've made them for 
-        conservation reports, government bids, published books, and 
-        public dashboards — mostly across Malaysia and Borneo.
-        A proper gallery is in the works. For now, the archive lives on Tumblr.
-      </p>
-
-      <div class="project">
-        <div class="project-header">
-          <span class="project-title">Nature in the Heart of Borneo</span>
-          <span class="project-status status-ip">Published · WWF 2020</span>
-        </div>
-        <p class="project-desc">
-          Series of maps for a WWF-Malaysia and FORMADAT ecotourism guidebook 
-          on Northern Sarawak's highland communities — Lun Bawang, Sa'ban, and Kelabit.
-        </p>
-      </div>
-
-      <div class="project">
-        <div class="project-header">
-          <span class="project-title">Malaysia Forest Cover 2020 Dashboard</span>
-          <span class="project-status status-active">WWF-Malaysia</span>
-        </div>
-        <p class="project-desc">
-          Interactive dashboard of forest cover extent and methodology across 
-          Malaysia's regions. Built with ArcGIS Pro and ArcGIS Online. 
-          GEM Award recipient 2020.
-        </p>
-      </div>
-
-      <div class="project">
-        <div class="project-header">
-          <span class="project-title">Malaysia Bid Round 2023 · PETRONAS</span>
-          <span class="project-status status-ip">Cartography</span>
-        </div>
-        <p class="project-desc">
-          Exploration block and hydrocarbon field maps for the annual 
-          Malaysia Bid Round event, using ArcGIS Pro symbolization and SQL expressions.
-        </p>
-      </div>
-
-      <div class="project">
-        <div class="project-header">
-          <span class="project-title">IKI Land Use Plan · Heart of Borneo</span>
-          <span class="project-status status-ip">WWF · 2021</span>
-        </div>
-        <p class="project-desc">
-          Maps supporting Natural Capital Valuation for the International 
-          Climate Initiative green initiative across the Heart of Borneo region.
-        </p>
-      </div>
-
-      <a class="medium-link" href="https://azaleakamellia.tumblr.com/tagged/portfolio" target="_blank">
-        Full cartography archive on Tumblr →
-      </a>
-    </div>
-  </section>
-
-  <!-- WRITING -->
-  <section id="writing">
-    <div class="wrap">
-      <p class="section-label">Writing</p>
-      <p class="writing-intro">
-        I write on Medium about geospatial work, remote sensing, and the 
-        honest realities of being a GIS analyst. Occasionally serious. 
-        Usually not.
-      </p>
-
-      <!-- Recent posts — update these manually as you publish new ones -->
-      <a class="post" href="https://medium.com/@azaleakamellia.a/the-day-i-realized-my-wasted-hostel-nights-were-actually-the-peak-of-my-life-1bf3ac4f4bd4" target="_blank">
-        <span class="post-title">The day I realized my 'wasted' hostel nights were actually the peak of my life</span>
-        <span class="post-date">Nov 2025</span>
-      </a>
-
-      <a class="post" href="https://medium.com/@azaleakamellia.a/digitizing-the-boundaries-to-your-skillset-and-patience-the-guide-to-survive-self-imposed-misery-637a6a7bac85" target="_blank">
-        <span class="post-title">Digitizing the boundaries to your skillset and patience</span>
-        <span class="post-date">Nov 2025</span>
-      </a>
-
-      <a class="post" href="https://medium.com/@azaleakamellia.a/google-maps-doesnt-do-this-and-other-lies-that-keep-me-employed-e8dbde9b1924" target="_blank">
-        <span class="post-title">Google Maps Doesn't Do This (And Other Lies That Keep Me Employed)</span>
-        <span class="post-date">Aug 2025</span>
-      </a>
-
-      <a class="post" href="https://medium.com/@azaleakamellia.a/a-gis-analysts-guide-to-losing-gracefully-mostly-just-losing-cc2834d11d05" target="_blank">
-        <span class="post-title">A GIS Analyst's Guide to Losing Gracefully (Mostly Just Losing)</span>
-        <span class="post-date">Aug 2025</span>
-      </a>
-
-      <a class="medium-link" href="https://medium.com/@azaleakamellia.a" target="_blank">
-        All posts on Medium →
-      </a>
-    </div>
-  </section>
-
-  <!-- CV -->
-  <section id="cv">
-    <div class="wrap">
-      <p class="section-label">Curriculum Vitae</p>
-      <div class="cv-row">
-        <p class="cv-text">
-          Full academic and professional history — including research output, 
-          registered IP, and 10+ years of geospatial consultancy experience.
-          Available in academic and industry formats.
-        </p>
-        <a href="cv.pdf" download class="pill pill-solid">Download CV (PDF)</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONNECT -->
-  <section id="connect">
-    <div class="wrap">
-      <p class="section-label">Get in Touch</p>
-      <div class="connect-grid">
-        <div class="connect-item">
-          <span class="connect-label">Email</span>
-          <a href="/cdn-cgi/l/email-protection#9ffee5fef3fafef4fef2faf3f3f6feb1fedff8f2fef6f3b1fcf0f2"><span class="__cf_email__" data-cfemail="2a4b504b464f4b414b474f4646434b044b6a4d474b434604494547">[email&#160;protected]</span></a>
-        </div>
-        <div class="connect-item">
-          <span class="connect-label">GitHub</span>
-          <a href="https://github.com/azaleakamellia" target="_blank">azaleakamellia</a>
-        </div>
-        <div class="connect-item">
-          <span class="connect-label">Medium</span>
-          <a href="https://medium.com/@azaleakamellia.a" target="_blank">@azaleakamellia.a</a>
-        </div>
-        <div class="connect-item">
-          <span class="connect-label">Membership</span>
-          <a href="https://www.igrsm.org.my" target="_blank">IGRSM · Gs.</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
+</body>
+</html>
