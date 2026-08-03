@@ -3,161 +3,396 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curriculum Vitae | Azalea Kamellia Abdullah</title>
-  <link rel="stylesheet" href="https://latex.vercel.app/style.min.css">
+  <title>Azalea Kamellia Abdullah — CV</title>
   
   <style>
+    /* ==========================================================================
+       LATEX / MODERN ACADEMIC CV TYPOGRAPHY
+       ========================================================================== */
+    @import url('https://fonts.googleapis.com/css2?family=Latin+Modern+Roman&family=Computer+Modern&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --font-serif: "Latin Modern Roman", "CMU Serif", Georgia, "Times New Roman", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --text-color: #111111;
+      --rule-color: #222222;
+      --subtext-color: #444444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-serif);
+      color: var(--text-color);
+      background-color: #fdfdfd;
+      line-height: 1.45;
+      font-size: 10.5pt;
+      padding: 3rem 1rem;
+    }
+
+    .cv-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-radius: 2px;
+    }
+
+    /* Top Navigation Bar (Hidden when printing) */
     .no-print-bar {
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.8rem 1rem;
-      background: #f4f4f4;
-      border-radius: 6px;
-      margin-bottom: 2rem;
-      border: 1px solid #e0e0e0;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
     }
-    
-    .cv-header-contact {
-      text-align: center;
-      font-size: 0.9rem;
+
+    .no-print-bar a {
+      color: #555;
+      text-decoration: none;
+    }
+    .no-print-bar a:hover { text-decoration: underline; }
+
+    .btn-print {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .btn-print:hover { background: #f5f5f5; }
+
+    /* Header Styling */
+    header {
       margin-bottom: 1.5rem;
     }
 
-    .job-title-row {
+    h1.name {
+      font-size: 20pt;
+      font-weight: normal;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-info {
+      font-size: 9.5pt;
+      color: var(--subtext-color);
+      line-height: 1.4;
+    }
+
+    .contact-info a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Section Headings with Full Horizontal Rule */
+    h2.section-title {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 1.4rem;
+      margin-bottom: 0.4rem;
+      padding-bottom: 0.15rem;
+      border-bottom: 1px solid var(--rule-color);
+    }
+
+    /* Paragraph & Profile */
+    p.profile-text {
+      text-align: justify;
+      font-size: 10pt;
+      line-height: 1.45;
+    }
+
+    /* Competencies / Two-Column Key-Value List */
+    .competency-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      row-gap: 0.3rem;
+      column-gap: 1rem;
+      font-size: 9.5pt;
+      margin-top: 0.3rem;
+    }
+
+    .competency-label {
+      font-weight: bold;
+    }
+
+    .competency-value {
+      color: var(--subtext-color);
+    }
+
+    /* Experience & Education Entries */
+    .entry {
+      margin-bottom: 0.9rem;
+    }
+
+    .entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 0.2rem;
     }
 
-    .job-title-row h3 {
-      margin: 0;
-      font-size: 1.05rem;
+    .entry-title {
+      font-size: 10.5pt;
+      font-weight: bold;
     }
 
-    .job-date {
+    .entry-location {
+      font-size: 9.5pt;
       font-style: italic;
-      font-size: 0.88rem;
-      color: #555;
     }
 
+    .entry-subhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.5pt;
+      font-style: italic;
+      color: var(--subtext-color);
+      margin-bottom: 0.25rem;
+    }
+
+    ul.entry-bullets {
+      list-style-type: disc;
+      margin-left: 1.2rem;
+      font-size: 9.5pt;
+      line-height: 1.4;
+    }
+
+    ul.entry-bullets li {
+      margin-bottom: 0.2rem;
+      text-align: justify;
+    }
+
+    /* Single Line List (Publications / IP / Awards) */
+    ul.simple-list {
+      list-style-type: disc;
+      margin-left: 1.2rem;
+      font-size: 9.5pt;
+      line-height: 1.4;
+    }
+    ul.simple-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* ==========================================================================
+       PRINT ENGINE OVERRIDES (Ctrl+P / Cmd+P)
+       ========================================================================== */
     @media print {
-      .no-print-bar { display: none !important; }
-      @page { size: A4 portrait; margin: 15mm 18mm; }
-      body { width: 100% !important; margin: 0 !important; padding: 0 !important; font-size: 10pt !important; }
-      a[href^="http"]:after { content: "" !important; } /* Clean links for printed CV */
-      .job-date { color: #000 !important; }
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+        font-size: 10pt !important;
+      }
+
+      .no-print-bar {
+        display: none !important;
+      }
+
+      .cv-container {
+        padding: 0 !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+
+      @page {
+        size: A4 portrait;
+        margin: 15mm 18mm 15mm 18mm;
+      }
+
+      h2.section-title {
+        border-bottom-color: #000000 !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: #000000 !important;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Action Bar -->
   <div class="no-print-bar">
     <a href="index.html">&larr; Back to Portfolio</a>
-    <button onclick="window.print()" style="padding: 0.45rem 0.9rem; cursor: pointer; font-weight: bold; border-radius: 4px; border: 1px solid #ccc; background: #fff;">🖨️ Save as PDF / Print</button>
+    <button class="btn-print" onclick="window.print()">🖨️ Save as PDF / Print</button>
   </div>
 
-  <header>
-    <h1>Azalea Kamellia Abdullah</h1>
-    <p class="author">Gs. (Geospatialist) | Practicing Professional Member, IGRSM</p>
-    <div class="cv-header-contact">
-      Kuala Lumpur, Malaysia • 
-      <a href="https://azaleakamellia.github.io">azaleakamellia.github.io</a> • 
-      GitHub: <a href="https://github.com/azaleakamellia">github.com/azaleakamellia</a>
-    </div>
-  </header>
+  <div class="cv-container">
 
-  <main>
+    <!-- Header -->
+    <header>
+      <h1 class="name">Azalea Kamellia Abdullah</h1>
+      <div class="contact-info">
+        azaleakamellia.a@gmail.com &bull; (+60) 12-660 2132 &bull; 
+        <a href="https://azaleakamellia.github.io">azaleakamellia.github.io</a> &bull; 
+        <a href="https://github.com/azaleakamellia">github.com/azaleakamellia</a><br>
+        Kuala Lumpur, Malaysia<br>
+        <strong>Gs. (Geospatialist)</strong> &bull; Professional Member, IGRSM &bull; 10+ Years Experience
+      </div>
+    </header>
+
+    <!-- Profile -->
     <section>
-      <h2>Research & Professional Profile</h2>
-      <p>
-        Senior geospatial data scientist and MPhil researcher with over 10 years of experience across environmental consulting, energy, and conservation sectors. Specialises in remote sensing, automated geospatial pipelines, satellite precipitation bias correction, and machine learning applied to large-scale Earth observation data. Developer of a registered drought indices calculation library (MyIPO).
+      <h2 class="section-title">Profile</h2>
+      <p class="profile-text">
+        Senior geospatial data scientist with over 10 years of experience across conservation, energy, and environmental consulting sectors. Specialises in remote sensing, automated geospatial pipelines, and machine learning applied to large-scale satellite imagery. Proven track record delivering data-driven solutions for ESG, ESIA, and biodiversity assessments. Developer of a registered drought indices library (MyIPO). Currently completing MPhil research in satellite precipitation bias correction at UTM, in collaboration with the Sarawak State Government.
       </p>
     </section>
 
+    <!-- Core Competencies -->
     <section>
-      <h2>Education</h2>
-      
-      <div class="job-title-row">
-        <h3>Master of Philosophy (Remote Sensing) — Universiti Teknologi Malaysia (UTM)</h3>
-        <span class="job-date">May 2025 – Present</span>
-      </div>
-      <p><em>Supervisor: Dr. Mohd Nadzri Md Reba (INSTeG, UTM) | Collaboration: Sarawak State Government</em></p>
-      <ul>
-        <li>Thesis focus: Calibration and bias correction of satellite gridded precipitation estimates (CHIRPS, PERSIANN-CDR, ERA5-Land) over the Sungai Sarawak basin (1983–2023) for sparse rain gauge networks.</li>
-        <li>Applying triple collocation error analysis and machine learning workflows in Google Earth Engine (GEE) Python/JS APIs for hydrological and drought monitoring.</li>
-      </ul>
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="competency-grid">
+        <div class="competency-label">Remote Sensing & Earth Obs.</div>
+        <div class="competency-value">GEE, Landsat, Sentinel, CHIRPS, ERA5</div>
 
-      <div class="job-title-row">
-        <h3>Bachelor of Science (Hons.) in Pure Geology — Universiti Malaya (UM)</h3>
-        <span class="job-date">2007 – 2010</span>
+        <div class="competency-label">Geospatial Data Engineering</div>
+        <div class="competency-value">Python, GDAL, PostGIS, DuckDB, SQL</div>
+
+        <div class="competency-label">Machine Learning</div>
+        <div class="competency-value">Scikit-Learn, PyTorch, TensorFlow</div>
+
+        <div class="competency-label">GIS Platforms</div>
+        <div class="competency-value">ArcGIS Pro, QGIS, ESA SNAP, ENVI</div>
+
+        <div class="competency-label">Cloud & Databases</div>
+        <div class="competency-value">GCP, AWS, Azure, PostgreSQL</div>
+
+        <div class="competency-label">Visualisation & Reporting</div>
+        <div class="competency-value">Streamlit, Dash, InVEST, Jupyter</div>
       </div>
-      <ul>
-        <li>Final Year Project: <em>"General Geology, Petrology and Geochemistry of Igneous Intrusion Pulau Salak, Sarawak."</em></li>
-      </ul>
     </section>
 
+    <!-- Professional Experience -->
     <section>
-      <h2>Professional Experience</h2>
+      <h2 class="section-title">Professional Experience</h2>
 
-      <div class="job-title-row">
-        <h3>Senior GIS & Geospatial Consultant — ERM Malaysia Sdn Bhd</h3>
-        <span class="job-date">July 2023 – Present</span>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Senior GIS & Geospatial Consultant (Capital Project Delivery)</span>
+          <span class="entry-location">Kuala Lumpur, Malaysia</span>
+        </div>
+        <div class="entry-subhead">
+          <span>ERM Malaysia Sdn Bhd</span>
+          <span>July 2023 – Present</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Engineered end-to-end geospatial data pipelines for environmental and biodiversity projects, reducing data cleaning time by 50% through Python automation and open-source libraries.</li>
+          <li>Deployed GEE workflows for forest cover monitoring, mangrove mapping, and land-use change detection across ESG and ESIA projects.</li>
+          <li>Built dynamic client-facing dashboards for marine traffic risk and habitat quality assessment using InVEST ecosystem services modules.</li>
+          <li>Redesigned spatial database architectures (PostgreSQL/PostGIS) and upskilled teams on Python data analytics workflows.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Engineered end-to-end geospatial data pipelines for ESG and ESIA projects, reducing data cleaning time by 50% through Python automation.</li>
-        <li>Deployed GEE workflows for forest cover monitoring, mangrove mapping, and land-use change detection.</li>
-        <li>Built dynamic client dashboards for marine traffic risk and habitat quality using InVEST ecosystem services modules.</li>
-      </ul>
 
-      <div class="job-title-row">
-        <h3>Technician I (SS-Geoscience) — PETRONAS</h3>
-        <span class="job-date">June 2022 – June 2023</span>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Technician I (SS-Geoscience)</span>
+          <span class="entry-location">Kuala Lumpur, Malaysia</span>
+        </div>
+        <div class="entry-subhead">
+          <span>Petroliam Nasional Berhad (PETRONAS)</span>
+          <span>June 2022 – June 2023</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Automated cartographical geoprocessing workflows using Python and ArcGIS Model Builder for resource exploration mapping.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Automated cartographical geoprocessing workflows using Python and ArcGIS ModelBuilder for resource exploration mapping.</li>
-      </ul>
 
-      <div class="job-title-row">
-        <h3>GIS Officer / Lead of Conservation GIS Unit — WWF-Malaysia</h3>
-        <span class="job-date">April 2018 – June 2022</span>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">GIS Officer / Lead of Conservation GIS Unit</span>
+          <span class="entry-location">Sarawak, Malaysia</span>
+        </div>
+        <div class="entry-subhead">
+          <span>WWF-Malaysia (Sarawak Conservation Programme)</span>
+          <span>April 2018 – June 2022</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Led Conservation GIS Unit delivering spatial analysis and satellite imagery processing for biodiversity monitoring across Sarawak's priority conservation areas.</li>
+          <li>Developed and deployed ML image classification models contributing to the Malaysia Forest Cover 2020 Dashboard in collaboration with PMTC and SLP.</li>
+          <li>Overhauled spatial database management (MS-1759 standards) and designed GIS SOPs for conservation programme delivery.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Led the Conservation GIS Unit delivering spatial analysis and imagery processing for priority conservation areas in Sarawak.</li>
-        <li>Developed machine learning image classification models contributing to the Malaysia Forest Cover 2020 Dashboard.</li>
-        <li>Overhauled spatial database management adhering to MS-1759 standards and authored GIS operational SOPs.</li>
-      </ul>
 
-      <div class="job-title-row">
-        <h3>Technical Support Analyst — Esri International Support Center (ISC)</h3>
-        <span class="job-date">Nov 2016 – March 2018</span>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Technical Support Analyst - Desktop Team</span>
+          <span class="entry-location">Kuala Lumpur, Malaysia</span>
+        </div>
+        <div class="entry-subhead">
+          <span>Esri International Support Center (ISC)</span>
+          <span>November 2016 – March 2018</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Resolved 127 support cases with 100% CSAT across ArcGIS Desktop/Pro/Online, Survey123, and Collector; trained incoming analysts.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Resolved 127 complex support cases with 100% CSAT across ArcGIS Desktop/Pro/Online, Survey123, and Collector.</li>
-      </ul>
 
-      <div class="job-title-row">
-        <h3>Research Assistant — Universiti Malaya</h3>
-        <span class="job-date">April 2014 – June 2016</span>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Research Assistant</span>
+          <span class="entry-location">Kuala Lumpur, Malaysia</span>
+        </div>
+        <div class="entry-subhead">
+          <span>Universiti Malaya</span>
+          <span>April 2014 – June 2016</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Conducted remote sensing-based burn detection and hydrological modelling for tropical peat research; soil and water sample analysis.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Conducted remote sensing burn detection and hydrological modelling for tropical peatland research in Kuala Langat.</li>
-      </ul>
     </section>
 
+    <!-- Education -->
     <section>
-      <h2>Intellectual Property & Software</h2>
-      <ul>
-        <li><strong>STEMRAINCAL Python Library (MyIPO Registered):</strong> Programmatic Python library for computing standardized drought indices from hydrometeorological inputs. Registered with the Malaysia Intellectual Property Office.</li>
-      </ul>
+      <h2 class="section-title">Education</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Master of Philosophy (Remote Sensing)</span>
+          <span class="entry-location">Sarawak / UTM</span>
+        </div>
+        <div class="entry-subhead">
+          <span>Universiti Teknologi Malaysia</span>
+          <span>May 2025 – Present</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Thesis: Bias correction of SPEs for drought monitoring, Sarawak State Government collaboration.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Bachelor of Science (Hons.) in Pure Geology</span>
+          <span class="entry-location">Kuala Lumpur, Malaysia</span>
+        </div>
+        <div class="entry-subhead">
+          <span>Universiti Malaya</span>
+          <span>2007 – 2010</span>
+        </div>
+      </div>
     </section>
 
+    <!-- Selected Publications -->
     <section>
-      <h2>Selected Publications</h2>
-      <ul>
+      <h2 class="section-title">Selected Publications</h2>
+      <ul class="simple-list">
         <li>
-          Md Reba, M. N., <strong>Abdullah, A. K.</strong>, Hashim, M., Mahmud, M. R., & Wan Ahmad, W. A. N. (2025). Evaluating satellite gridded precipitation errors in the Sungai Sarawak basin: A triple collocation approach. <em>Proceedings of the 46th Asian Conference on Remote Sensing (ACRS 2025)</em>.
+          Md Reba, M. N., <strong>Abdullah, A. K.</strong>, Hashim, M., Mahmud, M. R., & Wan Ahmad, W. A. N. (2025). Evaluating satellite gridded precipitation errors in the Sungai Sarawak basin: A triple collocation approach. <em>Proceedings of ACRS 2025</em>.
         </li>
         <li>
           <strong>Abdullah, A. K.</strong>, Md Reba, M. N., Jali, N. E., Magupin, S., & Anthony, D. (2021). Deep forest cover classification of consecutive Landsat imageries over Borneo. <em>Warta Geologi Newsletter</em>, 47(1), 71.
@@ -165,25 +400,33 @@
       </ul>
     </section>
 
+    <!-- Intellectual Property -->
     <section>
-      <h2>Technical Capabilities</h2>
-      <ul>
-        <li><strong>Remote Sensing & GIS:</strong> GEE (Python/JS APIs), ESA SNAP, GDAL, ArcGIS Pro, QGIS, ENVI, OBIA</li>
-        <li><strong>Programming & ML:</strong> Python (Scikit-Learn, PyTorch, TensorFlow), R, SQL, Git</li>
-        <li><strong>Hydrometeorology & Datasets:</strong> CHIRPS, PERSIANN-CDR, ERA5-Land, IMERG, Landsat, Sentinel</li>
-        <li><strong>Databases & Cloud:</strong> PostgreSQL/PostGIS, DuckDB, GCP, AWS, Azure</li>
-      </ul>
+      <h2 class="section-title">Intellectual Property</h2>
+      <p style="font-size: 9.5pt;">
+        <strong>STEMRAINCAL Python Library</strong> (Registered under MyIPO). Independent programmatic Python library for computing standardised drought indices from hydrometeorological inputs.
+      </p>
     </section>
 
+    <!-- Membership & Awards -->
     <section>
-      <h2>Honours & Awards</h2>
-      <ul>
-        <li><strong>SPOT Award (2024):</strong> ERM Malaysia — For procedural standards & analytics development.</li>
-        <li><strong>GEM Award x2 (2020, 2021):</strong> WWF-Malaysia — Forest Cover 2020 Dashboard & Compass Solutions.</li>
-        <li><strong>CSAT Award (2017):</strong> Esri Desktop Team — 100% CSAT performance rating.</li>
-      </ul>
+      <h2 class="section-title">Membership & Awards</h2>
+      <div class="competency-grid">
+        <div class="competency-label">IGRSM</div>
+        <div class="competency-value">Practicing Professional Member (Entitled to use title Gs.)</div>
+
+        <div class="competency-label">SPOT Award</div>
+        <div class="competency-value">ERM Malaysia, 2024 — Procedural standards & analytics</div>
+
+        <div class="competency-label">GEM Award x2</div>
+        <div class="competency-value">WWF-Malaysia, 2020 & 2021 — Forest Dashboard & Newsletter</div>
+
+        <div class="competency-label">CSAT Award</div>
+        <div class="competency-value">Esri Desktop Team, 2017 — 100% CSAT performance</div>
+      </div>
     </section>
-  </main>
+
+  </div>
 
 </body>
 </html>
