@@ -9,24 +9,24 @@
   --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
   
   /* Crisp Off-White Light Mode Palette */
-  --bg-color: #f8f9fa;         /* Crisp, subtle off-white */
-  --card-bg: #ffffff;          /* Pure white cards for crisp contrast */
-  --text-color: #2d3748;       /* Deep slate grey (soft on eyes, highly legible) */
-  --heading-color: #1a202c;    /* Very dark charcoal for headers */
-  --link-color: #9b2c2c;       /* Muted academic crimson */
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-color: #2d3748;
+  --heading-color: #1a202c;
+  --link-color: #9b2c2c;
   --rule-color: #cbd5e0;
   --border-color: #e2e8f0;
 }
 
-/* Dark Mode Palette */
+/* Dark Mode Palette Overrides */
 [data-theme="dark"] {
-  --bg-color: #121212;
-  --card-bg: #1e1e1e;
-  --text-color: #e2e8f0;
-  --heading-color: #ffffff;
-  --link-color: #63b3ed;
-  --rule-color: #4a5568;
-  --border-color: #2d3748;
+  --bg-color: #121212 !important;
+  --card-bg: #1e1e1e !important;
+  --text-color: #e2e8f0 !important;
+  --heading-color: #ffffff !important;
+  --link-color: #63b3ed !important;
+  --rule-color: #4a5568 !important;
+  --border-color: #2d3748 !important;
 }
 
 * {
@@ -37,11 +37,37 @@ html, body {
   background-color: var(--bg-color) !important;
   color: var(--text-color) !important;
   font-family: var(--font-serif) !important;
-  font-size: 16px;             /* Standard, comfortable reading size */
-  line-height: 1.7;            /* Relaxed line spacing */
+  font-size: 16px;
+  line-height: 1.7;
   letter-spacing: -0.003em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force Dark Mode on All LaTeX.css Elements */
+[data-theme="dark"] body,
+[data-theme="dark"] main,
+[data-theme="dark"] header,
+[data-theme="dark"] footer,
+[data-theme="dark"] section,
+[data-theme="dark"] article,
+[data-theme="dark"] div,
+[data-theme="dark"] p,
+[data-theme="dark"] li,
+[data-theme="dark"] span {
+  background-color: transparent !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4 {
+  color: var(--heading-color) !important;
+}
+
+[data-theme="dark"] a {
+  color: var(--link-color) !important;
 }
 
 /* Layout Canvas */
@@ -69,7 +95,7 @@ h2 { font-size: 1.5rem; margin-top: 2rem; }
 h3 { font-size: 1.2rem; }
 
 p, li {
-  font-size: 1.05rem; /* Generous text size for comfortable reading */
+  font-size: 1.05rem;
 }
 
 a {
@@ -79,7 +105,7 @@ a {
 }
 
 /* ==========================================================================
-   2. TOP NAVIGATION & BUTTONS (Clean Modern Style)
+   2. TOP NAVIGATION & BUTTONS
    ========================================================================== */
 .top-nav {
   display: flex;
@@ -107,7 +133,7 @@ a {
   font-weight: 500;
   color: var(--text-color) !important;
   text-decoration: none !important;
-  background-color: var(--card-bg);
+  background-color: var(--card-bg) !important;
   transition: all 0.2s ease;
   cursor: pointer;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
@@ -116,11 +142,10 @@ a {
 .btn-soft:hover {
   border-color: var(--rule-color);
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
 }
 
 /* ==========================================================================
-   3. PROJECT CARDS (Sleek Off-White Cards)
+   3. PROJECT CARDS
    ========================================================================== */
 .project-grid {
   display: grid;
@@ -133,15 +158,14 @@ a {
   border: 1px solid var(--border-color);
   padding: 1.5rem;
   border-radius: 8px;
-  background: var(--card-bg);
+  background: var(--card-bg) !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
 .project-card:hover {
   transform: translateY(-2px);
   border-color: var(--rule-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .project-card h3 {
@@ -154,7 +178,6 @@ a {
   font-size: 0.98rem;
   line-height: 1.55;
   margin-bottom: 1rem;
-  color: var(--text-color);
 }
 
 .project-tags {
@@ -168,5 +191,5 @@ a {
 }
 
 [data-theme="dark"] .project-tags {
-  color: #a0aec0;
+  color: #a0aec0 !important;
 }
