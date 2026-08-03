@@ -52,6 +52,31 @@
   </main>
 
   <script>
+    // Function inside index.html script tag
+const fileDetails = await Promise.all(htmlFiles.map(async file => {
+  const rawRes = await fetch(file.download_url);
+  const text = await rawRes.text();
+  
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(text, 'text/html');
+  
+  // Gets full title or cleanly formats filename if no title exists
+  let pageTitle = doc.querySelector('title')?.innerText || '';
+  if (pageTitle.includes('|')) {
+    pageTitle = pageTitle.split('|')[0].trim();
+  }
+  if (!pageTitle) {
+    pageTitle = file.name.replace('.html', '').replace(/-/g, ' ');
+  }
+  
+  return {
+    title: pageTitle,
+    description: doc.querySelector('meta[name="description"]')?.content || 'Geospatial workflow and case study details.',
+    tags: doc.querySelector('meta[name="keywords"]')?.content || 'GIS • Remote Sensing',
+    date: doc.querySelector('meta[name="date"]')?.content || '',
+    path: `${folderPath}/${file.name}`
+  };
+}));
     // Theme Toggle Logic
     const toggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
