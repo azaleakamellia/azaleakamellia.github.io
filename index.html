@@ -177,89 +177,93 @@
     }
 
     // -------------------------------------------------------------
-    // 2. Dynamic Repository Fetcher (Projects & Essays)
-    // -------------------------------------------------------------
-    const REPO_OWNER = 'azaleakamellia';
-    const REPO_NAME = 'azaleakamellia.github.io';
+// Dynamic Repository Fetcher (Filtered for Templates & Drafts)
+// -------------------------------------------------------------
+const REPO_OWNER = 'azaleakamellia';
+const REPO_NAME = 'azaleakamellia.github.io';
 
-    async function fetchDynamicContent() {
-      fetchFolderContent('projects', renderProjects);
-      fetchFolderContent('essays', renderEssays);
-    }
+async function fetchDynamicContent() {
+  fetchFolderContent('projects', renderProjects);
+  fetchFolderContent('essays', renderEssays);
+}
 
-    async function fetchFolderContent(folderPath, renderCallback) {
-      const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}`;
+async function fetchFolderContent(folderPath, renderCallback) {
+  const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}`;
+  
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error(`Folder ${folderPath} not found`);
+    
+    const files = await response.json();
+    
+    // 1. Ignore filenames starting with '_', 'draft-', or named 'template.html'
+    const htmlFiles = files.filter(f => 
+      f.name.endsWith('.html') && 
+      !f.name.startsWith('_') && 
+      !f.name.startsWith('draft-') &&
+      !f.name.includes('template')
+    );
+    
+    // 2. Fetch HTML meta details for remaining files
+    const fileDetails = await Promise.all(htmlFiles.map(async file => {
+      const rawRes = await fetch(file.download_url);
+      const text = await rawRes.text();
       
-      try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error(`Folder ${folderPath} not found`);
-        
-        const files = await response.json();
-        // New line: ignores templates and drafts
-        const htmlFiles = files.filter(f => 
-          f.name.endsWith('.html') && 
-          !f.name.startsWith('_') && 
-          !f.name.startsWith('draft-') &&
-          f.name !== 'template.html'
-        );
-        
-        // Fetch HTML meta details for each file
-        const fileDetails = await Promise.all(htmlFiles.map(async file => {
-          const rawRes = await fetch(file.download_url);
-          const text = await rawRes.text();
-          
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(text, 'text/html');
-          
-          return {
-            title: doc.querySelector('title')?.innerText || file.name.replace('.html', ''),
-            description: doc.querySelector('meta[name="description"]')?.content || '',
-            tags: doc.querySelector('meta[name="keywords"]')?.content || 'GIS • Remote Sensing',
-            date: doc.querySelector('meta[name="date"]')?.content || '',
-            path: `${folderPath}/${file.name}`
-          };
-        }));
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(text, 'text/html');
+      
+      return {
+        title: doc.querySelector('title')?.innerText || file.name.replace('.html', ''),
+        description: doc.querySelector('meta[name="description"]')?.content || '',
+        tags: doc.querySelector('meta[name="keywords"]')?.content || 'GIS • Remote Sensing',
+        date: doc.querySelector('meta[name="date"]')?.content || '',
+        status: doc.querySelector('meta[name="status"]')?.content || 'published',
+        path: `${folderPath}/${file.name}`
+      };
+    }));
 
-        renderCallback(fileDetails);
-      } catch (err) {
-        console.error(`Error loading ${folderPath}:`, err);
-      }
-    }
+    // 3. Filter out explicitly marked draft pages
+    const visibleFiles = fileDetails.filter(f => f.status !== 'draft' && f.status !== 'template');
 
-    function renderProjects(projects) {
-      const container = document.getElementById('projects-container');
-      if (!projects.length) {
-        container.innerHTML = '<p>No projects found in /projects directory.</p>';
-        return;
-      }
+    renderCallback(visibleFiles);
+  } catch (err) {
+    console.error(`Error loading ${folderPath}:`, err);
+  }
+}
 
-      container.innerHTML = projects.map(p => `
-        <article class="project-card">
-          <h3>${p.title}</h3>
-          ${p.tags ? `<div class="project-tags">${p.tags}</div>` : ''}
-          <p>${p.description || 'Geospatial workflow and case study details.'}</p>
-          <a href="${p.path}">&rarr; Read Project Case Study</a>
-        </article>
-      `).join('');
-    }
+function renderProjects(projects) {
+  const container = document.getElementById('projects-container');
+  if (!projects.length) {
+    container.innerHTML = '<p>No published projects found.</p>';
+    return;
+  }
 
-    function renderEssays(essays) {
-      const container = document.getElementById('essays-container');
-      if (!essays.length) {
-        container.innerHTML = '<li>No essays found in /essays directory.</li>';
-        return;
-      }
+  container.innerHTML = projects.map(p => `
+    <article class="project-card">
+      <h3>${p.title}</h3>
+      ${p.tags ? `<div class="project-tags">${p.tags}</div>` : ''}
+      <p>${p.description || 'Geospatial workflow and case study details.'}</p>
+      <a href="${p.path}">&rarr; Read Project Case Study</a>
+    </article>
+  `).join('');
+}
 
-      container.innerHTML = essays.map(e => `
-        <li>
-          <a href="${e.path}">${e.title}</a>
-          ${e.date ? ` &mdash; <em>${e.date}</em>` : ''}
-        </li>
-      `).join('');
-    }
+function renderEssays(essays) {
+  const container = document.getElementById('essays-container');
+  if (!essays.length) {
+    container.innerHTML = '<li>No published essays found.</li>';
+    return;
+  }
 
-    // Initialize Fetch on Page Load
-    document.addEventListener('DOMContentLoaded', fetchDynamicContent);
+  container.innerHTML = essays.map(e => `
+    <li>
+      <a href="${e.path}">${e.title}</a>
+      ${e.date ? ` &mdash; <em>${e.date}</em>` : ''}
+    </li>
+  `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', fetchDynamicContent);
   </script>
 
 </body>
