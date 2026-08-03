@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Azalea Kamellia | Geospatial Consultant & Researcher</title>
   
-  <!-- LaTeX.css + Shared Custom Styles -->
   <link rel="stylesheet" href="https://latex.vercel.app/style.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -24,41 +23,44 @@
   <header>
     <h1>Azalea Kamellia</h1>
     <p class="author">Geospatial & GIS Senior Consultant | MPhil Researcher</p>
-    <p style="font-size: 0.95rem; text-align: center; margin-top: 0.5rem;">
-      <a href="https://github.com/azaleakamellia" target="_blank" rel="noopener">GitHub</a> &bull; 
-      <a href="cv.html">Curriculum Vitae</a>
-    </p>
   </header>
 
   <main>
     <section>
       <h2>About</h2>
       <p>
-        Welcome to my academic and professional portfolio. My work focuses on geospatial data science, remote sensing workflows, machine learning applications, and satellite hydrometeorology.
+        I am an environmental consultant and graduate researcher at Universiti Teknologi Malaysia. My research interests include interpretability of machine learning in hydrometeorology and atmospheric remote sensing, spatial statistics, and environmental justice.
       </p>
     </section>
 
-    <!-- Dynamic Projects Section -->
+    <!-- Projects Section -->
     <section>
       <h2>Selected Workflows & Projects</h2>
       <div class="project-grid" id="projects-container">
-        <!-- Rendered via JS -->
+        <!-- Default Initial Content -->
+        <article class="project-card">
+          <h3>Satellite Precipitation Bias Correction</h3>
+          <div class="project-tags">Python • Machine Learning • CHIRPS • ERA5-Land</div>
+          <p>Evaluating error structures and machine learning bias-correction techniques for satellite precipitation estimates across tropical basins.</p>
+          <a href="projects/precipitation-bias.html">&rarr; Read Project Case Study</a>
+        </article>
       </div>
     </section>
 
-    <!-- Dynamic Essays Section -->
+    <!-- Essays Section -->
     <section>
       <h2>Essays & Notes</h2>
       <ul id="essays-container">
-        <!-- Rendered via JS -->
+        <!-- Default Initial Content -->
+        <li>
+          <a href="essays/on-digitalization.html">On Digitalization and Cognition</a> &mdash; <em>July 2026</em>
+        </li>
       </ul>
     </section>
   </main>
 
   <script>
-    // -------------------------------------------------------------------------
-    // 1. Theme Switcher Logic
-    // -------------------------------------------------------------------------
+    // Theme Switcher Logic
     const toggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
 
@@ -78,33 +80,26 @@
       toggleBtn.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
     }
 
-    // -------------------------------------------------------------------------
-    // 2. Dynamic Content Fetcher with Instant Fallback
-    // -------------------------------------------------------------------------
+    // Dynamic Directory Fetcher
     const REPO_OWNER = 'azaleakamellia';
     const REPO_NAME = 'azaleakamellia.github.io';
 
     async function fetchDynamicContent() {
-      fetchFolderContent('projects', renderProjects, fallbackProjects);
-      fetchFolderContent('essays', renderEssays, fallbackEssays);
+      fetchFolderContent('projects', renderProjects);
+      fetchFolderContent('essays', renderEssays);
     }
 
-    async function fetchFolderContent(folderPath, renderCallback, fallbackData) {
+    async function fetchFolderContent(folderPath, renderCallback) {
       const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}`;
       
       try {
         const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        if (!response.ok) return;
         
         const files = await response.json();
-        
-        // Exclude drafts/templates starting with '_'
         const htmlFiles = files.filter(f => f.name.endsWith('.html') && !f.name.startsWith('_'));
         
-        if (htmlFiles.length === 0) {
-          renderCallback([]);
-          return;
-        }
+        if (htmlFiles.length === 0) return;
 
         const fileDetails = await Promise.all(htmlFiles.map(async file => {
           try {
@@ -133,39 +128,15 @@
         const validFiles = fileDetails.filter(f => f !== null);
         if (validFiles.length > 0) {
           renderCallback(validFiles);
-        } else {
-          renderCallback(fallbackData);
         }
       } catch (err) {
-        console.warn(`GitHub API fetch failed for ${folderPath}. Using static fallback data.`, err);
-        renderCallback(fallbackData);
+        console.warn(`Dynamic fetch bypassed for ${folderPath}. Using default layout.`);
       }
     }
 
-    // Fallback Data (Ensures your page NEVER gets stuck loading)
-    const fallbackProjects = [
-      {
-        title: "Satellite Precipitation Bias Correction",
-        description: "Evaluating machine learning models and triple collocation for satellite precipitation bias correction across data-scarce tropical basins.",
-        tags: "Python • Machine Learning • CHIRPS • ERA5-Land",
-        path: "projects/precipitation-bias.html"
-      }
-    ];
-
-    const fallbackEssays = [
-      {
-        title: "On Digitalization and Cognition",
-        date: "July 2026",
-        path: "essays/on-digitalization.html"
-      }
-    ];
-
     function renderProjects(projects) {
       const container = document.getElementById('projects-container');
-      if (!projects || !projects.length) {
-        container.innerHTML = '<p style="font-style: italic; opacity: 0.7;">No published projects found in /projects directory.</p>';
-        return;
-      }
+      if (!projects || !projects.length) return;
 
       container.innerHTML = projects.map(p => `
         <article class="project-card">
@@ -179,10 +150,7 @@
 
     function renderEssays(essays) {
       const container = document.getElementById('essays-container');
-      if (!essays || !essays.length) {
-        container.innerHTML = '<li style="font-style: italic; opacity: 0.7;">No published essays found in /essays directory.</li>';
-        return;
-      }
+      if (!essays || !essays.length) return;
 
       container.innerHTML = essays.map(e => `
         <li>
