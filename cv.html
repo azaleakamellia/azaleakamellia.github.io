@@ -5,101 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Azalea Kamellia Abdullah — CV</title>
   
-  <!-- Global LaTeX Styling (Same as Homepage) -->
   <link rel="stylesheet" href="https://latex.vercel.app/style.min.css">
-  
+  <link rel="stylesheet" href="style.css">
+
   <style>
-    /* ==========================================================================
-       LATEX / ACADEMIC CV TYPOGRAPHY & SPACIOUS LAYOUT
-       ========================================================================== */
-      :root {
-  /* Aligns exact font family used by LaTeX.css across your site */
-  --font-serif: "Latin Modern", "Latin Modern Roman", "CMU Serif", Georgia, serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --text-color: #111111;
-  --rule-color: #000000;
-  --subtext-color: #333333;
-}
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: var(--font-serif);
-      color: var(--text-color);
-      background-color: #f8f9fa;
-      line-height: 1.6;
-      font-size: 11pt;
-      padding: 3rem 1.5rem;
-    }
-
-    /* Widen container for comfortable reading (matches academic portfolio widths) */
-    .cv-container {
-      max-width: 960px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 3.5rem 4rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      border-radius: 4px;
-    }
-
-    /* Top Navigation Bar */
-    .no-print-bar {
-      max-width: 960px;
-      margin: 0 auto 1.5rem auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-    }
-
-    .no-print-bar a {
-      color: #555;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .no-print-bar a:hover { text-decoration: underline; }
-
-    .btn-print {
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      padding: 0.45rem 0.9rem;
-      border: 1px solid #ccc;
-      background: #fff;
-      cursor: pointer;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: background 0.15s ease;
-    }
-    .btn-print:hover { background: #f0f0f0; }
-
-    /* Header Styling */
-    header {
-      margin-bottom: 2rem;
-    }
-
-    h1.name {
-      font-size: 22pt;
-      font-weight: normal;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.4rem;
-    }
-
-    .contact-info {
-      font-size: 10pt;
-      color: var(--subtext-color);
-      line-height: 1.5;
-    }
-
-    .contact-info a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Section Headings with Full Dark Rule & Vertical Breathing Room */
+    /* CV Specific Section Rule & Timeline Spacing */
     h2.section-title {
       font-size: 11.5pt;
       font-weight: bold;
@@ -111,13 +21,6 @@
       border-bottom: 1.5px solid var(--rule-color);
     }
 
-    p.profile-text {
-      text-align: justify;
-      font-size: 10.5pt;
-      line-height: 1.6;
-    }
-
-    /* Two-Column Key-Value Grid with Expanded Widths */
     .competency-grid {
       display: grid;
       grid-template-columns: 240px 1fr;
@@ -127,18 +30,10 @@
       margin-top: 0.5rem;
     }
 
-    .competency-label {
-      font-weight: bold;
-    }
+    .competency-label { font-weight: bold; }
+    .competency-value { opacity: 0.9; }
 
-    .competency-value {
-      color: var(--subtext-color);
-    }
-
-    /* Experience & Education Entries with Distinct Timelines */
-    .entry {
-      margin-bottom: 1.4rem;
-    }
+    .entry { margin-bottom: 1.4rem; }
 
     .entry-header {
       display: flex;
@@ -147,17 +42,8 @@
       margin-bottom: 0.15rem;
     }
 
-    .entry-title {
-      font-size: 11pt;
-      font-weight: bold;
-    }
-
-    .entry-location {
-      font-size: 10pt;
-      font-style: italic;
-      white-space: nowrap;
-      margin-left: 1rem;
-    }
+    .entry-title { font-size: 11pt; font-weight: bold; }
+    .entry-location { font-size: 10pt; font-style: italic; white-space: nowrap; margin-left: 1rem; }
 
     .entry-subhead {
       display: flex;
@@ -165,7 +51,7 @@
       align-items: baseline;
       font-size: 10pt;
       font-style: italic;
-      color: var(--subtext-color);
+      opacity: 0.85;
       margin-bottom: 0.4rem;
     }
 
@@ -173,7 +59,7 @@
       list-style-type: disc;
       margin-left: 1.4rem;
       font-size: 10pt;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     ul.entry-bullets li {
@@ -185,87 +71,46 @@
       list-style-type: disc;
       margin-left: 1.4rem;
       font-size: 10pt;
-      line-height: 1.55;
+      line-height: 1.6;
     }
+    ul.simple-list li { margin-bottom: 0.5rem; }
 
-    ul.simple-list li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* ==========================================================================
-       PRINT ENGINE OVERRIDES (Ctrl+P / Cmd+P)
-       ========================================================================== */
+    /* Print Overrides */
     @media print {
-      body {
-        background: #ffffff !important;
-        padding: 0 !important;
-        font-size: 10pt !important;
-      }
-
-      .no-print-bar {
-        display: none !important;
-      }
-
-      .cv-container {
-        padding: 0 !important;
-        box-shadow: none !important;
-        max-width: 100% !important;
-        width: 100% !important;
-      }
-
-      @page {
-        size: A4 portrait;
-        margin: 15mm 18mm 15mm 18mm;
-      }
-
-      h2.section-title {
-        border-bottom-color: #000000 !important;
-        margin-top: 1.5rem !important;
-        margin-bottom: 0.5rem !important;
-      }
-
-      .entry {
-        margin-bottom: 1rem !important;
-      }
-
-      a {
-        text-decoration: none !important;
-        color: #000000 !important;
-      }
+      body { background: #ffffff !important; padding: 0 !important; font-size: 10pt !important; color: #000 !important; }
+      .top-nav { display: none !important; }
+      @page { size: A4 portrait; margin: 15mm 18mm; }
+      h2.section-title { border-bottom-color: #000000 !important; margin-top: 1.5rem !important; }
+      a { text-decoration: none !important; color: #000000 !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <div class="no-print-bar">
-    <a href="index.html">&larr; Back to Portfolio</a>
-    <button class="btn-print" onclick="window.print()">🖨️ Save as PDF / Print</button>
+  <div class="top-nav">
+    <a href="index.html" class="btn-soft">&larr; Back to Portfolio</a>
+    <button class="btn-soft" onclick="window.print()">🖨️ Save as PDF / Print</button>
   </div>
 
-  <div class="cv-container">
+  <header>
+    <h1 style="margin-bottom: 0.2rem;">Azalea Kamellia Abdullah</h1>
+    <div style="font-size: 10pt; opacity: 0.85;">
+      azaleakamellia.a@gmail.com &bull; (+60) 12-660 2132 &bull; 
+      <a href="https://azaleakamellia.github.io">azaleakamellia.github.io</a> &bull; 
+      <a href="https://github.com/azaleakamellia">github.com/azaleakamellia</a><br>
+      Kuala Lumpur, Malaysia<br>
+      <strong>Gs. (Geospatialist)</strong> &bull; Professional Member, IGRSM &bull; 10+ Years Experience
+    </div>
+  </header>
 
-    <!-- Header -->
-    <header>
-      <h1 class="name">Azalea Kamellia Abdullah</h1>
-      <div class="contact-info">
-        azaleakamellia.a@gmail.com &bull; (+60) 12-660 2132 &bull; 
-        <a href="https://azaleakamellia.github.io">azaleakamellia.github.io</a> &bull; 
-        <a href="https://github.com/azaleakamellia">github.com/azaleakamellia</a><br>
-        Kuala Lumpur, Malaysia<br>
-        <strong>Gs. (Geospatialist)</strong> &bull; Professional Member, IGRSM &bull; 10+ Years Experience
-      </div>
-    </header>
-
-    <!-- Profile -->
+  <main>
     <section>
-      <h2 class="section-title">Profile</h2>
-      <p class="profile-text">
-        Senior geospatial data scientist with over 10 years of experience across conservation, energy, and environmental consulting sectors. Specialises in remote sensing, automated geospatial pipelines, and machine learning applied to large-scale satellite imagery. Proven track record delivering data-driven solutions for ESG, ESIA, and biodiversity assessments. Developer of a registered drought indices library (MyIPO). Currently completing MPhil research in satellite precipitation bias correction at UTM, in collaboration with the Sarawak State Government.
+      <h2 class="section-title">Research & Professional Profile</h2>
+      <p style="text-align: justify;">
+        Senior geospatial data scientist and MPhil researcher with over 10 years of experience across environmental consulting, energy, and conservation sectors. Specialises in remote sensing, automated geospatial pipelines, satellite precipitation bias correction, and machine learning applied to large-scale Earth observation data. Developer of a registered drought indices calculation library (MyIPO). Currently completing MPhil research in satellite precipitation bias correction at UTM, in collaboration with the Sarawak State Government.
       </p>
     </section>
 
-    <!-- Core Competencies -->
     <section>
       <h2 class="section-title">Core Competencies</h2>
       <div class="competency-grid">
@@ -289,7 +134,6 @@
       </div>
     </section>
 
-    <!-- Professional Experience -->
     <section>
       <h2 class="section-title">Professional Experience</h2>
 
@@ -369,7 +213,6 @@
       </div>
     </section>
 
-    <!-- Education -->
     <section>
       <h2 class="section-title">Education</h2>
 
@@ -399,7 +242,6 @@
       </div>
     </section>
 
-    <!-- Selected Publications -->
     <section>
       <h2 class="section-title">Selected Publications</h2>
       <ul class="simple-list">
@@ -412,7 +254,6 @@
       </ul>
     </section>
 
-    <!-- Intellectual Property -->
     <section>
       <h2 class="section-title">Intellectual Property</h2>
       <p style="font-size: 10pt;">
@@ -420,7 +261,6 @@
       </p>
     </section>
 
-    <!-- Membership & Awards -->
     <section>
       <h2 class="section-title">Membership & Awards</h2>
       <div class="competency-grid">
@@ -437,8 +277,7 @@
         <div class="competency-value">Esri Desktop Team, 2017 — 100% CSAT performance</div>
       </div>
     </section>
-
-  </div>
+  </main>
 
 </body>
 </html>
