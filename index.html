@@ -10,30 +10,46 @@
 
   <style>
     /* ==========================================================================
-       1. THEMING (Light / Dark Mode)
+       1. FIXED DARK MODE (Overrides LaTeX.css defaults completely)
        ========================================================================== */
-    [data-theme="dark"] {
+    [data-theme="dark"],
+    [data-theme="dark"] body,
+    [data-theme="dark"] main,
+    [data-theme="dark"] header,
+    [data-theme="dark"] footer,
+    [data-theme="dark"] section,
+    [data-theme="dark"] article {
       background-color: #121212 !important;
       color: #e0e0e0 !important;
     }
-    [data-theme="dark"] a {
-      color: #8ab4f8 !important;
+
+    [data-theme="dark"] a { color: #8ab4f8 !important; }
+    [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3 { color: #ffffff !important; }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      display: flex;
+      justify: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.5rem;
     }
-    [data-theme="dark"] aside {
-      background-color: #1e1e1e !important;
-      border-left-color: #bb86fc !important;
-      color: #b0b0b0 !important;
-    }
-    [data-theme="dark"] code, [data-theme="dark"] pre {
-      background-color: #2d2d2d !important;
-      color: #f1f1f1 !important;
+    [data-theme="dark"] .top-nav { border-bottom-color: #333; }
+
+    .nav-links { display: flex; gap: 1rem; align-items: center; }
+    
+    .btn-cv {
+      display: inline-block;
+      padding: 0.35rem 0.8rem;
+      border: 1px solid currentColor;
+      text-decoration: none !important;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: bold;
     }
 
-    /* Theme Toggle Button Styling */
     .theme-toggle-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
       background: none;
       border: 1px solid currentColor;
       padding: 0.3rem 0.6rem;
@@ -45,143 +61,50 @@
     }
 
     /* ==========================================================================
-       2. RESPONSIVE LAYOUT & MOBILE POLISH
+       2. PROJECT GRID CARDS
        ========================================================================== */
-    /* Desktop: Tufte Sidenotes */
-    @media screen and (min-width: 1200px) {
-      body {
-        max-width: 55%;
-        margin-left: 10%;
-        position: relative;
-      }
-      aside {
-        position: absolute;
-        left: 110%;
-        width: 45%;
-        margin-top: 0;
-        font-size: 0.85rem;
-        line-height: 1.4;
-        color: #555;
-        border-left: 1px dashed #ccc;
-        padding-left: 0.75rem;
-      }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin: 1.5rem 0;
     }
 
-    /* Mobile / Tablet: Clean Callout Boxes */
-    @media screen and (max-width: 1199px) {
-      body {
-        max-width: 90%;
-        margin: 0 auto;
-        padding: 1rem;
-      }
-      aside {
-        display: block;
-        margin: 1.2rem 0;
-        padding: 0.6rem 1rem;
-        background: #fdfdfd;
-        border-left: 3px solid #333;
-        font-size: 0.9rem;
-      }
-      .theme-toggle-btn {
-        position: static;
-        display: block;
-        margin: 0 0 1rem auto;
-      }
+    .project-card {
+      border: 1px solid #ddd;
+      padding: 1.2rem;
+      border-radius: 4px;
+      background: #fafafa;
+      transition: transform 0.15s ease;
+    }
+    .project-card:hover { transform: translateY(-2px); }
+
+    .project-card h3 { margin-top: 0; font-size: 1.1rem; }
+    .project-card p { font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.8rem; }
+    
+    .project-tags {
+      font-size: 0.78rem;
+      font-family: monospace;
+      color: #666;
+      margin-bottom: 0.6rem;
     }
 
-    /* ==========================================================================
-       3. PRINT ENGINE Optimization (Ctrl+P / Cmd+P)
-       ========================================================================== */
-    @media print {
-      .theme-toggle-btn {
-        display: none !important;
-      }
-      @page {
-        size: A4 portrait;
-        margin: 20mm;
-      }
-      body {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        font-size: 11pt !important;
-        color: #000 !important;
-        background: #fff !important;
-      }
-      aside {
-        display: block;
-        position: relative !important;
-        left: 0 !important;
-        width: 100% !important;
-        margin: 0.8rem 0 !important;
-        padding-left: 0.8rem !important;
-        font-size: 9.5pt !important;
-        font-style: italic;
-        border-left: 2px solid #666 !important;
-        page-break-inside: avoid;
-      }
-      a {
-        text-decoration: none !important;
-        color: #000 !important;
-      }
-      a[href^="http"]:after {
-        content: " (" attr(href) ")";
-        font-size: 8.5pt;
-        font-family: monospace;
-      }
+    [data-theme="dark"] .project-card {
+      background: #1e1e1e !important;
+      border-color: #333 !important;
     }
-
-    /* ==========================================================================
-   4. RESPONSIVE PROJECT GRID
-   ========================================================================== */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.project-card {
-  border: 1px solid #ddd;
-  padding: 1.2rem;
-  border-radius: 4px;
-  background: #fafafa;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.project-card h3 {
-  margin-top: 0;
-  font-size: 1.15rem;
-}
-
-.project-card p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  margin-bottom: 1rem;
-}
-
-.project-tags {
-  font-size: 0.8rem;
-  font-family: monospace;
-  color: #666;
-  margin-bottom: 0.8rem;
-}
-
-/* Dark Mode Adjustments for Project Cards */
-[data-theme="dark"] .project-card {
-  background: #1e1e1e !important;
-  border-color: #333 !important;
-}
-
-[data-theme="dark"] .project-tags {
-  color: #aaa !important;
-}
+    [data-theme="dark"] .project-tags { color: #aaa !important; }
   </style>
 </head>
 <body>
 
-  <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">🌙 Dark</button>
+  <!-- Top Navigation & Controls -->
+  <div class="top-nav">
+    <div class="nav-links">
+      <a href="cv.html" class="btn-cv">📄 Curriculum Vitae (PDF/Print)</a>
+    </div>
+    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">🌙 Dark</button>
+  </div>
 
   <header>
     <h1>Azalea Kamellia</h1>
@@ -192,62 +115,52 @@
     <section>
       <h2>About</h2>
       <p>
-        Welcome to my portfolio. My research and professional focus center on geospatial analysis, remote sensing workflows, and environmental data modeling.
-        <aside><strong>Note:</strong> Reading on physical paper promotes deeper focus. Hit Ctrl+P anytime for a cleanly typeset PDF version.</aside>
+        Welcome to my academic and professional portfolio. My work focuses on geospatial analysis, satellite remote sensing workflows, bias correction models, and coastal monitoring.
       </p>
     </section>
 
+    <!-- Projects Section with Sub-pages -->
+    <section>
+      <h2>Selected Workflows & Projects</h2>
+      <div class="project-grid">
+
+        <article class="project-card">
+          <h3>Satellite Precipitation Bias-Correction</h3>
+          <div class="project-tags">Python • Machine Learning • CHIRPS • ERA5</div>
+          <p>Multi-model evaluation using stratified cross-validation for rainfall bias correction.</p>
+          <a href="projects/precipitation-bias.html">&rarr; Read Project Case Study</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Automated Shoreline Analysis</h3>
+          <div class="project-tags">Google Earth Engine • Sentinel-2 • Python</div>
+          <p>Multi-temporal coastal shoreline extraction and spatial change detection.</p>
+          <a href="projects/shoreline-analysis.html">&rarr; Read Project Case Study</a>
+        </article>
+
+        <article class="project-card">
+          <h3>High-Res Mangrove Mapping (OBIA)</h3>
+          <div class="project-tags">GEE • OBIA • Drone Data • Sentinel</div>
+          <p>Object-based image analysis workflow combining UAV data and satellite imagery.</p>
+          <a href="projects/mangrove-obia.html">&rarr; Read Project Case Study</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Essays Section (Tufte formatted pages) -->
     <section>
       <h2>Essays & Notes</h2>
       <ul>
         <li><a href="essays/on-digitalization.html">On Digitalization and Cognition</a> — <em>July 2026</em></li>
       </ul>
     </section>
-    <section>
-  <h2>Selected Projects & Workflows</h2>
-  
-  <div class="project-grid">
-
-    <!-- Project Card 1 -->
-    <article class="project-card">
-      <h3>Bias-Correcting Satellite Precipitation Estimates</h3>
-      <div class="project-tags">Python • Machine Learning • CHIRPS • ERA5</div>
-      <p>
-        Performance evaluation of machine learning models for bias-correction of satellite precipitation data using stratified cross-validation.
-      </p>
-      <a href="https://github.com/azaleakamellia" target="_blank" rel="noopener">&rarr; View Repository</a>
-    </article>
-
-    <!-- Project Card 2 -->
-    <article class="project-card">
-      <h3>Automated Shoreline Analysis</h3>
-      <div class="project-tags">Google Earth Engine • Sentinel-2 • Python</div>
-      <p>
-        Multi-temporal coastal shoreline monitoring and spatial change detection framework built for satellite imagery analysis.
-      </p>
-      <a href="https://github.com/azaleakamellia" target="_blank" rel="noopener">&rarr; View Code & Details</a>
-    </article>
-
-    <!-- Project Card 3 -->
-    <article class="project-card">
-      <h3>High-Resolution Mangrove Mapping (OBIA)</h3>
-      <div class="project-tags">GEE • OBIA • Drone Data • Remote Sensing</div>
-      <p>
-        Object-Based Image Analysis workflow combining drone imagery and multi-spectral satellite data for accurate mangrove classification.
-      </p>
-      <a href="https://github.com/azaleakamellia" target="_blank" rel="noopener">&rarr; View Workflow</a>
-    </article>
-
-  </div>
-</section>
   </main>
 
   <script>
-    // Theme Switcher Logic
     const toggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
 
-    // Check saved preference or system theme
     const savedTheme = localStorage.getItem('theme') || 
       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     
