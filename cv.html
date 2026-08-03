@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae | Azalea Kamellia</title>
+  <link rel="stylesheet" href="https://latex.vercel.app/style.min.css">
+  
+  <style>
+    .no-print-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      background: #f0f0f0;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+    }
+    
+    @media print {
+      .no-print-bar { display: none !important; }
+      @page { size: A4 portrait; margin: 15mm 20mm; }
+      body { width: 100% !important; margin: 0 !important; padding: 0 !important; font-size: 10.5pt !important; }
+      a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 8pt; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-bar">
+    <a href="index.html">&larr; Back to Portfolio</a>
+    <button onclick="window.print()" style="padding: 0.4rem 0.8rem; cursor: pointer; font-weight: bold;">🖨️ Save as PDF / Print</button>
+  </div>
+
+  <header>
+    <h1>Azalea Kamellia Abdullah</h1>
+    <p class="author">Geospatial & GIS Senior Consultant | MPhil Researcher</p>
+    <p style="text-align: center; font-size: 0.9rem;">
+      <a href="https://azaleakamellia.github.io">azaleakamellia.github.io</a> • GitHub: github.com/azaleakamellia
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Professional Experience</h2>
+      <h3>Geospatial & GIS Senior Consultant — ERM</h3>
+      <p><em>Present</em></p>
+      <ul>
+        <li>Leading environmental spatial modeling, remote sensing assessments, and client screening workflows.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <h3>MPhil Research Student — Universiti Teknologi Malaysia</h3>
+      <p><em>In Progress</em></p>
+      <ul>
+        <li>Research focused on geospatial data integration, satellite precipitation modeling, and remote sensing workflows.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Languages & Platforms:</strong> Python, Google Earth Engine, JavaScript, HTML/CSS</li>
+        <li><strong>GIS & Remote Sensing:</strong> QGIS, ArcGIS, Sentinel-2, ERA5, CHIRPS, OBIA</li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>
