@@ -195,7 +195,13 @@
         if (!response.ok) throw new Error(`Folder ${folderPath} not found`);
         
         const files = await response.json();
-        const htmlFiles = files.filter(f => f.name.endsWith('.html'));
+        // New line: ignores templates and drafts
+        const htmlFiles = files.filter(f => 
+          f.name.endsWith('.html') && 
+          !f.name.startsWith('_') && 
+          !f.name.startsWith('draft-') &&
+          f.name !== 'template.html'
+        );
         
         // Fetch HTML meta details for each file
         const fileDetails = await Promise.all(htmlFiles.map(async file => {
