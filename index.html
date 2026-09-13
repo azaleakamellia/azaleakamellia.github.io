@@ -1,167 +1,185 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Azalea Kamellia | Geospatial Consultant & Researcher</title>
-  
-  <link rel="stylesheet" href="https://latex.vercel.app/style.min.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azalea Kamellia | Geospatial Science & Hydroclimatology</title>
+    <style>
+        /* LaTeX-style CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        body {
+            font-family: 'Libre Baskerville', 'Computer Modern', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #222;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background-color: #fafafa;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 0.2em;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.3em;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2em;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1.2em;
+        }
+
+        a {
+            color: #0044cc;
+            text-decoration: none;
+            border-bottom: 1px dotted #0044cc;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #0044cc;
+            background-color: #f0f4ff;
+        }
+
+        .item-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.8em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tag {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 3em 0;
+            text-align: center;
+        }
+
+        hr::after {
+            content: "§";
+            display: inline-block;
+            position: relative;
+            top: -12px;
+            padding: 0 10px;
+            background: #fafafa;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Top Navigation Controls -->
-  <div class="top-nav">
-    <div class="nav-controls">
-      <a href="cv.html" class="btn-soft">📄 Curriculum Vitae</a>
-    </div>
-    <div class="nav-controls">
-      <button class="btn-soft" id="theme-toggle" aria-label="Toggle Theme">🌙 Dark</button>
-    </div>
-  </div>
+    <header>
+        <h1>Azalea Kamellia</h1>
+        <div class="subtitle">Geospatial Scientist & Researcher</div>
+    </header>
 
-  <header>
-    <h1>Azalea Kamellia</h1>
-    <p class="author">Geospatial & GIS Senior Consultant | MPhil Researcher</p>
-  </header>
-
-  <main>
-    <section>
-      <h2>About</h2>
-      <p>
-        I am an environmental consultant and graduate researcher at Universiti Teknologi Malaysia. My research interests include interpretability of machine learning in hydrometeorology and atmospheric remote sensing, spatial statistics, and environmental justice.
-      </p>
+    <section id="abstract">
+        <h2>Abstract</h2>
+        <p>
+            I am a geospatial scientist and researcher focusing on hydroclimatology, satellite precipitation calibration, and environmental dynamics. Currently finalizing my MPhil thesis with plans to transition into doctoral research, my work bridges academic inquiry and applied environmental consultancy. I specialize in utilizing Google Earth Engine, Python, and machine learning models to correct global climate datasets for regional accuracy in Southeast Asia.
+        </p>
     </section>
 
-    <!-- Projects Section -->
-    <section>
-      <h2>Selected Workflows & Projects</h2>
-      <div class="project-grid" id="projects-container">
-        <!-- Default Initial Content -->
-        <article class="project-card">
-          <h3>Satellite Precipitation Bias Correction</h3>
-          <div class="project-tags">Python • Machine Learning • CHIRPS • ERA5-Land</div>
-          <p>Evaluating error structures and machine learning bias-correction techniques for satellite precipitation estimates across tropical basins.</p>
-          <a href="projects/precipitation-bias.html">&rarr; Read Project Case Study</a>
-        </article>
-      </div>
+    <section id="tools-and-implementations">
+        <h2>Tools & Implementations</h2>
+        <p>
+            I develop workflows that automate heavy spatial data processing. In the spirit of open science, base methodologies are open-source. For enterprise application, commercial licensing is available.
+        </p>
+
+        <div>
+            <h3>Asset-Level Physical Climate Risk Profiling</h3>
+            <div class="item-meta">
+                <span><span class="tag">Python</span> <span class="tag">GEE</span> <span class="tag">XGBoost</span></span>
+            </div>
+            <p>An automated pipeline that extracts historical climate data (ERA5-Land, CHIRPS) and calibrates it against local ground-truth data using machine learning bias correction. Designed to output standardized SPI metrics for corporate TCFD reporting and hydrological risk assessments.</p>
+            <ul>
+                <li><a href="#">Read the Methodology & Open-Source Core (AGPLv3)</a></li>
+                <li><a href="#">Request Commercial Enterprise Licensing</a></li>
+            </ul>
+        </div>
     </section>
 
-    <!-- Essays Section -->
-    <section>
-      <h2>Essays & Notes</h2>
-      <ul id="essays-container">
-        <!-- Default Initial Content -->
-        <li>
-          <a href="essays/on-digitalization.html">On Digitalization and Cognition</a> &mdash; <em>July 2026</em>
-        </li>
-      </ul>
-    </section>
-  </main>
-
-  <script>
-    // Theme Switcher Logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const htmlEl = document.documentElement;
-
-    const savedTheme = localStorage.getItem('theme') || 
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    
-    setTheme(savedTheme);
-
-    toggleBtn.addEventListener('click', () => {
-      const newTheme = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      setTheme(newTheme);
-    });
-
-    function setTheme(theme) {
-      htmlEl.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      toggleBtn.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
-    }
-
-    // Dynamic Directory Fetcher
-    const REPO_OWNER = 'azaleakamellia';
-    const REPO_NAME = 'azaleakamellia.github.io';
-
-    async function fetchDynamicContent() {
-      fetchFolderContent('projects', renderProjects);
-      fetchFolderContent('essays', renderEssays);
-    }
-
-    async function fetchFolderContent(folderPath, renderCallback) {
-      const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}`;
-      
-      try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) return;
+    <section id="research-projects">
+        <h2>Selected Research & Projects</h2>
         
-        const files = await response.json();
-        const htmlFiles = files.filter(f => f.name.endsWith('.html') && !f.name.startsWith('_'));
-        
-        if (htmlFiles.length === 0) return;
+        <div>
+            <h3>Standardized Precipitation Index (SPI) Calibration</h3>
+            <div class="item-meta">
+                <span>Universiti Teknologi Malaysia</span>
+                <span>2025 – 2026</span>
+            </div>
+            <p>Evaluating and correcting satellite precipitation estimates for drought monitoring across tropical catchments. This research informs my forthcoming master's thesis and lays the groundwork for my future PhD methodologies.</p>
+        </div>
 
-        const fileDetails = await Promise.all(htmlFiles.map(async file => {
-          try {
-            const rawRes = await fetch(file.download_url);
-            const text = await rawRes.text();
-            
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(text, 'text/html');
-            
-            let pageTitle = doc.querySelector('title')?.innerText || '';
-            if (pageTitle.includes('|')) pageTitle = pageTitle.split('|')[0].trim();
-            if (!pageTitle) pageTitle = file.name.replace('.html', '').replace(/-/g, ' ');
+        <div>
+            <h3>Automated Coastal Dynamics & ESI Extraction</h3>
+            <div class="item-meta">
+                <span>Environmental Consultancy Workflow</span>
+            </div>
+            <p>Developed sub-pixel water contour extraction scripts (MNDWI) using Sentinel-2 composites. This reduces the manual digitization bottleneck in generating Environmental Sensitivity Index (ESI) reports for high-priority terminal sites.</p>
+        </div>
+    </section>
 
-            return {
-              title: pageTitle,
-              description: doc.querySelector('meta[name="description"]')?.content || 'Geospatial workflow and case study details.',
-              tags: doc.querySelector('meta[name="keywords"]')?.content || 'GIS • Remote Sensing',
-              date: doc.querySelector('meta[name="date"]')?.content || '',
-              path: `${folderPath}/${file.name}`
-            };
-          } catch (e) {
-            return null;
-          }
-        }));
+    <section id="essays">
+        <h2>Essays & Field Notes</h2>
+        <p>Writings on the intersection of geospatial science, data processing, and environmental policy.</p>
 
-        const validFiles = fileDetails.filter(f => f !== null);
-        if (validFiles.length > 0) {
-          renderCallback(validFiles);
-        }
-      } catch (err) {
-        console.warn(`Dynamic fetch bypassed for ${folderPath}. Using default layout.`);
-      }
-    }
+        <ul>
+            <li>
+                <strong><a href="#">The Danger of Uncalibrated Climate Models in Corporate ESG</a></strong><br>
+                <span class="item-meta">Why raw CMIP6 data misrepresents tropical drought return periods.</span>
+            </li>
+            <li>
+                <strong><a href="#">Moving Past the GUI: Why Consultants Must Learn to Script</a></strong><br>
+                <span class="item-meta">Reflections on transitioning from enterprise desktop software to cloud-based data pipelines.</span>
+            </li>
+        </ul>
+    </section>
 
-    function renderProjects(projects) {
-      const container = document.getElementById('projects-container');
-      if (!projects || !projects.length) return;
+    <hr>
 
-      container.innerHTML = projects.map(p => `
-        <article class="project-card">
-          <h3>${p.title}</h3>
-          ${p.tags ? `<div class="project-tags">${p.tags}</div>` : ''}
-          <p>${p.description}</p>
-          <a href="${p.path}">&rarr; Read Project Case Study</a>
-        </article>
-      `).join('');
-    }
-
-    function renderEssays(essays) {
-      const container = document.getElementById('essays-container');
-      if (!essays || !essays.length) return;
-
-      container.innerHTML = essays.map(e => `
-        <li>
-          <a href="${e.path}">${e.title}</a>
-          ${e.date ? ` &mdash; <em>${e.date}</em>` : ''}
-        </li>
-      `).join('');
-    }
-
-    document.addEventListener('DOMContentLoaded', fetchDynamicContent);
-  </script>
+    <footer style="text-align: center; font-size: 0.9rem; color: #666;">
+        <p>Based in Kuching, Sarawak. <br>
+        <a href="mailto:your.email@example.com">Contact via Email</a> | <a href="https://github.com/azaleakamellia">GitHub</a> | <a href="#">Medium</a></p>
+    </footer>
 
 </body>
 </html>
