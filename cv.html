@@ -5,11 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Vitae | Azalea Kamellia Abdullah</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tiny inline style just for the print button on this specific page */
+        .print-btn {
+            position: fixed; top: 20px; right: 20px;
+            background: #000; color: #fff; border: none; padding: 8px 16px;
+            font-family: var(--sans-font); font-size: 10pt; font-weight: 600;
+            cursor: pointer; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .print-btn:hover { background: #333; }
+        @media print { .print-btn { display: none; } }
+    </style>
 </head>
 <body>
 
-    <h1 class="page-title">Curriculum Vitae</h1>
-    <p class="page-subtitle">Azalea Kamellia Abdullah</p>
+    <button class="print-btn" onclick="window.print()">Download PDF</button>
+
+    <h1 class="page-title">Azalea Kamellia Abdullah</h1>
+    <p class="page-subtitle">Gs. (Geospatialist) | Professional Member, IGRSM | 10+ Years Experience</p>
+    
+    <div class="contact-info">
+        <a href="mailto:azaleakamellia.a@gmail.com">azaleakamellia.a@gmail.com</a> &middot; 
+        (+60) 12-660 2132 &middot; 
+        <a href="https://azaleakamellia.github.io" target="_blank">azaleakamellia.github.io</a> &middot; 
+        <a href="https://linkedin.com/in/azaleakamellia" target="_blank">LinkedIn</a> &middot; 
+        Kuala Lumpur, Malaysia
+    </div>
 
     <nav class="main-nav">
         <a href="index.html">Profile</a>
@@ -19,8 +40,33 @@
         <a href="essays.html">Essays</a>
     </nav>
 
+    <!-- PROFILE -->
+    <h2 class="section-title">Profile</h2>
+    <p class="profile-text">
+        Senior geospatial data scientist with over 10 years of experience across conservation, energy, 
+        and environmental consulting sectors. Specialises in remote sensing, automated geospatial pipelines, 
+        and machine learning applied to large-scale satellite imagery, enabling data development and 
+        verification crucial for environmental management and monitoring in natural and urban landscape. 
+        Proven track record delivering data-driven solutions for ESG, ESIA, and biodiversity assessments. 
+        Developer of hydroclimatology programmatic analysis libraries and tools. Currently completing 
+        MPhil research in satellite precipitation bias correction at UTM, in collaboration with the 
+        Sarawak State Government.
+    </p>
+
+    <!-- CORE COMPETENCIES -->
+    <h2 class="section-title">Core Competencies</h2>
+    <div class="competency-grid">
+        <p><span class="competency-label">Remote Sensing & Earth Observation:</span> GEE, Landsat, Sentinel, CHIRPS, ERA5</p>
+        <p><span class="competency-label">Geospatial Data Engineering:</span> Python, GDAL, PostGIS, DuckDB, SQL</p>
+        <p><span class="competency-label">Machine Learning:</span> Scikit-Learn, PyTorch, TensorFlow</p>
+        <p><span class="competency-label">GIS Platforms:</span> ArcGIS Pro, QGIS, ESA SNAP, ENVI</p>
+        <p><span class="competency-label">Cloud & Databases:</span> GCP, AWS, Azure, PostgreSQL</p>
+        <p><span class="competency-label">Visualisation & Reporting:</span> Streamlit, Dash, InVEST, Jupyter</p>
+    </div>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
     <h2 class="section-title">Professional Experience</h2>
-    
+
     <div class="item">
         <div class="item-header">
             <span class="item-title">Senior GIS & Geospatial Consultant (Capital Project Delivery)</span>
@@ -48,7 +94,7 @@
 
     <div class="item">
         <div class="item-header">
-            <span class="item-title">GIS Officer / Lead of Conservation GIS Unit</span>
+            <span class="item-title">GIS Officer / Lead of Conservation GIS Unit for Sarawak Conservation Programme</span>
             <span class="item-date">April 2018 – June 2022</span>
         </div>
         <div class="item-subtitle">WWF-Malaysia · Sarawak, Malaysia</div>
@@ -70,15 +116,38 @@
         </ul>
     </div>
 
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Research Assistant</span>
+            <span class="item-date">April 2014 – June 2016</span>
+        </div>
+        <div class="item-subtitle">Universiti Malaya · Kuala Lumpur, Malaysia</div>
+        <ul class="item-list">
+            <li>Conducted remote sensing-based burn detection and hydrological modelling for tropical peat research; soil and water sample analysis.</li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Research Assistant (Intern)</span>
+            <span class="item-date">April 2012 – January 2014</span>
+        </div>
+        <div class="item-subtitle">Tropical Peat Research Laboratory (TROPI) · Sarawak, Malaysia</div>
+        <ul class="item-list">
+            <li>Conducted soil chemical analysis and statistical data visualisation on SigmaPlot for peat research programmes.</li>
+        </ul>
+    </div>
+
+    <!-- EDUCATION -->
     <h2 class="section-title">Education</h2>
-    
+
     <div class="item">
         <div class="item-header">
             <span class="item-title">Master of Philosophy (Remote Sensing)</span>
             <span class="item-date">May 2025 – Present</span>
         </div>
         <div class="item-subtitle">Universiti Teknologi Malaysia</div>
-        <p style="font-size: 10.5pt; margin-top: 4pt;">Bias correction of SPEs for drought monitoring, Sarawak — Sarawak State Government collaboration.</p>
+        <p style="margin-top: 4pt; font-size: 10.5pt;">Bias correction of SPEs for drought monitoring, Sarawak — Sarawak State Government collaboration.</p>
     </div>
 
     <div class="item">
@@ -89,6 +158,26 @@
         <div class="item-subtitle">Universiti Malaya</div>
     </div>
 
+    <!-- SELECTED PUBLICATIONS -->
+    <h2 class="section-title">Selected Publications</h2>
+    
+    <div class="pub-item">
+        Abdullah, A. K., Md Reba, M. N., Jali, N. E., Magupin, S., & Anthony, D. (2021). 
+        Deep forest cover classification of consecutive Landsat imageries over Borneo. 
+        <em>Warta Geologi Newsletter</em>, 47(1), 71.
+    </div>
+    
+    <div class="pub-item">
+        Md Reba, M. N., Abdullah, A. K., Hashim, M., Mahmud, M. R., & Wan Ahmad, W. A. N. (2025). 
+        Evaluating satellite gridded precipitation errors in the Sungai Sarawak basin: A triple collocation approach. 
+        <em>Proceedings of ACRS 2025</em>.
+    </div>
+
+    <!-- INTELLECTUAL PROPERTY -->
+    <h2 class="section-title">Intellectual Property</h2>
+    <p><strong>STEMRAINCAL Python Library</strong> — Registered under MyIPO (Malaysia Intellectual Property Office). Independent programmatic Python library for computing standardised drought indices from hydrometeorological inputs.</p>
+
+    <!-- MEMBERSHIP & AWARDS -->
     <h2 class="section-title">Membership & Awards</h2>
     <ul class="item-list">
         <li><strong>IGRSM Practicing Professional Member</strong> — Entitled to use title Gs.</li>
@@ -97,9 +186,11 @@
         <li><strong>CSAT Award</strong> — Esri Desktop Team, 2017 (100% CSAT performance)</li>
     </ul>
 
+    <!-- LANGUAGES -->
     <h2 class="section-title">Languages</h2>
     <p>English (Professional) | Bahasa Malaysia (Native)</p>
 
+    <!-- REFERENCES -->
     <h2 class="section-title">References</h2>
     <p>Available upon request.</p>
 
