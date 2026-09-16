@@ -3,566 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae | Azalea Kamellia</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
-
-    <style>
-        :root {
-            --bg-paper: #faf9f7;
-            --ink: #000000;
-            --ink-light: #3a3a3a;
-            --accent: #8b1a1a;
-            --muted: #666666;
-            --border: #d4cfc5;
-            --font-main: 'Crimson Pro', 'Garamond', 'Baskerville', 'Georgia', serif;
-        }
-        
-        * { box-sizing: border-box; }
-        
-        body {
-            background-color: var(--bg-paper);
-            color: var(--ink);
-            font-family: var(--font-main);
-            font-size: 13.5pt;
-            line-height: 1.6;
-            font-weight: 400;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 3rem 2.5rem 5rem 2.5rem;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .running-header {
-            position: sticky;
-            top: 0;
-            background-color: var(--bg-paper);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 0 1.5rem 0;
-            margin-bottom: 3rem;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            font-variant: small-caps;
-            letter-spacing: 0.15em;
-            color: var(--muted);
-            z-index: 100;
-        }
-
-        header.title-page {
-            text-align: left;
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid var(--ink);
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 600;
-            margin: 0 0 0.5rem 0;
-            color: var(--ink);
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--ink-light);
-            margin: 0 0 1rem 0;
-        }
-
-        .contact-info {
-            font-size: 0.95rem;
-            color: var(--ink-light);
-            line-height: 1.8;
-        }
-
-        .contact-info a {
-            color: var(--ink);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .contact-info a:hover {
-            border-bottom-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .imprint {
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            font-variant: small-caps;
-            letter-spacing: 0.08em;
-        }
-
-        .imprint a {
-            color: var(--ink);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .imprint a:hover {
-            border-bottom-color: var(--accent);
-            color: var(--accent);
-        }
-
-        nav.book-nav {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin: 2.5rem 0 3.5rem 0;
-            padding: 1.5rem 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav.book-nav a {
-            font-variant: small-caps;
-            letter-spacing: 0.08em;
-            font-size: 0.9rem;
-            color: var(--ink);
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s ease;
-            padding: 0.3rem 0;
-            font-weight: 500;
-            text-align: center;
-        }
-
-        nav.book-nav a:hover,
-        nav.book-nav a.active {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-        }
-
-        .cv-section {
-            margin-bottom: 2.5rem;
-        }
-
-        .chapter-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            margin-top: 0;
-            font-variant: small-caps;
-            letter-spacing: 0.12em;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.6rem;
-            color: var(--ink);
-        }
-
-        .cv-item {
-            margin-bottom: 1.8rem;
-            page-break-inside: avoid;
-        }
-
-        .cv-item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .cv-item-title {
-            font-weight: 600;
-            color: var(--ink);
-            font-size: 1.1rem;
-        }
-
-        .cv-item-date {
-            font-variant: small-caps;
-            letter-spacing: 0.05em;
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
-        .cv-item-subtitle {
-            font-style: italic;
-            color: var(--ink-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .cv-item-description {
-            color: var(--ink);
-            line-height: 1.6;
-        }
-
-        .cv-item-description ul {
-            margin: 0.5rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .cv-item-description li {
-            margin-bottom: 0.3rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.2rem;
-        }
-
-        .skill-category {
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-category strong {
-            font-weight: 600;
-            color: var(--ink);
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-
-        a {
-            color: var(--ink);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-            transition: all 0.2s ease;
-            font-weight: 500;
-        }
-
-        a:hover {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-        }
-
-        .folio {
-            text-align: center;
-            margin-top: 5rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.85rem;
-            font-variant: small-caps;
-            letter-spacing: 0.1em;
-            color: var(--muted);
-            line-height: 1.8;
-        }
-
-        .print-notice {
-            background: #f0ebe3;
-            border-left: 3px solid var(--accent);
-            padding: 1rem 1.5rem;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-            color: var(--ink-light);
-        }
-
-        .print-notice strong {
-            color: var(--ink);
-        }
-
-        @media print {
-            @page {
-                size: A4;
-                margin: 2.5cm 2cm 3cm 2.5cm;
-            }
-            body {
-                max-width: 100%;
-                padding: 0;
-                font-size: 11.5pt;
-                background: white;
-                color: black;
-            }
-            .running-header, nav.book-nav, .print-notice {
-                display: none;
-            }
-            header.title-page {
-                border-bottom: 2px solid black;
-                margin-bottom: 1.5rem;
-                padding-bottom: 1rem;
-            }
-            h1 { font-size: 24pt; }
-            .chapter-title {
-                page-break-after: avoid;
-                border-bottom: 1px solid #333;
-            }
-            .cv-item {
-                page-break-inside: avoid;
-                margin-bottom: 1.2rem;
-            }
-            .folio {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                text-align: center;
-                border-top: none;
-                font-size: 9pt;
-                color: #666;
-            }
-            a { border-bottom: none; color: black; }
-        }
-
-        @media (max-width: 768px) {
-            body { padding: 2rem 1.5rem 4rem 1.5rem; font-size: 13pt; }
-            h1 { font-size: 2.2rem; }
-            nav.book-nav { grid-template-columns: 1fr; gap: 0.5rem; }
-            nav.book-nav a { text-align: left; border-bottom: 1px solid var(--border); }
-            .cv-item-header { flex-direction: column; align-items: flex-start; }
-        }
-    </style>
+    <title>Curriculum Vitae | Azalea Kamellia Abdullah</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="running-header">
-        <span>Azalea Kamellia</span>
-        <span>Curriculum Vitae</span>
-    </div>
+    <h1 class="page-title">Curriculum Vitae</h1>
+    <p class="page-subtitle">Azalea Kamellia Abdullah</p>
 
-    <header class="title-page">
-        <h1>Azalea Kamellia</h1>
-        <p class="subtitle">Curriculum Vitae</p>
-        <div class="contact-info">
-            Geospatial Scientist & Hydroclimatology Researcher<br>
-            MPhil Candidate, Universiti Teknologi Malaysia<br>
-            Email: <a href="mailto:your.email@domain.com">your.email@domain.com</a><br>
-            GitHub: <a href="https://github.com/azaleakamellia">github.com/azaleakamellia</a><br>
-            Location: Johor Bahru, Malaysia
-        </div>
-        <p class="imprint"><a href="index.html">&larr; Return to Compendium</a></p>
-    </header>
-
-    <div class="print-notice">
-        <strong>Print-Ready:</strong> Press Ctrl+P (or Cmd+P) to save this CV as a beautifully formatted PDF. 
-        The print stylesheet optimizes margins, typography, and layout for professional A4/Letter printing.
-    </div>
-
-    <nav class="book-nav">
-        <a href="tools.html">Tools & Implementations</a>
-        <a href="research.html">Research & Projects</a>
-        <a href="essays.html">Essays & Field Notes</a>
+    <nav class="main-nav">
+        <a href="index.html">Profile</a>
         <a href="cv.html" class="active">Curriculum Vitae</a>
+        <a href="tools.html">Tools & IP</a>
+        <a href="research.html">Research</a>
+        <a href="essays.html">Essays</a>
     </nav>
 
-    <div class="cv-section">
-        <h2 class="chapter-title">Education</h2>
-        
-        <div class="cv-item">
-            <div class="cv-item-header">
-                <div class="cv-item-title">Master of Philosophy (MPhil) in Geospatial Science</div>
-                <div class="cv-item-date">2024–2026 (Expected)</div>
-            </div>
-            <div class="cv-item-subtitle">Universiti Teknologi Malaysia (UTM), Johor Bahru, Malaysia</div>
-            <div class="cv-item-description">
-                <strong>Research Focus:</strong> Satellite precipitation calibration, Standardized Precipitation Index (SPI) 
-                modeling, and machine learning bias correction for hydroclimatic applications.<br><br>
-                <strong>Thesis:</strong> "Satellite Precipitation Estimates for Drought Monitoring in Sarawak: A Systematic Review"<br>
-                <strong>Supervisor:</strong> [Supervisor Name]<br>
-                <strong>Key Coursework:</strong> Advanced Remote Sensing, Climate Modeling, Statistical Hydrology, 
-                Geospatial Data Science
-            </div>
+    <h2 class="section-title">Professional Experience</h2>
+    
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Senior GIS & Geospatial Consultant (Capital Project Delivery)</span>
+            <span class="item-date">July 2023 – Present</span>
         </div>
-
-        <div class="cv-item">
-            <div class="cv-item-header">
-                <div class="cv-item-title">Bachelor of Science (Hons) in [Your Major]</div>
-                <div class="cv-item-date">[Year]–[Year]</div>
-            </div>
-            <div class="cv-item-subtitle">[Your University], [Location]</div>
-            <div class="cv-item-description">
-                <strong>Thesis:</strong> [Thesis Title]<br>
-                <strong>CGPA:</strong> [Your CGPA]<br>
-                <strong>Relevant Coursework:</strong> [List relevant courses]
-            </div>
-        </div>
+        <div class="item-subtitle">ERM Malaysia Sdn Bhd · Kuala Lumpur, Malaysia</div>
+        <ul class="item-list">
+            <li>Engineered end-to-end geospatial data pipelines for environmental and biodiversity projects, reducing data cleaning time by 50% through Python automation and open-source libraries.</li>
+            <li>Deployed GEE workflows for forest cover monitoring, mangrove mapping, and land-use change detection across ESG and ESIA projects.</li>
+            <li>Built dynamic client-facing dashboards for marine traffic risk and habitat quality assessment using InVEST ecosystem services modules.</li>
+            <li>Redesigned spatial database architectures (PostgreSQL/PostGIS) and upskilled teams on Python data analytics workflows.</li>
+        </ul>
     </div>
 
-    <div class="cv-section">
-        <h2 class="chapter-title">Professional Experience</h2>
-        
-        <div class="cv-item">
-            <div class="cv-item-header">
-                <div class="cv-item-title">Founder & Principal Consultant</div>
-                <div class="cv-item-date">202X–Present</div>
-            </div>
-            <div class="cv-item-subtitle">Independent Scholar-Practitioner | Remote</div>
-            <div class="cv-item-description">
-                Operating a solopreneur consulting business focused on asset-level physical climate risk 
-                assessment for corporate TCFD and ISSB (IFRS S2) reporting. Developing automated pipelines 
-                for drought risk profiling using Python, Google Earth Engine, and machine learning.<br><br>
-                <strong>Key Achievements:</strong>
-                <ul>
-                    <li>Developed dual-license business model aligning open-source principles with Islamic commercial ethics</li>
-                    <li>Created automated climate risk profiling pipeline serving ESG auditors and sustainability directors</li>
-                    <li>Established intellectual property protection via MyIPO (Malaysia) copyright registration</li>
-                    <li>Built commercial partnerships for bespoke climate risk reporting and training</li>
-                </ul>
-            </div>
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Technician I (SS-Geoscience)</span>
+            <span class="item-date">June 2022 – June 2023</span>
         </div>
-
-        <div class="cv-item">
-            <div class="cv-item-header">
-                <div class="cv-item-title">Graduate Research Assistant</div>
-                <div class="cv-item-date">2024–Present</div>
-            </div>
-            <div class="cv-item-subtitle">Universiti Teknologi Malaysia (UTM) | Johor Bahru, Malaysia</div>
-            <div class="cv-item-description">
-                Conducting systematic reviews on bias correction methodologies and developing Python/GEE 
-                workflows for drought monitoring in tropical regions.<br><br>
-                <strong>Responsibilities:</strong>
-                <ul>
-                    <li>Literature review using ROSES framework for systematic evidence synthesis</li>
-                    <li>Development of ML-based bias correction algorithms (XGBoost, Random Forest)</li>
-                    <li>Processing of ERA5-Land, CHIRPS, and CMIP6 datasets via Google Earth Engine</li>
-                    <li>Statistical analysis of precipitation extremes and drought indices</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="cv-item">
-            <div class="cv-item-header">
-                <div class="cv-item-title">Environmental Consultant (Freelance)</div>
-                <div class="cv-item-date">[Year]–[Year]</div>
-            </div>
-            <div class="cv-item-subtitle">[Client Name Redacted] | Remote</div>
-            <div class="cv-item-description">
-                Conducted Environmental Sensitivity Index (ESI) mapping desktop study for coastal regions. 
-                Developed coastline classification methodologies and verification reports for environmental 
-                consultancy applications in Malaysia and Brunei.
-            </div>
-        </div>
+        <div class="item-subtitle">Petroliam Nasional Berhad (PETRONAS) · Kuala Lumpur, Malaysia</div>
+        <ul class="item-list">
+            <li>Automated cartographical geoprocessing workflows using Python and ArcGIS Model Builder for resource exploration mapping.</li>
+        </ul>
     </div>
 
-    <div class="cv-section">
-        <h2 class="chapter-title">Technical Proficiencies</h2>
-        
-        <div class="skills-grid">
-            <div class="skill-category">
-                <strong>Geospatial & Climate Data</strong>
-                Google Earth Engine (GEE), xarray, pandas, geopandas, rasterio, GDAL, ERA5-Land, 
-                CHIRPS, TRMM, GPM, CMIP6
-            </div>
-            
-            <div class="skill-category">
-                <strong>Machine Learning & Statistics</strong>
-                Scikit-learn, XGBoost, Random Forest, TensorFlow/Keras, quantile mapping, 
-                bias correction, time series analysis, uncertainty quantification
-            </div>
-            
-            <div class="skill-category">
-                <strong>Programming & Development</strong>
-                Python (advanced), R (intermediate), SQL, JavaScript (GEE API), Git/GitHub, 
-                Jupyter, Quarto, LaTeX, HTML/CSS
-            </div>
-            
-            <div class="skill-category">
-                <strong>Climate Risk & ESG Frameworks</strong>
-                TCFD Recommendations, IFRS S2 (ISSB), SPI/SPEI calculation, drought monitoring, 
-                physical climate risk assessment, scenario analysis
-            </div>
-            
-            <div class="skill-category">
-                <strong>Literate Programming & Documentation</strong>
-                Jupyter Notebooks, Quarto, R Markdown, technical writing, scientific visualization, 
-                training manual development
-            </div>
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">GIS Officer / Lead of Conservation GIS Unit</span>
+            <span class="item-date">April 2018 – June 2022</span>
         </div>
+        <div class="item-subtitle">WWF-Malaysia · Sarawak, Malaysia</div>
+        <ul class="item-list">
+            <li>Led Conservation GIS Unit delivering spatial analysis and satellite imagery processing for biodiversity monitoring across Sarawak’s priority conservation areas.</li>
+            <li>Developed and deployed ML image classification models contributing to the Malaysia Forest Cover 2020 Dashboard in collaboration with PMTC and SLP.</li>
+            <li>Overhauled spatial database management (MS-1759 standards) and designed GIS SOPs for conservation programme delivery.</li>
+        </ul>
     </div>
 
-    <div class="cv-section">
-        <h2 class="chapter-title">Selected Publications & Manuscripts</h2>
-        
-        <div class="cv-item">
-            <div class="cv-item-description">
-                <strong>Satellite Precipitation Estimates for Drought Monitoring in Sarawak: A Systematic Review</strong><br>
-                <em>Azalea Kamellia</em><br>
-                MPhil Research Project, Universiti Teknologi Malaysia (2026)<br>
-                <em>Status:</em> In preparation / Under review
-            </div>
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Technical Support Analyst – Desktop Team</span>
+            <span class="item-date">November 2016 – March 2018</span>
         </div>
-
-        <div class="cv-item">
-            <div class="cv-item-description">
-                <strong>Environmental Sensitivity Index (ESI) Mapping Desktop Study</strong><br>
-                <em>Azalea Kamellia</em><br>
-                Consultancy Report (2025)<br>
-                <em>Status:</em> Completed – Verification report for environmental consultancy applications
-            </div>
-        </div>
-
-        <div class="cv-item">
-            <div class="cv-item-description">
-                <strong>Machine Learning Approaches for Satellite Precipitation Bias Correction</strong><br>
-                <em>Azalea Kamellia</em><br>
-                Methodological Development Paper (2025)<br>
-                <em>Status:</em> In progress – Preliminary results available
-            </div>
-        </div>
+        <div class="item-subtitle">International Support Center (ISC) Esri · Kuala Lumpur, Malaysia</div>
+        <ul class="item-list">
+            <li>Resolved 127 support cases with 100% CSAT across ArcGIS Desktop/Pro/Online, Survey123, and Collector; trained incoming analysts.</li>
+        </ul>
     </div>
 
-    <div class="cv-section">
-        <h2 class="chapter-title">Presentations & Conferences</h2>
-        
-        <div class="cv-item">
-            <div class="cv-item-description">
-                <strong>[Conference/Presentation Title]</strong><br>
-                [Conference Name], [Location] ([Year])<br>
-                [Brief description of presentation]
-            </div>
+    <h2 class="section-title">Education</h2>
+    
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Master of Philosophy (Remote Sensing)</span>
+            <span class="item-date">May 2025 – Present</span>
         </div>
-
-        <div class="cv-item">
-            <div class="cv-item-description">
-                <strong>[Another Presentation Title]</strong><br>
-                [Event Name], [Location] ([Year])<br>
-                [Brief description]
-            </div>
-        </div>
+        <div class="item-subtitle">Universiti Teknologi Malaysia</div>
+        <p style="font-size: 10.5pt; margin-top: 4pt;">Bias correction of SPEs for drought monitoring, Sarawak — Sarawak State Government collaboration.</p>
     </div>
 
-    <div class="cv-section">
-        <h2 class="chapter-title">Professional Affiliations & Certifications</h2>
-        
-        <div class="cv-item">
-            <div class="cv-item-description">
-                <strong>[Professional Organization Name]</strong> – Member ([Year]–Present)<br>
-                <strong>[Certification Name]</strong> – [Issuing Organization] ([Year])<br>
-                <strong>[Another Certification]</strong> – [Issuing Organization] ([Year])
-            </div>
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Bachelor of Science (Hons.) in Pure Geology</span>
+            <span class="item-date">2007 – 2010</span>
         </div>
+        <div class="item-subtitle">Universiti Malaya</div>
     </div>
 
-    <div class="cv-section">
-        <h2 class="chapter-title">Languages</h2>
-        
-        <div class="cv-item">
-            <div class="cv-item-description">
-                <strong>Bahasa Malaysia:</strong> Native<br>
-                <strong>English:</strong> Fluent (academic and professional)<br>
-                <strong>[Other Language]:</strong> [Proficiency Level]
-            </div>
-        </div>
-    </div>
+    <h2 class="section-title">Membership & Awards</h2>
+    <ul class="item-list">
+        <li><strong>IGRSM Practicing Professional Member</strong> — Entitled to use title Gs.</li>
+        <li><strong>SPOT Award</strong> — ERM Malaysia, 2024 (Procedural standards & analytics)</li>
+        <li><strong>GEM Award ×2</strong> — WWF-Malaysia, 2020 & 2021 (Forest Dashboard & Newsletter)</li>
+        <li><strong>CSAT Award</strong> — Esri Desktop Team, 2017 (100% CSAT performance)</li>
+    </ul>
 
-    <div class="cv-section">
-        <h2 class="chapter-title">References</h2>
-        <div class="cv-item">
-            <div class="cv-item-description">
-                Available upon request.<br><br>
-                <em>For academic references, please contact:</em><br>
-                [Supervisor Name], [Title]<br>
-                Universiti Teknologi Malaysia<br>
-                Email: [supervisor.email@utm.my]<br><br>
-                <em>For professional references, please contact:</em><br>
-                [Professional Reference Name], [Title]<br>
-                [Organization]<br>
-                Email: [reference.email@organization.com]
-            </div>
-        </div>
-    </div>
+    <h2 class="section-title">Languages</h2>
+    <p>English (Professional) | Bahasa Malaysia (Native)</p>
 
-    <footer class="folio">
-        <p>&copy; 2026 Azalea Kamellia. Intellectual property registered under Malaysian Copyright (MyIPO).</p>
-        <p>Last Updated: [Month] 2026</p>
-        <p>Curriculum Vitae typeset in EB Garamond &middot; Print-optimized for A4/Letter</p>
+    <h2 class="section-title">References</h2>
+    <p>Available upon request.</p>
+
+    <footer class="site-footer">
+        Last updated: 2026 | Typeset in LaTeX style | &copy; Azalea Kamellia Abdullah
     </footer>
 
 </body>
