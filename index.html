@@ -1,111 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azalea Kamellia | Geospatial Scientist</title> <!-- Change per page -->
+    <title>Azalea Kamellia | Geospatial Scientist</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
     <style>
-        /* --- SCREEN STYLES (Classic Book Design) --- */
         :root {
-            --bg-paper: #fdfbf7; --ink: #2b2b2b; --accent: #8b1a1a; --muted: #5a5a5a;
+            --bg-paper: #faf9f7;
+            --ink: #1a1a1a;
+            --ink-light: #3a3a3a;
+            --accent: #8b1a1a;
+            --muted: #666666;
+            --border: #d4cfc5;
             --font-main: 'EB Garamond', 'Garamond', 'Baskerville', 'Georgia', serif;
         }
-        body {
-            background-color: var(--bg-paper); color: var(--ink); font-family: var(--font-main);
-            font-size: 11.5pt; line-height: 1.45; max-width: 680px; margin: 0 auto;
-            padding: 4rem 3rem 6rem 3rem; 
-            font-feature-settings: "liga" 1, "kern" 1, "smcp" 1, "c2sc" 1;
-            -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-        }
-        .running-header {
-            position: sticky; top: 0; background-color: var(--bg-paper);
-            border-bottom: 1px solid #d4cfc5; padding: 0.8rem 0 1.2rem 0; margin-bottom: 2.5rem;
-            display: flex; justify-content: space-between; font-size: 0.85rem;
-            font-variant: small-caps; letter-spacing: 0.12em; color: var(--muted); z-index: 100;
-        }
-        header.title-page { text-align: left; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--ink); }
-        h1 { font-size: 2.4rem; font-weight: 500; margin: 0 0 0.5rem 0; letter-spacing: -0.02em; }
-        .subtitle { font-size: 1.2rem; font-style: italic; color: var(--muted); margin: 0; }
-        .imprint { margin-top: 1.5rem; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.08em; }
-        .imprint a { color: var(--ink); text-decoration: none; border-bottom: 1px solid #ccc; }
         
-        nav.book-nav {
-            display: flex; justify-content: center; gap: 2.5rem; margin: 2rem 0 3rem 0;
-            padding: 1.5rem 0; border-top: 1px solid #e0dcd5; border-bottom: 1px solid #e0dcd5;
+        * {
+            box-sizing: border-box;
         }
-        nav.book-nav a {
-            font-variant: small-caps; letter-spacing: 0.1em; font-size: 0.95rem; 
-            color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent;
+        
+        body {
+            background-color: var(--bg-paper);
+            color: var(--ink);
+            font-family: var(--font-main);
+            font-size: 12.5pt;
+            line-height: 1.6;
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 2.5rem 5rem 2.5rem;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
-        nav.book-nav a:hover, nav.book-nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-        .intro-text { margin-bottom: 3rem; text-align: justify; hyphens: auto; }
-        .intro-text::first-letter {
-            float: left; font-size: 3.6em; line-height: 0.75; padding-right: 0.15em; padding-top: 0.1em;
-            font-weight: 600; color: var(--accent);
+        .running-header {
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-paper);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0 1.5rem 0;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-variant: small-caps;
+            letter-spacing: 0.15em;
+            color: var(--muted);
+            z-index: 100;
         }
-        .intro-text::first-line { font-variant: small-caps; letter-spacing: 0.05em; font-size: 1.05em; }
+
+        header.title-page {
+            text-align: left;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--ink);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--ink-light);
+            margin: 0 0 1rem 0;
+            font-weight: 400;
+        }
+
+        .imprint {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            font-variant: small-caps;
+            letter-spacing: 0.08em;
+            color: var(--ink-light);
+        }
+
+        .imprint a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .imprint a:hover {
+            border-bottom-color: var(--accent);
+            color: var(--accent);
+        }
+
+        nav.book-nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2.5rem 0 3.5rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav.book-nav a {
+            font-variant: small-caps;
+            letter-spacing: 0.08em;
+            font-size: 0.9rem;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+            padding: 0.3rem 0;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        nav.book-nav a:hover,
+        nav.book-nav a.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .intro-text {
+            margin-bottom: 3.5rem;
+            text-align: justify;
+            hyphens: auto;
+            color: var(--ink);
+            font-size: 12.5pt;
+            line-height: 1.7;
+        }
+
+        .intro-text::first-letter {
+            float: left;
+            font-size: 4.2em;
+            line-height: 0.7;
+            padding-right: 0.12em;
+            padding-top: 0.1em;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .intro-text::first-line {
+            font-variant: small-caps;
+            letter-spacing: 0.05em;
+            font-size: 1.05em;
+        }
 
         .chapter-title {
-            font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; margin-top: 3rem;
-            font-variant: small-caps; letter-spacing: 0.1em; border-bottom: 1px solid #e0dcd5; padding-bottom: 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+            font-variant: small-caps;
+            letter-spacing: 0.12em;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.6rem;
+            color: var(--ink);
         }
-        .catalog-list { list-style: none; padding: 0; margin: 1.5rem 0; }
-        .catalog-list li { margin-bottom: 1.8rem; padding-left: 1.5rem; text-indent: -1.5rem; }
-        .catalog-list strong { font-weight: 600; }
-        .catalog-list em { font-style: italic; }
-        
-        a { color: var(--ink); text-decoration: none; border-bottom: 1px solid #ccc; transition: all 0.2s ease; }
-        a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-        
+
+        .catalog-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .catalog-list li {
+            margin-bottom: 2rem;
+            padding-left: 0;
+            color: var(--ink);
+        }
+
+        .catalog-list strong {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .catalog-list em {
+            font-style: italic;
+            color: var(--ink-light);
+        }
+
+        a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
         .commercial-cta {
-            display: inline-block; margin-top: 0.5rem; font-variant: small-caps; letter-spacing: 0.08em;
-            font-size: 0.85rem; color: var(--accent); border: 1px solid var(--accent);
-            padding: 0.3rem 0.8rem; border-radius: 2px;
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-variant: small-caps;
+            letter-spacing: 0.08em;
+            font-size: 0.85rem;
+            color: var(--accent);
+            border: 1.5px solid var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 2px;
+            font-weight: 600;
         }
-        .commercial-cta:hover { background-color: var(--accent); color: var(--bg-paper); }
+
+        .commercial-cta:hover {
+            background-color: var(--accent);
+            color: var(--bg-paper);
+            border-bottom-color: var(--accent);
+        }
 
         .folio {
-            text-align: center; margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #d4cfc5;
-            font-size: 0.85rem; font-variant: small-caps; letter-spacing: 0.1em; color: var(--muted);
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            font-variant: small-caps;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            line-height: 1.8;
         }
-        .katex { font-size: 1.1em; }
 
-        /* --- PRINT STYLES (The Magic for PDF Export) --- */
+        .katex {
+            font-size: 1.1em;
+        }
+
         @media print {
             @page {
                 size: A4;
-                margin: 2.5cm 2cm 3cm 2.5cm; /* Top, Right, Bottom (deep), Left (gutter) */
+                margin: 2.5cm 2cm 3cm 2.5cm;
             }
             body {
-                max-width: 100%; padding: 0; font-size: 11pt; line-height: 1.4;
-                background: white; color: black; /* Save ink, keep it crisp */
+                max-width: 100%;
+                padding: 0;
+                font-size: 11.5pt;
+                background: white;
+                color: black;
             }
-            .running-header, nav.book-nav, .commercial-cta { display: none; } /* Hide web UI */
-            header.title-page { border-bottom: 2px solid black; margin-bottom: 1.5rem; padding-bottom: 1rem; }
-            h1 { font-size: 22pt; }
-            .chapter-title { page-break-after: avoid; border-bottom: 1px solid #666; }
-            .catalog-list li { page-break-inside: avoid; margin-bottom: 1rem; }
-            .folio { position: fixed; bottom: 0; left: 0; right: 0; text-align: center; border-top: none; font-size: 9pt; }
-            a { border-bottom: none; color: black; } /* Clean links for print */
-            .intro-text::first-letter { color: black; }
+            .running-header, nav.book-nav, .commercial-cta {
+                display: none;
+            }
+            header.title-page {
+                border-bottom: 2px solid black;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+            }
+            h1 {
+                font-size: 24pt;
+            }
+            .chapter-title {
+                page-break-after: avoid;
+                border-bottom: 1px solid #333;
+            }
+            .catalog-list li {
+                page-break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            .folio {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                text-align: center;
+                border-top: none;
+                font-size: 9pt;
+                color: #666;
+            }
+            a {
+                border-bottom: none;
+                color: black;
+            }
+            .intro-text::first-letter {
+                color: #8b1a1a;
+            }
         }
 
         @media (max-width: 768px) {
-            body { padding: 2rem 1.5rem 4rem 1.5rem; font-size: 12pt; }
-            h1 { font-size: 2rem; }
-            nav.book-nav { flex-direction: column; gap: 1rem; align-items: center; }
+            body {
+                padding: 2rem 1.5rem 4rem 1.5rem;
+                font-size: 13pt;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            nav.book-nav {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            nav.book-nav a {
+                text-align: left;
+                border-bottom: 1px solid var(--border);
+            }
         }
     </style>
+</head>
+<body>
 
-    <body>
     <div class="running-header">
         <span>Azalea Kamellia</span>
         <span>Compendium of Works</span>
@@ -139,17 +342,39 @@
 
     <h2 class="chapter-title">Recent Entries</h2>
     <ul class="catalog-list">
-        <li><a href="cv.html">Curriculum Vitae (Updated 2026).</a><br><em>Document.</em> Comprehensive academic and professional history.</li>
-        <li><a href="essays.html#note-03">Note 03: On the epistemology of satellite precipitation bias correction.</a><br><em>Essay.</em> Reflecting on the limits of ML when ground-truth data is sparse.</li>
-        <li><a href="tools.html#drought-pipeline">Asset-Level Physical Climate & Drought Risk Profiling Pipeline.</a><br><em>Tool.</em> Automated Python/GEE workflow for corporate TCFD/ISSB reporting. <a href="https://yourstore.lemonsqueezy.com" class="commercial-cta">Acquire License</a></li>
-        <li><a href="research.html#sarawak-review">Satellite Precipitation Estimates for Drought Monitoring in Sarawak.</a><br><em>Research.</em> Systematic literature review (ROSES framework).</li>
-        <li><a href="essays.html#note-02">Note 02: The Scholar-Practitioner in the age of greenwashing.</a><br><em>Essay.</em> Why academic rigor must anchor corporate climate risk profiling.</li>
-        <li><a href="tools.html#field-manuals">Methodological Baselines & Field Manuals.</a><br><em>Open Source.</em> Jupyter Notebook exports and baseline code for SPI modeling.</li>
+        <li>
+            <a href="cv.html">Curriculum Vitae (Updated 2026).</a><br>
+            <em>Document.</em> Comprehensive academic and professional history.
+        </li>
+        <li>
+            <a href="essays.html#note-03">Note 03: On the epistemology of satellite precipitation bias correction.</a><br>
+            <em>Essay.</em> Reflecting on the limits of machine learning when ground-truth station data is sparse. 
+            \( \text{SPI}_{\text{corrected}} = f(X_{\text{satellite}}, X_{\text{station}}) \)
+        </li>
+        <li>
+            <a href="tools.html#drought-pipeline">Asset-Level Physical Climate & Drought Risk Profiling Pipeline.</a><br>
+            <em>Tool.</em> Automated Python/GEE workflow for corporate TCFD/ISSB reporting. 
+            <a href="https://yourstore.lemonsqueezy.com" class="commercial-cta">Acquire Commercial License</a>
+        </li>
+        <li>
+            <a href="research.html#sarawak-review">Satellite Precipitation Estimates for Drought Monitoring in Sarawak.</a><br>
+            <em>Research.</em> Systematic literature review (ROSES framework) on bias correction methodologies.
+        </li>
+        <li>
+            <a href="essays.html#note-02">Note 02: The Scholar-Practitioner in the age of greenwashing.</a><br>
+            <em>Essay.</em> Why academic rigor and peer-reviewed quality must anchor corporate climate risk profiling.
+        </li>
+        <li>
+            <a href="tools.html#field-manuals">Methodological Baselines & Field Manuals.</a><br>
+            <em>Open Source.</em> Jupyter Notebook exports and baseline code for satellite precipitation calibration and SPI modeling.
+        </li>
     </ul>
 
     <footer class="folio">
         <p>&copy; 2026 Azalea Kamellia. Intellectual property registered under Malaysian Copyright (MyIPO).</p>
         <p>Content: CC BY-NC-SA 4.0 &middot; Code: AGPLv3 &middot; Typeset in EB Garamond</p>
+        <p>No tracking. No cookies. No JavaScript frameworks.</p>
     </footer>
+
 </body>
-</head>
+</html>
