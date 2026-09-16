@@ -1,0 +1,191 @@
+/* --- MASTER STYLESHEET: LaTeX CV Theme --- */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+:root {
+    --serif-font: 'Libre Baskerville', 'Times New Roman', serif;
+    --sans-font: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+    --text-color: #000000;
+    --muted-color: #333333;
+    --border-color: #cccccc;
+    --bg-color: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--serif-font);
+    font-size: 11.5pt;
+    line-height: 1.5;
+    color: var(--text-color);
+    background: var(--bg-color);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+/* --- TYPOGRAPHY & HIERARCHY --- */
+h1, h2, h3 { font-family: var(--sans-font); color: var(--text-color); }
+
+.page-title {
+    font-size: 22pt;
+    font-weight: 700;
+    letter-spacing: 0.5pt;
+    margin-bottom: 5pt;
+    font-family: var(--serif-font); /* Name stays serif for elegance */
+}
+
+.page-subtitle {
+    font-size: 11pt;
+    font-style: italic;
+    color: var(--muted-color);
+    margin-bottom: 15pt;
+}
+
+.section-title {
+    font-family: var(--sans-font);
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    color: var(--text-color);
+    border-bottom: 1.5pt solid var(--text-color);
+    padding-bottom: 4pt;
+    margin-top: 35pt;
+    margin-bottom: 15pt;
+}
+
+/* --- NAVIGATION --- */
+.main-nav {
+    font-family: var(--sans-font);
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.main-nav a {
+    margin-right: 25px;
+    text-decoration: none;
+    color: var(--muted-color);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+    padding-bottom: 2px;
+}
+
+/* --- CONTACT INFO --- */
+.contact-info {
+    font-family: var(--sans-font);
+    font-size: 10pt;
+    color: var(--muted-color);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: var(--muted-color);
+    text-decoration: none;
+    border-bottom: 0.5pt solid var(--border-color);
+}
+
+.contact-info a:hover { border-bottom: 0.5pt solid var(--text-color); }
+
+/* --- CONTENT BLOCKS --- */
+.profile-text {
+    text-align: justify;
+    hyphens: auto;
+    margin-bottom: 10pt;
+}
+
+.competency-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8pt;
+}
+
+.competency-label {
+    font-family: var(--sans-font);
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+/* --- EXPERIENCE & EDUCATION --- */
+.item { margin-bottom: 18pt; page-break-inside: avoid; }
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4pt;
+    flex-wrap: wrap;
+}
+
+.item-title {
+    font-family: var(--sans-font);
+    font-weight: 700;
+    font-size: 11pt;
+    color: var(--text-color);
+}
+
+.item-date {
+    font-family: var(--sans-font);
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--muted-color);
+}
+
+.item-subtitle {
+    font-style: italic;
+    font-size: 10.5pt;
+    color: var(--muted-color);
+    margin-bottom: 6pt;
+}
+
+.item-list {
+    margin-left: 18pt;
+    margin-top: 6pt;
+}
+
+.item-list li {
+    margin-bottom: 4pt;
+    text-align: justify;
+    hyphens: auto;
+    font-size: 10.5pt;
+}
+
+/* --- PUBLICATIONS & IP --- */
+.pub-item {
+    margin-bottom: 10pt;
+    padding-left: 15pt;
+    text-indent: -15pt;
+    font-size: 10.5pt;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* --- FOOTER --- */
+.site-footer {
+    margin-top: 50pt;
+    padding-top: 10pt;
+    border-top: 0.5pt solid var(--border-color);
+    font-family: var(--sans-font);
+    font-size: 9pt;
+    color: var(--muted-color);
+    text-align: center;
+}
+
+/* --- PRINT STYLES --- */
+@media print {
+    @page { size: A4; margin: 15mm 20mm; }
+    body { padding: 0; max-width: none; box-shadow: none; }
+    .main-nav, .site-footer { display: none; }
+    .section-title { margin-top: 20pt; }
+    a { text-decoration: none; color: black; border: none; }
+}
