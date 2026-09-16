@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azalea Kamellia | Geospatial Scientist</title>
+    <title>Azalea Kamellia | Geospatial Scientist</title> <!-- Change per page -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
     <style>
-        /* --- CLASSIC BOOK DESIGN SYSTEM (Shared across all pages) --- */
+        /* --- SCREEN STYLES (Classic Book Design) --- */
         :root {
             --bg-paper: #fdfbf7; --ink: #2b2b2b; --accent: #8b1a1a; --muted: #5a5a5a;
             --font-main: 'EB Garamond', 'Garamond', 'Baskerville', 'Georgia', serif;
@@ -34,10 +34,8 @@
         h1 { font-size: 2.4rem; font-weight: 500; margin: 0 0 0.5rem 0; letter-spacing: -0.02em; }
         .subtitle { font-size: 1.2rem; font-style: italic; color: var(--muted); margin: 0; }
         .imprint { margin-top: 1.5rem; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.08em; }
-        .imprint a { color: var(--ink); text-decoration: none; border-bottom: 1px solid #ccc; transition: border-color 0.3s; }
-        .imprint a:hover { border-bottom-color: var(--accent); color: var(--accent); }
-
-        /* Navigation styled as a classic Table of Contents */
+        .imprint a { color: var(--ink); text-decoration: none; border-bottom: 1px solid #ccc; }
+        
         nav.book-nav {
             display: flex; justify-content: center; gap: 2.5rem; margin: 2rem 0 3rem 0;
             padding: 1.5rem 0; border-top: 1px solid #e0dcd5; border-bottom: 1px solid #e0dcd5;
@@ -45,11 +43,9 @@
         nav.book-nav a {
             font-variant: small-caps; letter-spacing: 0.1em; font-size: 0.95rem; 
             color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent;
-            transition: all 0.2s ease;
         }
-        nav.book-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+        nav.book-nav a:hover, nav.book-nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-        /* Intro text with drop cap (No header) */
         .intro-text { margin-bottom: 3rem; text-align: justify; hyphens: auto; }
         .intro-text::first-letter {
             float: left; font-size: 3.6em; line-height: 0.75; padding-right: 0.15em; padding-top: 0.1em;
@@ -74,13 +70,33 @@
             font-size: 0.85rem; color: var(--accent); border: 1px solid var(--accent);
             padding: 0.3rem 0.8rem; border-radius: 2px;
         }
-        .commercial-cta:hover { background-color: var(--accent); color: var(--bg-paper); border-bottom-color: var(--accent); }
+        .commercial-cta:hover { background-color: var(--accent); color: var(--bg-paper); }
 
         .folio {
             text-align: center; margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #d4cfc5;
             font-size: 0.85rem; font-variant: small-caps; letter-spacing: 0.1em; color: var(--muted);
         }
         .katex { font-size: 1.1em; }
+
+        /* --- PRINT STYLES (The Magic for PDF Export) --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 2.5cm 2cm 3cm 2.5cm; /* Top, Right, Bottom (deep), Left (gutter) */
+            }
+            body {
+                max-width: 100%; padding: 0; font-size: 11pt; line-height: 1.4;
+                background: white; color: black; /* Save ink, keep it crisp */
+            }
+            .running-header, nav.book-nav, .commercial-cta { display: none; } /* Hide web UI */
+            header.title-page { border-bottom: 2px solid black; margin-bottom: 1.5rem; padding-bottom: 1rem; }
+            h1 { font-size: 22pt; }
+            .chapter-title { page-break-after: avoid; border-bottom: 1px solid #666; }
+            .catalog-list li { page-break-inside: avoid; margin-bottom: 1rem; }
+            .folio { position: fixed; bottom: 0; left: 0; right: 0; text-align: center; border-top: none; font-size: 9pt; }
+            a { border-bottom: none; color: black; } /* Clean links for print */
+            .intro-text::first-letter { color: black; }
+        }
 
         @media (max-width: 768px) {
             body { padding: 2rem 1.5rem 4rem 1.5rem; font-size: 12pt; }
@@ -89,81 +105,3 @@
         }
     </style>
 </head>
-<body>
-
-    <div class="running-header">
-        <span>Azalea Kamellia</span>
-        <span>Compendium of Works</span>
-    </div>
-
-    <header class="title-page">
-        <h1>Azalea Kamellia</h1>
-        <p class="subtitle">Geospatial Scientist & Researcher in Hydroclimatology</p>
-        <p class="imprint">
-            MPhil Candidate, Universiti Teknologi Malaysia &middot; 
-            <a href="mailto:your.email@domain.com">Correspondence</a> &middot; 
-            <a href="https://github.com/azaleakamellia">GitHub</a>
-        </p>
-    </header>
-
-    <!-- Navigation Tabs -->
-    <nav class="book-nav">
-        <a href="tools.html">Tools & Implementations</a>
-        <a href="research.html">Research & Projects</a>
-        <a href="essays.html">Essays & Field Notes</a>
-    </nav>
-
-    <!-- Introduction (No Header, just the text with a drop cap) -->
-    <p class="intro-text">
-        My work exists at the intersection of rigorous academic research and practical climate risk assessment. 
-        Guided by the principles of <em>Sadaqah Jariyah</em> (beneficial, enduring knowledge) and <em>Tijarah & Ihsan</em> 
-        (fair, excellent commerce), I maintain a strict dual-license framework. Baseline methodologies, tutorials, and 
-        code are openly shared for students and researchers. Polished, heavy-lifting tools and bespoke reports are 
-        reserved for corporate clients via commercial licensing. Intellectual property is established via MyIPO (Malaysia), 
-        intentionally avoiding patents in favor of open, ethical stewardship.
-    </p>
-
-    <!-- The "Latest 6" Hub -->
-    <h2 class="chapter-title">Recent Entries</h2>
-    <ul class="catalog-list">
-        <!-- ITEM 1 (e.g., a new essay) -->
-        <li>
-            <a href="essays.html#note-03">Note 03: On the epistemology of satellite precipitation bias correction.</a>
-            <br><em>Essay.</em> Reflecting on the limits of machine learning when ground-truth station data is sparse. \( \text{SPI}_{\text{corrected}} = f(X_{\text{sat}}, X_{\text{stn}}) \).
-        </li>
-        <!-- ITEM 2 (e.g., a tool update) -->
-        <li>
-            <a href="tools.html#drought-pipeline">Asset-Level Physical Climate & Drought Risk Profiling Pipeline.</a>
-            <br><em>Tool.</em> Automated Python/GEE workflow for corporate TCFD/ISSB reporting. 
-            <a href="https://yourstore.lemonsqueezy.com" class="commercial-cta">Acquire License</a>
-        </li>
-        <!-- ITEM 3 (e.g., research) -->
-        <li>
-            <a href="research.html#sarawak-review">Satellite Precipitation Estimates for Drought Monitoring in Sarawak.</a>
-            <br><em>Research.</em> Systematic literature review (ROSES framework) on bias correction methodologies.
-        </li>
-        <!-- ITEM 4 -->
-        <li>
-            <a href="essays.html#note-02">Note 02: The Scholar-Practitioner in the age of greenwashing.</a>
-            <br><em>Essay.</em> Why academic rigor must anchor corporate climate risk profiling.
-        </li>
-        <!-- ITEM 5 -->
-        <li>
-            <a href="tools.html#field-manuals">Methodological Baselines & Field Manuals.</a>
-            <br><em>Open Source.</em> Jupyter Notebook exports and baseline code for SPI modeling.
-        </li>
-        <!-- ITEM 6 -->
-        <li>
-            <a href="research.html#esi-mapping">Environmental Sensitivity Index (ESI) Mapping Desktop Study.</a>
-            <br><em>Project.</em> Verification report detailing coastline classification methodologies.
-        </li>
-    </ul>
-
-    <footer class="folio">
-        <p>&copy; 2026 Azalea Kamellia. Intellectual property registered under Malaysian Copyright (MyIPO).</p>
-        <p>Content: CC BY-NC-SA 4.0 &middot; Code: AGPLv3 &middot; Typeset in EB Garamond</p>
-        <p>No tracking. No cookies. No JavaScript frameworks.</p>
-    </footer>
-
-</body>
-</html>
