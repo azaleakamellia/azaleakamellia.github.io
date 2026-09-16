@@ -7,16 +7,16 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --bg-paper: #faf9f7;
             --ink: #000000;
-            --ink-light: #222222;
+            --ink-light: #333333;
             --accent: #8b1a1a;
             --muted: #555555;
-            --border: #d4cfc5;
+            --border: #c4bfb5;
             --font-main: 'Crimson Pro', 'Garamond', 'Baskerville', 'Georgia', serif;
         }
         
@@ -26,41 +26,63 @@
             background-color: var(--bg-paper);
             color: var(--ink);
             font-family: var(--font-main);
-            font-size: 13.5pt;
-            line-height: 1.7;
+            font-size: 15pt; /* INCREASED FONT SIZE */
+            line-height: 1.45; /* TIGHTER, CLASSIC BOOK SPACING */
             font-weight: 400;
-            max-width: 720px;
+            max-width: 750px;
             margin: 0 auto;
-            padding: 4rem 2.5rem 6rem 2.5rem;
+            padding: 4rem 3rem 6rem 3rem;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
+        /* --- RATIONAL LOGICAL VISUALIZATION: HEADINGS --- */
+        h1 {
+            font-size: 3.2rem; /* Very large, clear main heading */
+            font-weight: 700; /* Extra bold */
+            margin: 0 0 0.5rem 0;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        h2.section-title {
+            font-size: 1.6rem; /* Clear, bold sub-heading */
+            font-weight: 700;
+            margin: 3rem 0 1.5rem 0;
+            color: var(--ink);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 2px solid var(--ink); /* Strong visual separator */
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem; /* Clear child heading */
+            font-weight: 600;
+            margin: 0 0 0.4rem 0;
+            color: var(--ink);
+        }
+
+        /* --- LAYOUT ELEMENTS --- */
         header.title-page {
             text-align: left;
             margin-bottom: 3rem;
             padding-bottom: 2.5rem;
-            border-bottom: 2px solid var(--ink);
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            margin: 0 0 0.5rem 0;
-            color: var(--ink);
-            letter-spacing: -0.02em;
+            border-bottom: 3px solid var(--ink);
         }
 
         .subtitle {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            font-weight: 400;
             font-style: italic;
             color: var(--ink-light);
-            margin: 0 0 1.5rem 0;
+            margin: 0.5rem 0 1.5rem 0;
         }
 
         .contact-info {
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 1.05rem;
+            line-height: 1.6;
             color: var(--ink-light);
         }
 
@@ -68,6 +90,7 @@
             color: var(--ink);
             text-decoration: none;
             border-bottom: 1px solid var(--border);
+            font-weight: 600;
         }
 
         .contact-info a:hover {
@@ -78,19 +101,20 @@
         /* Under Construction Notice */
         .construction-notice {
             background: #f4f1ea;
-            border-left: 4px solid var(--accent);
+            border-left: 5px solid var(--accent);
             padding: 2rem 2.5rem;
-            margin: 2rem 0 3rem 0;
+            margin: 2.5rem 0 3rem 0;
             border-radius: 0 4px 4px 0;
         }
 
         .construction-notice h2 {
-            font-size: 1.6rem;
-            font-weight: 600;
+            font-size: 1.4rem;
+            font-weight: 700;
             margin: 0 0 1rem 0;
-            color: var(--ink);
-            font-variant: small-caps;
+            color: var(--accent);
+            text-transform: uppercase;
             letter-spacing: 0.08em;
+            border: none; /* Override default h2 border for this specific box */
         }
 
         .construction-notice p {
@@ -104,21 +128,6 @@
         }
 
         /* Available Now Section */
-        .available-section {
-            margin: 3rem 0;
-        }
-
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            font-variant: small-caps;
-            letter-spacing: 0.1em;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.6rem;
-            color: var(--ink);
-        }
-
         .link-list {
             list-style: none;
             padding: 0;
@@ -126,67 +135,70 @@
         }
 
         .link-list li {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             padding-left: 0;
         }
 
-        .link-list strong {
-            font-weight: 600;
-            color: var(--ink);
-            display: block;
-            margin-bottom: 0.3rem;
-            font-size: 1.1rem;
-        }
-
-        .link-list a {
+        .link-list a.main-link {
             color: var(--ink);
             text-decoration: none;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 2px solid var(--border);
             transition: all 0.2s ease;
-            font-weight: 500;
+            font-weight: 700; /* Bold links for clear hierarchy */
+            font-size: 1.15rem;
         }
 
-        .link-list a:hover {
+        .link-list a.main-link:hover {
             color: var(--accent);
             border-bottom-color: var(--accent);
         }
 
-        .link-list em {
+        .link-list .description {
+            display: block;
+            margin-top: 0.4rem;
             color: var(--ink-light);
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         .external-link::after {
-            content: " ";
+            content: " ↗";
             font-size: 0.8em;
+            font-weight: 400;
         }
 
-        /* Timeline */
+        /* Timeline Box */
         .timeline {
             margin: 3rem 0;
-            padding: 2rem;
+            padding: 2rem 2.5rem;
             background: #f9f7f4;
             border: 1px solid var(--border);
             border-radius: 4px;
         }
 
         .timeline h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 0 0 1rem 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 1.2rem 0;
             color: var(--ink);
-            font-variant: small-caps;
-            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
         }
 
         .timeline ul {
-            margin: 1rem 0;
+            margin: 0;
             padding-left: 1.5rem;
         }
 
         .timeline li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
+            color: var(--ink);
+            line-height: 1.5;
+        }
+
+        .timeline li strong {
+            font-weight: 700;
             color: var(--ink);
         }
 
@@ -194,19 +206,20 @@
             text-align: center;
             margin-top: 5rem;
             padding-top: 2rem;
-            border-top: 1px solid var(--border);
+            border-top: 2px solid var(--border);
             font-size: 0.9rem;
             font-variant: small-caps;
             letter-spacing: 0.1em;
             color: var(--muted);
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
         @media (max-width: 768px) {
-            body { padding: 2rem 1.5rem 4rem 1.5rem; font-size: 14pt; }
-            h1 { font-size: 2.4rem; }
+            body { padding: 2rem 1.5rem 4rem 1.5rem; font-size: 16pt; }
+            h1 { font-size: 2.6rem; }
+            h2.section-title { font-size: 1.4rem; }
         }
-    </style>
+    </style “>
 </head>
 <body>
 
@@ -218,48 +231,46 @@
             Email: <a href="mailto:your.email@domain.com">your.email@domain.com</a><br>
             GitHub: <a href="https://github.com/azaleakamellia" class="external-link" target="_blank" rel="noopener noreferrer">github.com/azaleakamellia</a><br>
             Location: Johor Bahru, Malaysia
-        </div>
+        </div
     </header>
 
     <div class="construction-notice">
         <h2>Website Under Construction</h2>
         <p>This digital compendium is currently being developed with care and attention to scholarly rigor.</p>
-        <p><em>Expected completion: [Month Year]</em></p>
-        <p style="margin-top: 1.5rem; font-size: 0.95rem;">
+        <p><em>Expected completion: Mid 2026</em></p>
+        <p style="margin-top: 1.5rem; font-size: 1rem;">
             In the meantime, please access my Curriculum Vitae and professional links below. 
             For inquiries regarding commercial licensing or research collaboration, please contact me directly via email.
         </p>
     </div>
 
-    <div class="available-section">
-        <h2 class="section-title">Available Now</h2>
-        <ul class="link-list">
-            <li>
-                <strong><a href="cv.html">Curriculum Vitae (Updated 2026)</a></strong>
-                <em>Comprehensive academic and professional history. Available for download as PDF.</em>
-            </li>
-            <li>
-                <strong><a href="https://github.com/azaleakamellia" class="external-link" target="_blank" rel="noopener noreferrer">GitHub Repository</a></strong>
-                <em>Open-source code, baseline methodologies, and technical documentation.</em>
-            </li>
-            <li>
-                <strong><a href="https://yourstore.lemonsqueezy.com" class="external-link" target="_blank" rel="noopener noreferrer">Commercial Tools & Licenses</a></strong>
-                <em>Enterprise-grade climate risk profiling tools for corporate TCFD/ISSB reporting.</em>
-            </li>
-            <li>
-                <strong>Email Correspondence</strong>
-                <em>For research collaboration, PhD opportunities, or bespoke consultancy: <a href="mailto:your.email@domain.com">your.email@domain.com</a></em>
-            </li>
-        </ul>
-    </div>
+    <h2 class="section-title">Available Now</h2>
+    <ul class="link-list">
+        <li>
+            <a href="cv.html" class="main-link">Curriculum Vitae (Updated 2026)</a>
+            <span class="description">Comprehensive academic and professional history. Optimized for direct PDF printing.</span>
+        </li>
+        <li>
+            <a href="https://github.com/azaleakamellia" class="main-link external-link" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            <span class="description">Open-source code, baseline methodologies, and technical documentation.</span>
+        </li>
+        <li>
+            <a href="https://yourstore.lemonsqueezy.com" class="main-link external-link" target="_blank" rel="noopener noreferrer">Commercial Tools & Licenses</a>
+            <span class="description">Enterprise-grade climate risk profiling tools for corporate TCFD/ISSB reporting.</span>
+        </li>
+        <li>
+            <span class="main-link" style="border-bottom: 2px solid var(--border); font-size: 1.15rem; font-weight: 700;">Direct Correspondence</span>
+            <span class="description">For research collaboration, PhD opportunities, or bespoke consultancy, please email me directly.</span>
+        </li>
+    </ul>
 
     <div class="timeline">
         <h3>Coming Soon</h3>
         <ul>
-            <li><strong>Tools & Implementations:</strong> Detailed documentation of the Asset-Level Physical Climate & Drought Risk Profiling Pipeline</li>
-            <li><strong>Research & Projects:</strong> Systematic review on satellite precipitation estimates for drought monitoring in Sarawak</li>
-            <li><strong>Essays & Field Notes:</strong> Reflections on methodology, ethics, and the scholar-practitioner framework</li>
-            <li><strong>Training Manuals:</strong> Open-access educational materials on SPI modeling and bias correction</li>
+            <li><strong>Tools & Implementations:</strong> Detailed documentation of the Asset-Level Physical Climate & Drought Risk Profiling Pipeline.</li>
+            <li><strong>Research & Projects:</strong> Systematic review protocol on satellite precipitation estimates for drought monitoring in Sarawak.</li>
+            <li><strong>Essays & Field Notes:</strong> Reflections on methodology, ethics, and the scholar-practitioner framework.</li>
+            <li><strong>Training Manuals:</strong> Open-access educational materials on SPI modeling and bias correction.</li>
         </ul>
     </div>
 
