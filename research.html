@@ -1,0 +1,43 @@
+<!-- (Copy the exact same <head> and CSS from index.html here) -->
+
+<body>
+    <!-- Running Header updates to show the current "Chapter" -->
+    <div class="running-header">
+        <span>Azalea Kamellia</span>
+        <span>Tools & Implementations</span> <!-- CHANGE THIS for research/essays -->
+    </div>
+
+    <header class="title-page">
+        <h1>Tools & Implementations</h1> <!-- CHANGE THIS -->
+        <p class="subtitle">Software, Pipelines, and Methodological Baselines</p> <!-- CHANGE THIS -->
+        <p class="imprint"><a href="index.html">&larr; Return to Compendium</a></p>
+    </header>
+
+    <nav class="book-nav">
+        <a href="tools.html" style="color: var(--accent); border-bottom-color: var(--accent);">Tools & Implementations</a>
+        <a href="research.html">Research & Projects</a>
+        <a href="essays.html">Essays & Field Notes</a>
+    </nav>
+
+    <ul class="catalog-list">
+        <!-- Add ALL your tools here. Use id="" for anchor linking from the main page -->
+        <li id="drought-pipeline">
+            <strong>Asset-Level Physical Climate & Drought Risk Profiling Pipeline.</strong> 
+            An automated Python/Google Earth Engine workflow for corporate TCFD and ISSB (IFRS S2) reporting. 
+            Ingests asset coordinates, retrieves ERA5-Land/CHIRPS/CMIP6 data, applies ML bias correction 
+            (XGBoost/Random Forest) against local station data, and outputs standardized SPI metrics. 
+            <br>
+            <a href="https://yourstore.lemonsqueezy.com" class="commercial-cta">Acquire Commercial Enterprise License</a>
+        </li>
+        <li id="field-manuals">
+            <strong>Methodological Baselines & Field Manuals.</strong> 
+            Open-access training materials, Jupyter Notebook exports, and baseline code for satellite 
+            precipitation calibration and SPI modeling. Licensed under CC BY-NC-SA 4.0.
+            <br>
+            <a href="https://github.com/azaleakamellia/your-repo">View Open-Source Repository</a>
+        </li>
+        <!-- Add more tools as you build them -->
+    </ul>
+
+    <!-- (Copy the exact same footer from index.html here) -->
+</body>
