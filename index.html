@@ -3,281 +3,551 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azalea Kamellia | Geospatial Scientist</title>
+    <title>Curriculum Vitae | Azalea Kamellia Abdullah</title>
     
+    <!-- Latin Modern Font - The Actual LaTeX Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
     <style>
         :root {
-            --bg-paper: #faf9f7;
-            --ink: #000000;
-            --ink-light: #333333;
-            --accent: #8b1a1a;
-            --muted: #555555;
-            --border: #c4bfb5;
-            --font-main: 'Crimson Pro', 'Garamond', 'Baskerville', 'Georgia', serif;
+            --latex-font: 'Libre Baskerville', 'Times New Roman', serif;
+            --sans-font: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+            --text-color: #000000;
+            --section-color: #000000;
+            --muted-color: #333333;
+            --border-color: #cccccc;
+            --bg-color: #ffffff;
         }
         
-        * { box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         body {
-            background-color: var(--bg-paper);
-            color: var(--ink);
-            font-family: var(--font-main);
-            font-size: 15pt; /* INCREASED FONT SIZE */
-            line-height: 1.45; /* TIGHTER, CLASSIC BOOK SPACING */
-            font-weight: 400;
-            max-width: 750px;
+            font-family: var(--latex-font);
+            font-size: 11pt;
+            line-height: 1.4;
+            color: var(--text-color);
+            background: var(--bg-color);
+            max-width: 210mm; /* A4 width */
             margin: 0 auto;
-            padding: 4rem 3rem 6rem 3rem;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            padding: 20mm 15mm 20mm 15mm; /* A4 margins */
         }
 
-        /* --- RATIONAL LOGICAL VISUALIZATION: HEADINGS --- */
-        h1 {
-            font-size: 3.2rem; /* Very large, clear main heading */
-            font-weight: 700; /* Extra bold */
-            margin: 0 0 0.5rem 0;
-            color: var(--ink);
-            letter-spacing: -0.02em;
-            line-height: 1.1;
+        /* Header Section */
+        .cv-header {
+            border-bottom: 2pt solid var(--text-color);
+            padding-bottom: 12pt;
+            margin-bottom: 16pt;
         }
 
-        h2.section-title {
-            font-size: 1.6rem; /* Clear, bold sub-heading */
+        .cv-name {
+            font-size: 20pt;
             font-weight: 700;
-            margin: 3rem 0 1.5rem 0;
-            color: var(--ink);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            border-bottom: 2px solid var(--ink); /* Strong visual separator */
-            padding-bottom: 0.5rem;
+            letter-spacing: 0.5pt;
+            margin-bottom: 4pt;
+            color: var(--text-color);
         }
 
-        h3 {
-            font-size: 1.25rem; /* Clear child heading */
-            font-weight: 600;
-            margin: 0 0 0.4rem 0;
-            color: var(--ink);
-        }
-
-        /* --- LAYOUT ELEMENTS --- */
-        header.title-page {
-            text-align: left;
-            margin-bottom: 3rem;
-            padding-bottom: 2.5rem;
-            border-bottom: 3px solid var(--ink);
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            font-weight: 400;
+        .cv-title {
+            font-size: 10.5pt;
             font-style: italic;
-            color: var(--ink-light);
-            margin: 0.5rem 0 1.5rem 0;
+            color: var(--muted-color);
+            margin-bottom: 8pt;
         }
 
-        .contact-info {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: var(--ink-light);
+        .cv-contact {
+            font-family: var(--sans-font);
+            font-size: 9.5pt;
+            line-height: 1.5;
+            color: var(--muted-color);
         }
 
-        .contact-info a {
-            color: var(--ink);
+        .cv-contact span {
+            margin-right: 12pt;
+        }
+
+        .cv-contact a {
+            color: var(--muted-color);
             text-decoration: none;
-            border-bottom: 1px solid var(--border);
-            font-weight: 600;
+            border-bottom: 0.5pt solid var(--border-color);
         }
 
-        .contact-info a:hover {
-            border-bottom-color: var(--accent);
-            color: var(--accent);
+        .cv-contact a:hover {
+            border-bottom: 0.5pt solid var(--text-color);
         }
 
-        /* Under Construction Notice */
-        .construction-notice {
-            background: #f4f1ea;
-            border-left: 5px solid var(--accent);
-            padding: 2rem 2.5rem;
-            margin: 2.5rem 0 3rem 0;
-            border-radius: 0 4px 4px 0;
+        /* Section Styling - LaTeX Style */
+        .cv-section {
+            margin-bottom: 14pt;
         }
 
-        .construction-notice h2 {
-            font-size: 1.4rem;
+        .cv-section-title {
+            font-family: var(--sans-font);
+            font-size: 11pt;
             font-weight: 700;
-            margin: 0 0 1rem 0;
-            color: var(--accent);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            border: none; /* Override default h2 border for this specific box */
+            letter-spacing: 1pt;
+            color: var(--section-color);
+            border-bottom: 1pt solid var(--text-color);
+            padding-bottom: 3pt;
+            margin-bottom: 8pt;
         }
 
-        .construction-notice p {
-            margin: 0.8rem 0;
-            color: var(--ink);
-        }
-
-        .construction-notice em {
-            color: var(--ink-light);
-            font-style: italic;
-        }
-
-        /* Available Now Section */
-        .link-list {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-
-        .link-list li {
-            margin-bottom: 2rem;
-            padding-left: 0;
-        }
-
-        .link-list a.main-link {
-            color: var(--ink);
-            text-decoration: none;
-            border-bottom: 2px solid var(--border);
-            transition: all 0.2s ease;
-            font-weight: 700; /* Bold links for clear hierarchy */
-            font-size: 1.15rem;
-        }
-
-        .link-list a.main-link:hover {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-        }
-
-        .link-list .description {
-            display: block;
-            margin-top: 0.4rem;
-            color: var(--ink-light);
-            font-style: italic;
-            font-size: 1rem;
+        .cv-section-content {
+            font-size: 10.5pt;
             line-height: 1.5;
         }
 
-        .external-link::after {
-            content: " ↗";
-            font-size: 0.8em;
-            font-weight: 400;
+        /* Profile/Summary */
+        .profile-text {
+            text-align: justify;
+            hyphens: auto;
         }
 
-        /* Timeline Box */
-        .timeline {
-            margin: 3rem 0;
-            padding: 2rem 2.5rem;
-            background: #f9f7f4;
-            border: 1px solid var(--border);
-            border-radius: 4px;
+        /* Competencies */
+        .competency-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6pt;
         }
 
-        .timeline h3 {
-            font-size: 1.3rem;
+        .competency-item {
+            margin-bottom: 4pt;
+        }
+
+        .competency-label {
             font-weight: 700;
-            margin: 0 0 1.2rem 0;
-            color: var(--ink);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
+            color: var(--text-color);
+            display: inline;
         }
 
-        .timeline ul {
-            margin: 0;
-            padding-left: 1.5rem;
+        .competency-text {
+            color: var(--muted-color);
+            display: inline;
         }
 
-        .timeline li {
-            margin-bottom: 1rem;
-            color: var(--ink);
-            line-height: 1.5;
+        /* Experience Items */
+        .experience-item {
+            margin-bottom: 10pt;
+            page-break-inside: avoid;
         }
 
-        .timeline li strong {
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3pt;
+            flex-wrap: wrap;
+            gap: 4pt;
+        }
+
+        .experience-position {
             font-weight: 700;
-            color: var(--ink);
+            font-size: 10.5pt;
+            color: var(--text-color);
         }
 
-        .folio {
+        .experience-date {
+            font-family: var(--sans-font);
+            font-size: 9.5pt;
+            color: var(--muted-color);
+            font-weight: 600;
+        }
+
+        .experience-company {
+            font-style: italic;
+            font-size: 10pt;
+            color: var(--muted-color);
+            margin-bottom: 4pt;
+        }
+
+        .experience-list {
+            margin-left: 12pt;
+            margin-top: 4pt;
+        }
+
+        .experience-list li {
+            margin-bottom: 3pt;
+            text-align: justify;
+            hyphens: auto;
+            font-size: 10pt;
+        }
+
+        /* Education Items */
+        .education-item {
+            margin-bottom: 8pt;
+        }
+
+        .education-degree {
+            font-weight: 700;
+            font-size: 10.5pt;
+        }
+
+        .education-school {
+            font-style: italic;
+            color: var(--muted-color);
+            margin-top: 2pt;
+        }
+
+        .education-details {
+            font-size: 10pt;
+            margin-top: 2pt;
+            color: var(--muted-color);
+        }
+
+        /* Publications */
+        .publication-item {
+            margin-bottom: 6pt;
+            padding-left: 12pt;
+            text-indent: -12pt;
+            font-size: 10pt;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        /* Skills List */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6pt;
+            align-items: center;
+        }
+
+        .skill-item {
+            background: var(--text-color);
+            color: var(--bg-color);
+            padding: 2pt 8pt;
+            font-family: var(--sans-font);
+            font-size: 9pt;
+            font-weight: 600;
+            border-radius: 2pt;
+        }
+
+        /* Footer */
+        .cv-footer {
+            margin-top: 20pt;
+            padding-top: 8pt;
+            border-top: 0.5pt solid var(--border-color);
+            font-size: 9pt;
+            color: var(--muted-color);
             text-align: center;
-            margin-top: 5rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--border);
-            font-size: 0.9rem;
-            font-variant: small-caps;
-            letter-spacing: 0.1em;
-            color: var(--muted);
-            line-height: 1.6;
+            font-family: var(--sans-font);
         }
 
-        @media (max-width: 768px) {
-            body { padding: 2rem 1.5rem 4rem 1.5rem; font-size: 16pt; }
-            h1 { font-size: 2.6rem; }
-            h2.section-title { font-size: 1.4rem; }
+        /* Print Styles */
+        @media print {
+            @page {
+                size: A4;
+                margin: 15mm 20mm;
+            }
+            
+            body {
+                padding: 0;
+                max-width: none;
+                font-size: 11pt;
+            }
+            
+            .cv-header {
+                border-bottom: 2pt solid black;
+            }
+            
+            .cv-section-title {
+                border-bottom: 1pt solid black;
+            }
+            
+            a {
+                text-decoration: none;
+                color: black;
+                border-bottom: none;
+            }
+            
+            .experience-item, .education-item {
+                page-break-inside: avoid;
+            }
+            
+            .no-print {
+                display: none;
+            }
         }
-    </style “>
+
+        /* Screen Styles */
+        @media screen {
+            body {
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                min-height: 100vh;
+            }
+            
+            .print-button {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--text-color);
+                color: var(--bg-color);
+                padding: 10pt 20pt;
+                border: none;
+                border-radius: 4px;
+                font-family: var(--sans-font);
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                z-index: 1000;
+            }
+            
+            .print-button:hover {
+                background: #222;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            body {
+                padding: 15mm 10mm;
+                font-size: 10.5pt;
+            }
+            
+            .cv-name {
+                font-size: 18pt;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header class="title-page">
-        <h1>Azalea Kamellia</h1>
-        <p class="subtitle">Geospatial Scientist & Researcher in Hydroclimatology</p>
-        <div class="contact-info">
-            MPhil Candidate, Universiti Teknologi Malaysia<br>
-            Email: <a href="mailto:your.email@domain.com">your.email@domain.com</a><br>
-            GitHub: <a href="https://github.com/azaleakamellia" class="external-link" target="_blank" rel="noopener noreferrer">github.com/azaleakamellia</a><br>
-            Location: Johor Bahru, Malaysia
-        </div
+    <button class="print-button no-print" onclick="window.print()">Download PDF</button>
+
+    <!-- HEADER -->
+    <header class="cv-header">
+        <h1 class="cv-name">Azalea Kamellia Abdullah</h1>
+        <p class="cv-title">Gs. (Geospatialist) | Professional Member, IGRSM | 10+ Years Experience</p>
+        <div class="cv-contact">
+            <span><a href="mailto:azaleakamellia.a@gmail.com">azaleakamellia.a@gmail.com</a></span>
+            <span>(+60) 12-660 2132</span><br>
+            <span><a href="https://azaleakamellia.github.io" target="_blank">azaleakamellia.github.io</a></span>
+            <span><a href="https://linkedin.com/in/azaleakamellia" target="_blank">linkedin.com/in/azaleakamellia</a></span><br>
+            <span>Kuala Lumpur, Malaysia</span>
+        </div>
     </header>
 
-    <div class="construction-notice">
-        <h2>Website Under Construction</h2>
-        <p>This digital compendium is currently being developed with care and attention to scholarly rigor.</p>
-        <p><em>Expected completion: Mid 2026</em></p>
-        <p style="margin-top: 1.5rem; font-size: 1rem;">
-            In the meantime, please access my Curriculum Vitae and professional links below. 
-            For inquiries regarding commercial licensing or research collaboration, please contact me directly via email.
-        </p>
-    </div>
+    <!-- PROFILE -->
+    <section class="cv-section">
+        <h2 class="cv-section-title">Profile</h2>
+        <div class="cv-section-content">
+            <p class="profile-text">
+                Senior geospatial data scientist with over 10 years of experience across conservation, energy, 
+                and environmental consulting sectors. Specialises in remote sensing, automated geospatial pipelines, 
+                and machine learning applied to large-scale satellite imagery, enabling data development and 
+                verification crucial for environmental management and monitoring in natural and urban landscape. 
+                Proven track record delivering data-driven solutions for ESG, ESIA, and biodiversity assessments. 
+                Developer of hydroclimatology programmatic analysis libraries and tools. Currently completing 
+                MPhil research in satellite precipitation bias correction at UTM, in collaboration with the 
+                Sarawak State Government.
+            </p>
+        </div>
+    </section>
 
-    <h2 class="section-title">Available Now</h2>
-    <ul class="link-list">
-        <li>
-            <a href="cv.html" class="main-link">Curriculum Vitae (Updated 2026)</a>
-            <span class="description">Comprehensive academic and professional history. Optimized for direct PDF printing.</span>
-        </li>
-        <li>
-            <a href="https://github.com/azaleakamellia" class="main-link external-link" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-            <span class="description">Open-source code, baseline methodologies, and technical documentation.</span>
-        </li>
-        <li>
-            <a href="https://yourstore.lemonsqueezy.com" class="main-link external-link" target="_blank" rel="noopener noreferrer">Commercial Tools & Licenses</a>
-            <span class="description">Enterprise-grade climate risk profiling tools for corporate TCFD/ISSB reporting.</span>
-        </li>
-        <li>
-            <span class="main-link" style="border-bottom: 2px solid var(--border); font-size: 1.15rem; font-weight: 700;">Direct Correspondence</span>
-            <span class="description">For research collaboration, PhD opportunities, or bespoke consultancy, please email me directly.</span>
-        </li>
-    </ul>
+    <!-- CORE COMPETENCIES -->
+    <section class="cv-section">
+        <h2 class="cv-section-title">Core Competencies</h2>
+        <div class="cv-section-content">
+            <div class="competency-grid">
+                <div class="competency-item">
+                    <span class="competency-label">Remote Sensing & Earth Observation:</span>
+                    <span class="competency-text">GEE, Landsat, Sentinel, CHIRPS, ERA5</span>
+                </div>
+                <div class="competency-item">
+                    <span class="competency-label">Geospatial Data Engineering:</span>
+                    <span class="competency-text">Python, GDAL, PostGIS, DuckDB, SQL</span>
+                </div>
+                <div class="competency-item">
+                    <span class="competency-label">Machine Learning:</span>
+                    <span class="competency-text">Scikit-Learn, PyTorch, TensorFlow</span>
+                </div>
+                <div class="competency-item">
+                    <span class="competency-label">GIS Platforms:</span>
+                    <span class="competency-text">ArcGIS Pro, QGIS, ESA SNAP, ENVI</span>
+                </div>
+                <div class="competency-item">
+                    <span class="competency-label">Cloud & Databases:</span>
+                    <span class="competency-text">GCP, AWS, Azure, PostgreSQL</span>
+                </div>
+                <div class="competency-item">
+                    <span class="competency-label">Visualisation & Reporting:</span>
+                    <span class="competency-text">Streamlit, Dash, InVEST, Jupyter</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="timeline">
-        <h3>Coming Soon</h3>
-        <ul>
-            <li><strong>Tools & Implementations:</strong> Detailed documentation of the Asset-Level Physical Climate & Drought Risk Profiling Pipeline.</li>
-            <li><strong>Research & Projects:</strong> Systematic review protocol on satellite precipitation estimates for drought monitoring in Sarawak.</li>
-            <li><strong>Essays & Field Notes:</strong> Reflections on methodology, ethics, and the scholar-practitioner framework.</li>
-            <li><strong>Training Manuals:</strong> Open-access educational materials on SPI modeling and bias correction.</li>
-        </ul>
-    </div>
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section class="cv-section">
+        <h2 class="cv-section-title">Professional Experience</h2>
+        <div class="cv-section-content">
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-position">Senior GIS & Geospatial Consultant (Capital Project Delivery)</span>
+                    <span class="experience-date">July 2023 – Present</span>
+                </div>
+                <div class="experience-company">ERM Malaysia Sdn Bhd · Kuala Lumpur, Malaysia</div>
+                <ul class="experience-list">
+                    <li>Engineered end-to-end geospatial data pipelines for environmental and biodiversity projects, reducing data cleaning time by 50% through Python automation and open-source libraries.</li>
+                    <li>Deployed GEE workflows for forest cover monitoring, mangrove mapping, and land-use change detection across ESG and ESIA projects.</li>
+                    <li>Built dynamic client-facing dashboards for marine traffic risk and habitat quality assessment using InVEST ecosystem services modules.</li>
+                    <li>Redesigned spatial database architectures (PostgreSQL/PostGIS) and upskilled teams on Python data analytics workflows.</li>
+                </ul>
+            </div>
 
-    <footer class="folio">
-        <p>&copy; 2026 Azalea Kamellia. Intellectual property registered under Malaysian Copyright (MyIPO).</p>
-        <p>Content: CC BY-NC-SA 4.0 &middot; Code: AGPLv3 &middot; Typeset in Crimson Pro</p>
-        <p>No tracking. No cookies. No JavaScript frameworks.</p>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-position">Technician I (SS-Geoscience)</span>
+                    <span class="experience-date">June 2022 – June 2023</span>
+                </div>
+                <div class="experience-company">Petroliam Nasional Berhad (PETRONAS) · Kuala Lumpur, Malaysia</div>
+                <ul class="experience-list">
+                    <li>Automated cartographical geoprocessing workflows using Python and ArcGIS Model Builder for resource exploration mapping.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-position">GIS Officer / Lead of Conservation GIS Unit for Sarawak Conservation Programme</span>
+                    <span class="experience-date">April 2018 – June 2022</span>
+                </div>
+                <div class="experience-company">WWF-Malaysia · Sarawak, Malaysia</div>
+                <ul class="experience-list">
+                    <li>Led Conservation GIS Unit delivering spatial analysis and satellite imagery processing for biodiversity monitoring across Sarawak's priority conservation areas.</li>
+                    <li>Developed and deployed ML image classification models contributing to the Malaysia Forest Cover 2020 Dashboard in collaboration with PMTC and SLP.</li>
+                    <li>Overhauled spatial database management (MS-1759 standards) and designed GIS SOPs for conservation programme delivery.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-position">Technical Support Analyst – Desktop Team</span>
+                    <span class="experience-date">November 2016 – March 2018</span>
+                </div>
+                <div class="experience-company">International Support Center (ISC) Esri · Kuala Lumpur, Malaysia</div>
+                <ul class="experience-list">
+                    <li>Resolved 127 support cases with 100% CSAT across ArcGIS Desktop/Pro/Online, Survey123, and Collector; trained incoming analysts.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-position">Research Assistant</span>
+                    <span class="experience-date">April 2014 – June 2016</span>
+                </div>
+                <div class="experience-company">Universiti Malaya · Kuala Lumpur, Malaysia</div>
+                <ul class="experience-list">
+                    <li>Conducted remote sensing-based burn detection and hydrological modelling for tropical peat research; soil and water sample analysis.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-position">Research Assistant (Intern)</span>
+                    <span class="experience-date">April 2012 – January 2014</span>
+                </div>
+                <div class="experience-company">Tropical Peat Research Laboratory (TROPI) · Sarawak, Malaysia</div>
+                <ul class="experience-list">
+                    <li>Conducted soil chemical analysis and statistical data visualisation on SigmaPlot for peat research programmes.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="cv-section">
+        <h2 class="cv-section-title">Education</h2>
+        <div class="cv-section-content">
+            
+            <div class="education-item">
+                <div class="education-degree">Master of Philosophy (Remote Sensing)</div>
+                <div class="education-school">Universiti Teknologi Malaysia</div>
+                <div class="education-details">May 2025 – Present | Bias correction of SPEs for drought monitoring, Sarawak — Sarawak State Government collaboration</div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-degree">Bachelor of Science (Hons.) in Pure Geology</div>
+                <div class="education-school">Universiti Malaya</div>
+                <div class="education-details">2007 – 2010</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SELECTED PUBLICATIONS -->
+    <section class="cv-section">
+        <h2 class="cv-section-title">Selected Publications</h2>
+        <div class="cv-section-content">
+            <div class="publication-item">
+                Abdullah, A. K., Md Reba, M. N., Jali, N. E., Magupin, S., & Anthony, D. (2021). 
+                Deep forest cover classification of consecutive Landsat imageries over Borneo. 
+                <em>Warta Geologi Newsletter</em>, 47(1), 71.
+            </div>
+            <div class="publication-item">
+                Md Reba, M. N., Abdullah, A. K., Hashim, M., Mahmud, M. R., & Wan Ahmad, W. A. N. (2025). 
+                Evaluating satellite gridded precipitation errors in the Sungai Sarawak basin: A triple collocation approach. 
+                <em>Proceedings of ACRS 2025</em>.
+            </div>
+        </div>
+    </section>
+
+    <!-- INTELLECTUAL PROPERTY -->
+    <section class="cv-section">
+        <h2 class="cv-section-title">Intellectual Property</h2>
+        <div class="cv-section-content">
+            <p><strong>STEMRAINCAL Python Library</strong> — Registered under MyIPO (Malaysia Intellectual Property Office). 
+            Independent programmatic Python library for computing standardised drought indices from hydrometeorological inputs.</p>
+        </div>
+    </section>
+
+    <!-- MEMBERSHIP & AWARDS -->
+    <section class="cv-section">
+        <h2 class="cv-section-title">Membership & Awards</h2>
+        <div class="cv-section-content">
+            <ul class="experience-list">
+                <li><strong>IGRSM Practicing Professional Member</strong> — Entitled to use title Gs.</li>
+                <li><strong>SPOT Award</strong> — ERM Malaysia, 2024 (Procedural standards & analytics)</li>
+                <li><strong>GEM Award ×2</strong> — WWF-Malaysia, 2020 & 2021 (Forest Dashboard & Newsletter)</li>
+                <li><strong>CSAT Award</strong> — Esri Desktop Team, 2017 (100% CSAT performance)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section class="cv-section">
+        <h2 class="cv-section-title">Languages</h2>
+        <div class="cv-section-content">
+            <p><strong>Bahasa Malaysia:</strong> Native | <strong>English:</strong> Professional</p>
+        </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section class="cv-section">
+        <h2 class="cv-section-title">References</h2>
+        <div class="cv-section-content">
+            <p>Available upon request.</p>
+        </div>
+    </section>
+
+    <footer class="cv-footer">
+        Last updated: 2026 | Typeset in LaTeX style | © Azalea Kamellia Abdullah
     </footer>
 
 </body>
