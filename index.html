@@ -16,23 +16,21 @@
     <style>
         :root {
             --bg-paper: #faf9f7;
-            --ink: #1a1a1a;
-            --ink-light: #3a3a3a;
+            --ink: #000000; /* CHANGED: Pure Black */
+            --ink-light: #222222; /* CHANGED: Very dark gray for subtitles */
             --accent: #8b1a1a;
-            --muted: #666666;
+            --muted: #555555;
             --border: #d4cfc5;
             --font-main: 'EB Garamond', 'Garamond', 'Baskerville', 'Georgia', serif;
         }
         
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
         
         body {
             background-color: var(--bg-paper);
             color: var(--ink);
             font-family: var(--font-main);
-            font-size: 12.5pt;
+            font-size: 13.5pt; /* CHANGED: Increased from 12.5pt */
             line-height: 1.6;
             font-weight: 400;
             max-width: 720px;
@@ -40,7 +38,6 @@
             padding: 3rem 2.5rem 5rem 2.5rem;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
         }
 
         .running-header {
@@ -52,7 +49,7 @@
             margin-bottom: 3rem;
             display: flex;
             justify-content: space-between;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-variant: small-caps;
             letter-spacing: 0.15em;
             color: var(--muted);
@@ -67,24 +64,23 @@
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 3rem; /* Slightly larger title */
             font-weight: 600;
             margin: 0 0 0.5rem 0;
-            letter-spacing: -0.02em;
             color: var(--ink);
+            letter-spacing: -0.02em;
         }
 
         .subtitle {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-style: italic;
             color: var(--ink-light);
             margin: 0 0 1rem 0;
-            font-weight: 400;
         }
 
         .imprint {
             margin-top: 1.5rem;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-variant: small-caps;
             letter-spacing: 0.08em;
             color: var(--ink-light);
@@ -94,7 +90,6 @@
             color: var(--ink);
             text-decoration: none;
             border-bottom: 1px solid var(--border);
-            transition: all 0.2s ease;
         }
 
         .imprint a:hover {
@@ -115,7 +110,7 @@
         nav.book-nav a {
             font-variant: small-caps;
             letter-spacing: 0.08em;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--ink);
             text-decoration: none;
             border-bottom: 2px solid transparent;
@@ -136,13 +131,13 @@
             text-align: justify;
             hyphens: auto;
             color: var(--ink);
-            font-size: 12.5pt;
+            font-size: 13.5pt;
             line-height: 1.7;
         }
 
         .intro-text::first-letter {
             float: left;
-            font-size: 4.2em;
+            font-size: 4.5em;
             line-height: 0.7;
             padding-right: 0.12em;
             padding-top: 0.1em;
@@ -157,7 +152,7 @@
         }
 
         .chapter-title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
             margin-top: 3rem;
@@ -175,7 +170,7 @@
         }
 
         .catalog-list li {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             padding-left: 0;
             color: var(--ink);
         }
@@ -203,17 +198,20 @@
             border-bottom-color: var(--accent);
         }
 
+        /* FIXED: Button Layout */
         .commercial-cta {
-            display: inline-block;
-            margin-top: 0.6rem;
+            display: block; /* Forces it to its own line */
+            width: fit-content; /* Only takes up as much width as the text needs */
+            margin-top: 1rem; /* Adds space between text and button */
             font-variant: small-caps;
             letter-spacing: 0.08em;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--accent);
             border: 1.5px solid var(--accent);
-            padding: 0.4rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 2px;
             font-weight: 600;
+            text-decoration: none;
         }
 
         .commercial-cta:hover {
@@ -227,83 +225,30 @@
             margin-top: 5rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-variant: small-caps;
             letter-spacing: 0.1em;
             color: var(--muted);
             line-height: 1.8;
         }
 
-        .katex {
-            font-size: 1.1em;
-        }
+        .katex { font-size: 1.1em; }
 
         @media print {
-            @page {
-                size: A4;
-                margin: 2.5cm 2cm 3cm 2.5cm;
-            }
-            body {
-                max-width: 100%;
-                padding: 0;
-                font-size: 11.5pt;
-                background: white;
-                color: black;
-            }
-            .running-header, nav.book-nav, .commercial-cta {
-                display: none;
-            }
-            header.title-page {
-                border-bottom: 2px solid black;
-                margin-bottom: 1.5rem;
-                padding-bottom: 1rem;
-            }
-            h1 {
-                font-size: 24pt;
-            }
-            .chapter-title {
-                page-break-after: avoid;
-                border-bottom: 1px solid #333;
-            }
-            .catalog-list li {
-                page-break-inside: avoid;
-                margin-bottom: 1rem;
-            }
-            .folio {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                text-align: center;
-                border-top: none;
-                font-size: 9pt;
-                color: #666;
-            }
-            a {
-                border-bottom: none;
-                color: black;
-            }
-            .intro-text::first-letter {
-                color: #8b1a1a;
-            }
+            @page { size: A4; margin: 2.5cm 2cm 3cm 2.5cm; }
+            body { max-width: 100%; padding: 0; font-size: 12pt; background: white; color: black; }
+            .running-header, nav.book-nav, .commercial-cta { display: none; }
+            header.title-page { border-bottom: 2px solid black; }
+            h1 { font-size: 24pt; }
+            .folio { position: fixed; bottom: 0; left: 0; right: 0; text-align: center; border-top: none; font-size: 9pt; }
+            a { border-bottom: none; color: black; }
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 2rem 1.5rem 4rem 1.5rem;
-                font-size: 13pt;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            nav.book-nav {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-            nav.book-nav a {
-                text-align: left;
-                border-bottom: 1px solid var(--border);
-            }
+            body { padding: 2rem 1.5rem 4rem 1.5rem; font-size: 14pt; }
+            h1 { font-size: 2.4rem; }
+            nav.book-nav { grid-template-columns: 1fr; gap: 0.5rem; }
+            nav.book-nav a { text-align: left; border-bottom: 1px solid var(--border); }
         }
     </style>
 </head>
@@ -353,7 +298,8 @@
         </li>
         <li>
             <a href="tools.html#drought-pipeline">Asset-Level Physical Climate & Drought Risk Profiling Pipeline.</a><br>
-            <em>Tool.</em> Automated Python/GEE workflow for corporate TCFD/ISSB reporting. 
+            <em>Tool.</em> Automated Python/GEE workflow for corporate TCFD/ISSB reporting.
+            <!-- The button is now forced to a new line by CSS -->
             <a href="https://yourstore.lemonsqueezy.com" class="commercial-cta">Acquire Commercial License</a>
         </li>
         <li>
