@@ -8,16 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
     <style>
         :root {
             --bg-paper: #faf9f7;
-            --ink: #000000; /* CHANGED: Pure Black */
-            --ink-light: #222222; /* CHANGED: Very dark gray for subtitles */
+            --ink: #000000;
+            --ink-light: #222222;
             --accent: #8b1a1a;
             --muted: #555555;
             --border: #d4cfc5;
@@ -30,41 +26,25 @@
             background-color: var(--bg-paper);
             color: var(--ink);
             font-family: var(--font-main);
-            font-size: 13.5pt; /* CHANGED: Increased from 12.5pt */
-            line-height: 1.6;
+            font-size: 13.5pt;
+            line-height: 1.7;
             font-weight: 400;
             max-width: 720px;
             margin: 0 auto;
-            padding: 3rem 2.5rem 5rem 2.5rem;
+            padding: 4rem 2.5rem 6rem 2.5rem;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        .running-header {
-            position: sticky;
-            top: 0;
-            background-color: var(--bg-paper);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 0 1.5rem 0;
-            margin-bottom: 3rem;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            font-variant: small-caps;
-            letter-spacing: 0.15em;
-            color: var(--muted);
-            z-index: 100;
-        }
-
         header.title-page {
             text-align: left;
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2.5rem;
             border-bottom: 2px solid var(--ink);
         }
 
         h1 {
-            font-size: 3rem; /* Slightly larger title */
+            font-size: 3rem;
             font-weight: 600;
             margin: 0 0 0.5rem 0;
             color: var(--ink);
@@ -75,117 +55,90 @@
             font-size: 1.4rem;
             font-style: italic;
             color: var(--ink-light);
-            margin: 0 0 1rem 0;
+            margin: 0 0 1.5rem 0;
         }
 
-        .imprint {
-            margin-top: 1.5rem;
+        .contact-info {
             font-size: 1rem;
-            font-variant: small-caps;
-            letter-spacing: 0.08em;
+            line-height: 1.8;
             color: var(--ink-light);
         }
 
-        .imprint a {
+        .contact-info a {
             color: var(--ink);
             text-decoration: none;
             border-bottom: 1px solid var(--border);
         }
 
-        .imprint a:hover {
+        .contact-info a:hover {
             border-bottom-color: var(--accent);
             color: var(--accent);
         }
 
-        nav.book-nav {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin: 2.5rem 0 3.5rem 0;
-            padding: 1.5rem 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+        /* Under Construction Notice */
+        .construction-notice {
+            background: #f4f1ea;
+            border-left: 4px solid var(--accent);
+            padding: 2rem 2.5rem;
+            margin: 2rem 0 3rem 0;
+            border-radius: 0 4px 4px 0;
         }
 
-        nav.book-nav a {
+        .construction-notice h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+            color: var(--ink);
             font-variant: small-caps;
             letter-spacing: 0.08em;
-            font-size: 0.95rem;
+        }
+
+        .construction-notice p {
+            margin: 0.8rem 0;
             color: var(--ink);
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s ease;
-            padding: 0.3rem 0;
-            font-weight: 500;
-            text-align: center;
         }
 
-        nav.book-nav a:hover,
-        nav.book-nav a.active {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
+        .construction-notice em {
+            color: var(--ink-light);
+            font-style: italic;
         }
 
-        .intro-text {
-            margin-bottom: 3.5rem;
-            text-align: justify;
-            hyphens: auto;
-            color: var(--ink);
-            font-size: 13.5pt;
-            line-height: 1.7;
+        /* Available Now Section */
+        .available-section {
+            margin: 3rem 0;
         }
 
-        .intro-text::first-letter {
-            float: left;
-            font-size: 4.5em;
-            line-height: 0.7;
-            padding-right: 0.12em;
-            padding-top: 0.1em;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .intro-text::first-line {
-            font-variant: small-caps;
-            letter-spacing: 0.05em;
-            font-size: 1.05em;
-        }
-
-        .chapter-title {
-            font-size: 1.5rem;
+        .section-title {
+            font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            margin-top: 3rem;
             font-variant: small-caps;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
             border-bottom: 1px solid var(--border);
             padding-bottom: 0.6rem;
             color: var(--ink);
         }
 
-        .catalog-list {
+        .link-list {
             list-style: none;
             padding: 0;
             margin: 1.5rem 0;
         }
 
-        .catalog-list li {
-            margin-bottom: 2.5rem;
+        .link-list li {
+            margin-bottom: 1.5rem;
             padding-left: 0;
-            color: var(--ink);
         }
 
-        .catalog-list strong {
+        .link-list strong {
             font-weight: 600;
             color: var(--ink);
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
         }
 
-        .catalog-list em {
-            font-style: italic;
-            color: var(--ink-light);
-        }
-
-        a {
+        .link-list a {
             color: var(--ink);
             text-decoration: none;
             border-bottom: 1px solid var(--border);
@@ -193,31 +146,48 @@
             font-weight: 500;
         }
 
-        a:hover {
+        .link-list a:hover {
             color: var(--accent);
             border-bottom-color: var(--accent);
         }
 
-        /* FIXED: Button Layout */
-        .commercial-cta {
-            display: block; /* Forces it to its own line */
-            width: fit-content; /* Only takes up as much width as the text needs */
-            margin-top: 1rem; /* Adds space between text and button */
+        .link-list em {
+            color: var(--ink-light);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .external-link::after {
+            content: " ";
+            font-size: 0.8em;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f9f7f4;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        .timeline h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+            color: var(--ink);
             font-variant: small-caps;
             letter-spacing: 0.08em;
-            font-size: 0.9rem;
-            color: var(--accent);
-            border: 1.5px solid var(--accent);
-            padding: 0.5rem 1.2rem;
-            border-radius: 2px;
-            font-weight: 600;
-            text-decoration: none;
         }
 
-        .commercial-cta:hover {
-            background-color: var(--accent);
-            color: var(--bg-paper);
-            border-bottom-color: var(--accent);
+        .timeline ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .timeline li {
+            margin-bottom: 0.8rem;
+            color: var(--ink);
         }
 
         .folio {
@@ -232,93 +202,70 @@
             line-height: 1.8;
         }
 
-        .katex { font-size: 1.1em; }
-
-        @media print {
-            @page { size: A4; margin: 2.5cm 2cm 3cm 2.5cm; }
-            body { max-width: 100%; padding: 0; font-size: 12pt; background: white; color: black; }
-            .running-header, nav.book-nav, .commercial-cta { display: none; }
-            header.title-page { border-bottom: 2px solid black; }
-            h1 { font-size: 24pt; }
-            .folio { position: fixed; bottom: 0; left: 0; right: 0; text-align: center; border-top: none; font-size: 9pt; }
-            a { border-bottom: none; color: black; }
-        }
-
         @media (max-width: 768px) {
             body { padding: 2rem 1.5rem 4rem 1.5rem; font-size: 14pt; }
             h1 { font-size: 2.4rem; }
-            nav.book-nav { grid-template-columns: 1fr; gap: 0.5rem; }
-            nav.book-nav a { text-align: left; border-bottom: 1px solid var(--border); }
         }
     </style>
 </head>
 <body>
 
-    <div class="running-header">
-        <span>Azalea Kamellia</span>
-        <span>Compendium of Works</span>
-    </div>
-
     <header class="title-page">
         <h1>Azalea Kamellia</h1>
         <p class="subtitle">Geospatial Scientist & Researcher in Hydroclimatology</p>
-        <p class="imprint">
-            MPhil Candidate, Universiti Teknologi Malaysia &middot; 
-            <a href="mailto:your.email@domain.com">Correspondence</a> &middot; 
-            <a href="cv.html">Curriculum Vitae</a>
-        </p>
+        <div class="contact-info">
+            MPhil Candidate, Universiti Teknologi Malaysia<br>
+            Email: <a href="mailto:your.email@domain.com">your.email@domain.com</a><br>
+            GitHub: <a href="https://github.com/azaleakamellia" class="external-link" target="_blank" rel="noopener noreferrer">github.com/azaleakamellia</a><br>
+            Location: Johor Bahru, Malaysia
+        </div>
     </header>
 
-    <nav class="book-nav">
-        <a href="tools.html">Tools & Implementations</a>
-        <a href="research.html">Research & Projects</a>
-        <a href="essays.html">Essays & Field Notes</a>
-        <a href="cv.html">Curriculum Vitae</a>
-    </nav>
+    <div class="construction-notice">
+        <h2>Website Under Construction</h2>
+        <p>This digital compendium is currently being developed with care and attention to scholarly rigor.</p>
+        <p><em>Expected completion: [Month Year]</em></p>
+        <p style="margin-top: 1.5rem; font-size: 0.95rem;">
+            In the meantime, please access my Curriculum Vitae and professional links below. 
+            For inquiries regarding commercial licensing or research collaboration, please contact me directly via email.
+        </p>
+    </div>
 
-    <p class="intro-text">
-        My work exists at the intersection of rigorous academic research and practical climate risk assessment. 
-        Guided by the principles of <em>Sadaqah Jariyah</em> (beneficial, enduring knowledge) and <em>Tijarah & Ihsan</em> 
-        (fair, excellent commerce), I maintain a strict dual-license framework. Baseline methodologies, tutorials, and 
-        code are openly shared for students and researchers. Polished, heavy-lifting tools and bespoke reports are 
-        reserved for corporate clients via commercial licensing. Intellectual property is established via MyIPO (Malaysia), 
-        intentionally avoiding patents in favor of open, ethical stewardship.
-    </p>
+    <div class="available-section">
+        <h2 class="section-title">Available Now</h2>
+        <ul class="link-list">
+            <li>
+                <strong><a href="cv.html">Curriculum Vitae (Updated 2026)</a></strong>
+                <em>Comprehensive academic and professional history. Available for download as PDF.</em>
+            </li>
+            <li>
+                <strong><a href="https://github.com/azaleakamellia" class="external-link" target="_blank" rel="noopener noreferrer">GitHub Repository</a></strong>
+                <em>Open-source code, baseline methodologies, and technical documentation.</em>
+            </li>
+            <li>
+                <strong><a href="https://yourstore.lemonsqueezy.com" class="external-link" target="_blank" rel="noopener noreferrer">Commercial Tools & Licenses</a></strong>
+                <em>Enterprise-grade climate risk profiling tools for corporate TCFD/ISSB reporting.</em>
+            </li>
+            <li>
+                <strong>Email Correspondence</strong>
+                <em>For research collaboration, PhD opportunities, or bespoke consultancy: <a href="mailto:your.email@domain.com">your.email@domain.com</a></em>
+            </li>
+        </ul>
+    </div>
 
-    <h2 class="chapter-title">Recent Entries</h2>
-    <ul class="catalog-list">
-        <li>
-            <a href="cv.html">Curriculum Vitae (Updated 2026).</a><br>
-            <em>Document.</em> Comprehensive academic and professional history.
-        </li>
-        <li>
-            <a href="essays.html#note-03">Note 03: On the epistemology of satellite precipitation bias correction.</a><br>
-            <em>Essay.</em> Reflecting on the limits of machine learning when ground-truth station data is sparse. 
-            \( \text{SPI}_{\text{corrected}} = f(X_{\text{satellite}}, X_{\text{station}}) \)
-        </li>
-        <li>
-            <a href="tools.html#drought-pipeline">Asset-Level Physical Climate & Drought Risk Profiling Pipeline.</a><br>
-            <em>Tool.</em> Automated Python/GEE workflow for corporate TCFD/ISSB reporting.
-            <!-- The button is now forced to a new line by CSS -->
-            <a href="https://yourstore.lemonsqueezy.com" class="commercial-cta">Acquire Commercial License</a>
-        </li>
-        <li>
-            <a href="research.html#sarawak-review">Satellite Precipitation Estimates for Drought Monitoring in Sarawak.</a><br>
-            <em>Research.</em> Systematic literature review (ROSES framework) on bias correction methodologies.
-        </li>
-        <li>
-            <a href="essays.html#note-02">Note 02: The Scholar-Practitioner in the age of greenwashing.</a><br>
-            <em>Essay.</em> Why academic rigor and peer-reviewed quality must anchor corporate climate risk profiling.
-        </li>
-        <li>
-            <a href="tools.html#field-manuals">Methodological Baselines & Field Manuals.</a><br>
-            <em>Open Source.</em> Jupyter Notebook exports and baseline code for satellite precipitation calibration and SPI modeling.
-        </li>
-    </ul>
+    <div class="timeline">
+        <h3>Coming Soon</h3>
+        <ul>
+            <li><strong>Tools & Implementations:</strong> Detailed documentation of the Asset-Level Physical Climate & Drought Risk Profiling Pipeline</li>
+            <li><strong>Research & Projects:</strong> Systematic review on satellite precipitation estimates for drought monitoring in Sarawak</li>
+            <li><strong>Essays & Field Notes:</strong> Reflections on methodology, ethics, and the scholar-practitioner framework</li>
+            <li><strong>Training Manuals:</strong> Open-access educational materials on SPI modeling and bias correction</li>
+        </ul>
+    </div>
 
     <footer class="folio">
         <p>&copy; 2026 Azalea Kamellia. Intellectual property registered under Malaysian Copyright (MyIPO).</p>
-        <p>Content: CC BY-NC-SA 4.0 &middot; Code: AGPLv3 &middot; Typeset in EB Garamond</p>
+        <p>Content: CC BY-NC-SA 4.0 &middot; Code: AGPLv3 &middot; Typeset in Crimson Pro</p>
         <p>No tracking. No cookies. No JavaScript frameworks.</p>
     </footer>
 
