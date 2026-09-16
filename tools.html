@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tools & IP | Azalea Kamellia Abdullah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools & Intellectual Property | Azalea Kamellia Abdullah</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <h1 class="page-title">Tools & Intellectual Property</h1>
+    <p class="page-subtitle">Software, Pipelines, and Methodological Frameworks</p>
+
     <nav class="main-nav">
         <a href="index.html">Profile</a>
         <a href="cv.html">Curriculum Vitae</a>
@@ -15,17 +19,120 @@
         <a href="essays.html">Essays</a>
     </nav>
 
-    <h2 class="section-title">Intellectual Property</h2>
+    <!-- PHILOSOPHY / INTRO -->
+    <p class="profile-text">
+        My approach to software development and tool creation is guided by a dual-license framework. 
+        I believe in sharing foundational knowledge openly for the benefit of the scientific community, 
+        while reserving heavy-lifting, enterprise-grade pipelines for commercial licensing. Below is a 
+        classified overview of my tools, intellectual property, and ongoing projects.
+    </p>
+
+    <!-- CLASSIFICATION 1: REGISTERED IP -->
+    <h2 class="section-title">I. Registered Intellectual Property</h2>
+    
     <div class="item">
-        <div class="item-title">STEMRAINCAL Python Library</div>
-        <div class="item-subtitle">Registered under MyIPO (Malaysia Intellectual Property Office)</div>
-        <p style="margin-top: 6pt;">Independent programmatic Python library for computing standardised drought indices from hydrometeorological inputs. Developed to support rigorous, reproducible hydroclimatic analysis.</p>
-        <p style="margin-top: 10pt;"><a href="https://github.com/azaleakamellia" target="_blank" style="color: #000; border-bottom: 1px solid #ccc; text-decoration: none;">View on GitHub &rarr;</a></p>
+        <div class="item-header">
+            <span class="item-title">STEMRAINCAL Python Library</span>
+            <span class="item-date">MyIPO Registered</span>
+        </div>
+        <div class="item-subtitle">Independent Programmatic Library for Hydroclimatology</div>
+        <ul class="item-list">
+            <li>A robust Python library designed for computing standardised drought indices from hydrometeorological inputs.</li>
+            <li>Registered under the Malaysia Intellectual Property Office (MyIPO) to establish clear ownership while avoiding restrictive patents.</li>
+            <li>Currently under active development for an updated open-source release under the AGPLv3 license.</li>
+        </ul>
     </div>
 
-    <h2 class="section-title">Commercial Tools</h2>
-    <p>Enterprise-grade climate risk profiling tools for corporate TCFD/ISSB reporting are currently in development. For early access or commercial licensing inquiries, please contact me directly.</p>
+    <!-- CLASSIFICATION 2: OPEN SOURCE & RECREATIONAL -->
+    <h2 class="section-title">II. Open Source Tools & Projects</h2>
+    <p class="profile-text" style="margin-bottom: 12pt;">
+        This classification encompasses recreational experiments, personal projects, and community baselines. 
+        These tools are developed for continuous learning, methodological exploration, and open scientific contribution.
+    </p>
 
-    <footer class="site-footer">&copy; 2026 Azalea Kamellia Abdullah.</footer>
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Recreational & Experimental Scripts</span>
+            <span class="item-date">Personal GitHub</span>
+        </div>
+        <div class="item-subtitle">Algorithmic Experiments & Visualisations</div>
+        <ul class="item-list">
+            <li>Experimental Google Earth Engine (GEE) scripts for novel land-cover change visualisations and spatial statistics.</li>
+            <li>Interactive Streamlit and Dash dashboards for personal climate data exploration and hydrological modelling.</li>
+            <li>Algorithmic experiments in geospatial data engineering and spatial interpolation techniques.</li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Methodological Baselines & Tutorials</span>
+            <span class="item-date">Open Access</span>
+        </div>
+        <div class="item-subtitle">Educational Resources for Students & Researchers</div>
+        <ul class="item-list">
+            <li>Jupyter Notebook exports detailing baseline code for satellite precipitation calibration and SPI modeling.</li>
+            <li>Step-by-step guides for setting up GEE environments and processing ERA5-Land/CHIRPS data.</li>
+        </ul>
+    </div>
+
+    <!-- CLASSIFICATION 3: COMMERCIAL & ENTERPRISE -->
+    <h2 class="section-title">III. Commercial & Enterprise Solutions</h2>
+    <p class="profile-text" style="margin-bottom: 12pt;">
+        Polished, heavy-lifting tools and bespoke reports reserved for corporate clients (ESG auditors, 
+        sustainability directors) via commercial licensing. These tools are designed for closed-door, 
+        proprietary usage.
+    </p>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Asset-Level Physical Climate & Drought Risk Profiling Pipeline</span>
+            <span class="item-date">Commercial License</span>
+        </div>
+        <div class="item-subtitle">Automated Workflow for Corporate TCFD & ISSB (IFRS S2) Reporting</div>
+        <ul class="item-list">
+            <li>Ingests client asset coordinates, retrieves ERA5-Land/CHIRPS/CMIP6 data via GEE.</li>
+            <li>Applies ML bias correction (XGBoost/Random Forest) against local station data.</li>
+            <li>Outputs standardized SPI metrics and drought return periods for regulatory compliance.</li>
+        </ul>
+        <p style="margin-top: 12pt;">
+            <a href="https://yourstore.lemonsqueezy.com" target="_blank" style="color: #000; border-bottom: 1px solid #000; text-decoration: none; font-weight: 700; font-family: var(--sans-font); font-size: 10pt; text-transform: uppercase; letter-spacing: 0.5px;">Acquire Commercial License &rarr;</a>
+        </p>
+    </div>
+
+    <!-- CLASSIFICATION 4: CONFIDENTIAL / IN-DEVELOPMENT -->
+    <h2 class="section-title">IV. In-Development & Confidential Projects</h2>
+    <p class="profile-text" style="margin-bottom: 12pt;">
+        Projects currently under NDA, in closed development, or in the conceptual phase where the 
+        final licensing model (open vs. commercial) has not yet been decided.
+    </p>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Bespoke Geospatial Verification Tools</span>
+            <span class="item-date">Under NDA</span>
+        </div>
+        <div class="item-subtitle">Environmental Consultancy Applications</div>
+        <ul class="item-list">
+            <li>Custom-built spatial data verification pipelines for specific environmental consultancy applications in Malaysia and Brunei.</li>
+            <li>Proprietary coastline classification and Environmental Sensitivity Index (ESI) mapping utilities.</li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Advanced Hydrometeorological Modellers</span>
+            <span class="item-date">Conceptual Phase</span>
+        </div>
+        <div class="item-subtitle">Undecided Licensing Status</div>
+        <ul class="item-list">
+            <li>Next-generation ensemble models for tropical precipitation forecasting.</li>
+            <li>Currently evaluating whether to release as a community open-source tool or a premium commercial API.</li>
+        </ul>
+    </div>
+
+    <footer class="site-footer">
+        Last updated: 2026 | Typeset in LaTeX style | &copy; Azalea Kamellia Abdullah
+    </footer>
+
 </body>
 </html>
